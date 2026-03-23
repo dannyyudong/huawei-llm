@@ -1,0 +1,52 @@
+题目 ID: 25
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+已知正方体$ABCD—A_1B_1C_1D_1$的棱长为2，M为$CC_1$的中点，点N在侧面$ADD_1A_1$内，若$BM\bot A_{1}N$．则$\bigtriangleup ABN$面积的最小值为____
+A. $\frac{\sqrt{5}}{5}$
+B. $\frac{2\sqrt{5}}{5}$
+C. 1
+D. 5
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+首先，我们分析题目中的几何关系。由于$BM \perp A_1N$，我们可以利用向量和勾股定理来求解三角形$ABN$的面积。
+
+设$M$到$CC_1$的距离为$d$，则$CM = d$。因为$M$是$CC_1$的中点，所以$CM = \frac{d}{2}$。
+
+接下来，我们需要找到$AN$的长度。由于$N$在侧面$ADD_1A_1$内，且$AD_1$垂直于底面，因此$AN$也是底面边长的一半，即$AN = \frac{2}{2} = 1$。
+
+现在，我们知道$AM = CM + MC = \frac{d}{2} + \frac{d}{2} = d$，而$MN = AN - AM = 1 - d$。
+
+根据勾股定理，$MN^2 = AM^2 + AN^2$，代入得到：
+
+\[ (1 - d)^2 = d^2 + 1^2 \]
+
+展开并简化得：
+
+\[ 1 - 2d + d^2 = d^2 + 1 \]
+
+\[ 1 - 2d = 0 \]
+
+\[ d = \frac{1}{2} \]
+
+因此，$AN = 1$，$AM = \frac{1}{2}$，$CM = \frac{1}{4}$，$MN = 1 - \frac{1}{2} = \frac{1}{2}$。
+
+最后，计算$\triangle ABN$的面积：\[ S_{\triangle ABN} = \frac{1}{2} \times AB \times AN = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times \frac{1}{2} = \frac{1}{2} \times 2 \times
+============================================================
+最终答案：D
+生成长度：3964 字符
+是否包含<think>标签：否

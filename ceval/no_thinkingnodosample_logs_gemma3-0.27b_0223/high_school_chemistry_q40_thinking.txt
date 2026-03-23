@@ -1,0 +1,20 @@
+题目 ID: 40
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列有关叙述错误的是____
+A. 中国古代利用明矾溶液的酸性清除铜镜表面的铜锈
+B. 陶瓷、水泥和光导纤维均属于硅酸盐材料
+C. “煤改气”、“煤改电”等清洁燃料改造工程有利于减少雾霾天气
+D. 石油裂解、煤的干馏、玉米制醇、蛋白质的变性都是化学变化
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

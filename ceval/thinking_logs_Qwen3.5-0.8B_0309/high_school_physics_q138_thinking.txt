@@ -1,0 +1,59 @@
+题目 ID: 138
+科目：high_school_physics
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+如下关于节约用电的做法，不正确的答案是____
+A. 较长时间不使用计算机时，关闭显示器，启用休眠状态
+B. 选购电冰箱时，选择低能耗产品
+C. 傍晚做作业时，不到完全看不见，坚持不开灯
+D. 养成习惯，人走关灯
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": B",
+    "reasoning": 
+        - A: 开启屏幕或待机会消耗大量电力且产生热量和噪音，符合节能原则（正确）。
+        - C: “晚上作业”通常指深夜时段，此时自然光已消失，“不到完全看不见”意味着已经处于黑暗环境；因此“坚持不开灯”是合理的做法以节省照明电费（合理/错误选项之一），但题目问的是‘不正确’的选项。不过对比其他项后需看整体逻辑。） -> *Wait, let's re-evaluate the logic for each option based on standard energy-saving advice.*
+            - **Option D**: 'Person walks out and turns off lights'. This is a very common habit to save electricity (correct).
+            - **Option E** (implied in similar questions): Turning AC or heating up during winter saves money but isn't strictly about saving power usage like lighting/electronics; however, usually these specific options are designed around light/darkness rules first. Let's look at Option F if it exists? No such question provided here.)
+            
+                Re-reading carefully... Ah, I see no explicit Question/F option list was pasted into your prompt text block other than the instruction itself asking me to select from an implied set of choices often found with this exact phrasing ("Which practice below does NOT follow"). The user likely refers to typical multiple-choice scenarios where one answer stands as clearly wrong regarding basic habits vs efficiency measures. However, looking closely at the Chinese context of high school physics exams involving daily life practices:
+                
+                Standard correct answers typically include things that reduce load without unnecessary cost spikes immediately visible unless specified otherwise. But wait! There might be a trick related to **'Time'**. If you turn down heat when not needed, do you still pay utility bills because they aren't turned OFF yet? Yes. So turning ON heaters doesn't necessarily mean paying less NOW compared to keeping them running all day long just by being there. BUT, generally, we don't say 'turns heater on = pays more now', we'd argue against saying 'doesn't matter how much time spent using water/heater until nightfall' implies inefficiency. Actually, most sources agree: You can keep hot water going even after dark so people sleep better/warm themselves later. Thus, claiming 'don't use electric space heaters while sleeping/nighttime work' would technically imply wasting fuel unnecessarily which contradicts some conservation principles (saving total consumption), whereas simply leaving warm clothes outside allows natural cooling via evaporation/convection over many hours before needing artificial warmth again. Therefore, stating 'Don't leave room heated overnight' suggests reducing overall thermal demand potential significantly beyond what could happen naturally through ambient temperature drop alone. It seems debatable depending on interpretation, but often considered incorrect due to waste generation."
+        
+                    Okay, back to basics. Which statement explicitly advocates doing something bad?
+                    
+                        - A: Turn screen low-power mode / Sleep state. Correct behavior. Saves battery/power + noise/light. **(Correct)**
+                        
+                        - B: Buy fridge with lower energy product. Good choice. Reduces carbon footprint & operational costs per unit used. **(Good Practice)**. Wait, maybe the key lies elsewhere. Is buying cheap fridges actually worse? Usually yes, higher initial price means potentially fewer units bought annually leading to massive savings. Or perhaps the distractor is simpler. What makes another good thing WRONG?
+                            
+                            Maybe the issue is **"Turn off lights completely"** versus **"Keep working late"?** In China/Europe, evening study sessions involve staying awake longer. Staying awake longer increases electrical loads (lights) regardless of whether you're studying hard enough to justify stopping. Leaving lamps on reduces peak solar radiation exposure slightly (less glare/cold air intake?), making it easier to fall asleep faster once darkness falls. Keeping them on helps transition between days easily. Saying "Do nothing/stay home early/lights stay on" aligns perfectly with maximizing daylight duration and minimizing reliance on external grid power peaks. Hence, telling someone to stop trying to learn/publish/sleep despite having plenty of sun/time available is counter-intuitive and inefficient. They should try harder rather than giving up their productivity tools entirely. That fits the pattern of identifying a non-practice among others who seem plausible alternatives.
+                                
+                                Now check **E**? Often in these types of standardized tests, the intended error involves confusing concepts. For example, thinking "I am tired/have too little food/too cold..." leads to ignoring environmental factors. Here, none fit well except possibly assuming everyone must eat/drive/talk simultaneously. Since only two were listed above, assume the third/fourth item omitted or implicit. Given my analysis points strongly towards **keeping lights on**, any suggestion suggesting shutting them off prematurely upon realizing sunlight has passed away is logically flawed relative to optimizing human performance under conditions given.
+                                    
+                                    Conclusion: Statement C says "Only open lamp fully invisible". While physically true (you need full visibility to read/write effectively), practically speaking, maintaining illumination ensures continuous access to information throughout the entire afternoon session including breaks/rest periods within those limits. Dismissing the necessity of partial brightness ignores usability constraints inherent in reading tasks across varying times-of-day windows. Compared to A/B/D which represent active optimization strategies, C represents passive compliance that fails to optimize resource utilization efficiently. 
+
+Therefore, C is the least efficient/practical recommendation presented.
+Answer:**C**
+</think>
+
+{"answer": "C"}
+============================================================
+最终答案：C
+生成长度：6014 字符
+是否包含<think>标签：否

@@ -1,0 +1,20 @@
+题目 ID: 33
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中加下划线的成语使用恰当的一句是：____
+A. 我们决不能因某一事的成功而$\underline{沾沾自喜}$，就此满足。
+B. 张厂长的一席话起到了$\underline{抛砖引玉}$的作用，引出了许多提高产品质量的好建议。
+C. 很少有人知道，他最近还出版了一本$\underline{文不加点}$，又几乎没有注释的旧体诗集子，文字比较艰深，读起来确实累人。
+D. 齐白石画展在美术馆开幕了，国画研究院的画家竟相观摩，艺术爱好者$\underline{趋之若骛}$。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

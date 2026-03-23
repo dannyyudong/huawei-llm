@@ -1,0 +1,20 @@
+题目 ID: 59
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中，没有语病的一项是____
+A. 每年春运都会出现“一票难求”的现象，春运期间，用最简单便捷的方式购得一张回家的车票显然成为了在外务工人员的最大心愿。
+B. 国际互联网虽然给我们带来了不少商务、交通上的便利，但是我们对网上信息的真实性和安全性越来越怀疑。
+C. 毋庸置疑，原生态的东西有精华也有糟粕，必须具体分析，辩证看待，因此，王冰认为赵亮关于原生态艺术的那篇文章有错误的观点是值得商榷的。
+D. 相关统计数字表明，全球手机用户年平均增长率为 22%，今年全球手机使用者数量已超过33亿左右，在全球人口中的普及率达到49% 。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

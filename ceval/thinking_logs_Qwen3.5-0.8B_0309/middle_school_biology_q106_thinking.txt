@@ -1,0 +1,41 @@
+题目 ID: 106
+科目：middle_school_biology
+Prompt:
+以下是中国关于初中生物考试的单项选择题，请选出其中的正确答案。
+
+关于达尔文自然选择学说的叙述，不正确的是____
+A. 合理地解释了生物进化的原因
+B. 解释了遗传和变异的原因
+C. 生物普遍具有很强的繁殖能力
+D. 适应者生存，不适应者被淘汰
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+  "answer": B",
+  "reasoning": 
+    - A: 正确。达尔文的进化论确实为现代生物学提供了有力的解释框架（即‘适应性’），认为环境对生物的筛选作用导致了物种的演变。\n    - C: 错误。虽然自然界中存在大量具有较强繁殖能力的个体以利于种群繁衍，但这是由个体的生理特征决定的结果；而“普遍的”这一表述过于绝对且不符合科学事实。（注：题目问的是学说本身是否包含此观点作为其核心内容之一）。\n    - D: 正确。这是对自然选择在起作用的具体描述机制——适者生存、不适者淘汰是长期演化和维持种群的法则。\n    - B: 不正确。达尔文的理论主要侧重于**如何导致变化并产生多样性**。他提出基因突变提供原材料，通过自然的定向选择和隔离过程来改变性状。**遗传性状的传递与变异的来源才是理解多样性的关键所在**。“解释了遗传...的原因”通常指代孟德尔豌豆实验或摩尔根果蝇杂交实验中揭示出的规律，而非广义的自然选择原理的核心内涵。”
+}",
+  "output_format": {
+    ".type": "JSON",
+    "\"value\": \"\"\"", // The value should be the string 'B' or similar based on reasoning, but looking at standard output format examples like {'answer': 'A'}, I will provide just the letter as requested in the prompt's example structure logic). Wait, re-reading instruction: "Please select from your answer list only". And then showing an example `{'answer': 'A'}`. Usually this means providing a key-value pair where the content is the option text (e.g., if options are letters) OR simply selecting one of them represented by its label? Let's look closer at the request: "Your response must contain ONLY YOUR CHOICE." and show it inside quotes/structure. Given typical multiple choice tasks here, usually they want the specific option identifier. However, since there was no explicit set of choices provided to me other than listing statements, identifying which statement IS incorrect requires knowing all four for context. But wait, Option B says "explains genetic variation reasons"? No, natural selection explains *how* diversity arises via change over time due to differential survival/reproduction. Genetic inheritance patterns explain why traits persist across generations through passing genes. So saying Natural Selection explained genetics isn't quite right; Mendel did that specifically regarding heredity mechanisms distinctively. Therefore B is definitely the intended wrong answer.)}
+    
+    }
+} ```
+============================================================
+最终答案：B
+生成长度：1912 字符
+是否包含<think>标签：否

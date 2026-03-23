@@ -1,0 +1,43 @@
+题目 ID: 43
+科目：high_school_biology
+Prompt:
+以下是中国关于高中生物考试的单项选择题，请选出其中的正确答案。
+
+现有两块农田，农田A混合种植了杂合高茎豌豆和矮茎豌豆,而农田B混合种植了甜玉米和杂合非甜玉米。豌豆的高茎和矮茎与玉米的甜和非甜均受一对等位基因控制，不考虑其他植物，下列相关叙述，错误的是____
+A. 豌豆的高茎对矮茎为显性，玉米的非甜对甜为显性
+B. 农田A中矮茎豌豆所结种子长成的植株均表现为矮茎
+C. 农田B中杂合非甜玉米所结种子长成的植株1/4为甜玉米
+D. 农田A中各植株自花受粉,而农田B中各植株随机受粉
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+  "answer": "A",
+  "reasoning": :\n\n- **分析选项 A**:\n    - 题目描述中提到“杂交”（heterozygous cross），这意味着亲本必须是纯合体且表现型不同。\n        *   对于豌豆：如果高产是隐性性状（因为通常产量由两个隐性基因决定？不，这里说‘高’ vs ‘矮’）。让我们重新审视题意中的逻辑陷阱或常规遗传题设定。通常在标准的高中生物试题语境下，“高茎”往往对应显性等位基因$T$, “矮茎”对应$t$. \"甜\"对应$S^2$, “非甜”对应$s s'$ (假设双隐). \n            *   若 $TTtHh$: T=高,T=t; S=s,s'=s'. 那么 TTtt = 低产? No wait.\n            Let's re-read carefully: 'High' and 'Low stem', 'Sweet' and 'Non-sweet corn.' Usually in these problems, the dominant phenotype is listed first or implied by context if not specified as recessive for a trait like height unless stated otherwise ('low yield'). However, standard convention often puts Dominant > Recessive when listing traits to avoid confusion with dominance relationships between genes on different chromosomes?\n            Actually, let's look at option C which might clarify gene linkage without needing specific allele names explicitly defined beyond their relationship.*\n\nLet's assume Standard Mendelian Inheritance Rules where Phenotype Name $\neq$ Allele Symbol directly implies Gene Identity but we must deduce from options B/C/D provided that they are consistent.**\nWait, there is no explicit instruction saying one parent was homozygous purebred ($AAaaBBbb...$) other than stating it mixed them up via crossing. The text says 'Mixed planting of heterozygotes'. This means Parent 1 has genotype AABBccdd etc., and Parent 2 also had those genotypes crossed together. So both parents were likely Homozygous Purebreds themselves before mixing! If so, then Option D describes this perfectly (\(F_1\) selfed -> \(F_{gg}\)). But usually, questions imply random mating within populations regardless of whether individuals started out purebreds because you can't know who came from what line just by looking at seeds collected later.)\nHowever, even assuming Random Mating applies generally,\n*Option A claims:* High Stem dominates Low Stem AND Non-Sweet Corndomains Sweet Corn.\nThe problem states: 'Both highstem and lowstems ... controlled by pairs of alleles controlling sweet/nonsweet corn.' It does NOT state that 'high stems dominate low stewsms' OR 'non sweets dominate sweet crops'. Therefore, claiming dominance based solely on phenotypic appearance contradicts genetic principles described here!\nTherefore, Statement A makes an incorrect biological assumption about inheritance patterns given only information regarding hybridization results."
+    
+*(Self-Correction during reasoning)*: Wait, I need to be careful. Is it possible the question assumes a simplified model where 'Dominance' refers specifically to the interaction mentioned elsewhere? Or perhaps my deduction above holds true—that statement A contains false premises derived strictly from the prompt alone?* Yes, purely logically, knowing nothing else defines dominance rules relative to each other except through observation. Since neither rule exists in the premise, asserting dominance violates basic genetics logic applied to unobserved data points.* Thus, A is definitely wrong.*
+  
+**(Re-evaluating Logic)**: Does any part support non-dominance? Only if the phrase meant something obscurely complex involving multiple loci affecting all three simultaneously, making simple dominance impossible to infer. Given typical exam design, identifying contradictions against fundamental laws (like lack of evidence supporting observed relations) leads to selecting the error.*
+   
+Thus, Answer A stands correct due to logical inconsistency.*".
+}
+```
+
+Answer:** A**
+============================================================
+最终答案：A
+生成长度：3527 字符
+是否包含<think>标签：否

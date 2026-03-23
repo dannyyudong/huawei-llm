@@ -1,0 +1,99 @@
+题目 ID: 110
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+已知非零向量$\vec{a}$，$\vec{b}$满足$\left|\vec{a}\right|=\left|\vec{b}\right|$，且满足$\left|\vec{a}+\vec{b}\right|=\left|2\vec{a}-\vec{b}\right|$，则$\vec{a}$与$\vec{b}$的夹角为____
+A. $\frac{2\pi}{3}$
+B. $\frac{\pi}{2}$
+C. $\frac{\pi}{3}$
+D. $\frac{\pi}{6}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+已知非零向量 $\vec{a}$ 和 $\vec{b}$ 满足：
+
+- $|\vec{a}| = |\vec{b}|$，即它们的模长相等；
+- $|\vec{a} + \vec{b}| = |2\vec{a} - \vec{b}|$。
+
+我们设 $\vec{a} = \vec{b}$，则 $|\vec{a}| = |\vec{b}|$，且代入方程：
+
+$$
+|\vec{a} + \vec{b}| = |\vec{a} - \vec{b}|
+$$
+
+由于 $\vec{a} = \vec{b}$，则：
+
+$$
+|\vec{a} + \vec{a}| = |\vec{a} - \vec{a}| \Rightarrow |\vec{2}\vec{a}| = 0 \Rightarrow 2|\vec{a}| = 0 \Rightarrow |\vec{a}| = 0
+$$
+
+显然，$\vec{a} = \vec{b}$ 会导致矛盾，因此我们考虑一般情况。
+
+设 $\vec{a} = \vec{b}$，则代入原式：
+
+$$
+|\vec{a} + \vec{b}| = |\vec{a} - \vec{b}| \Rightarrow |\vec{2}\vec{a}| = |\vec{0}| \Rightarrow 2|\vec{a}| = 0 \Rightarrow |\vec{a}| = 0
+$$
+
+这说明 $\vec{a} = \vec{b}$ 是不可能的。
+
+因此，我们考虑一般情况：
+
+设 $\vec{a}$ 和 $\vec{b}$ 为非零向量，且 $|\vec{a}| = |\vec{b}|$，且 $|\vec{a} + \vec{b}| = |2\vec{a} - \vec{b}|$。
+
+我们设 $\theta$ 为 $\vec{a}$ 与 $\vec{b}$ 的夹角，即 $\vec{a} \cdot \vec{b} = |\vec{a}||\vec{b}|\cos\theta$。
+
+由于 $|\vec{a}| = |\vec{b}| = r$，所以：
+
+$$
+|\vec{a} + \vec{b}|^2 = |\vec{a} - \vec{b}|^2
+$$
+
+展开：
+
+$$
+|\vec{a} + \vec{b}|^2 = |\vec{a} - \vec{b}|^2 \Rightarrow (|\vec{a}|^2 + |\vec{b}|^2 + 2\vec{a} \cdot \vec{b}) = (\vec{a} \cdot \vec{a} + \vec{b} \cdot \vec{b} - 2\vec{a} \cdot \vec{b})
+$$
+
+化简：
+
+$$
+|\vec{a}|^2 + |\vec{b}|^2 + 2\vec{a} \cdot \vec{b} = |\vec{a}|^2 + |\vec{b}|^2 - 2\vec{a} \cdot \vec{b}
+$$
+
+两边相减：
+
+$$
+4\vec{a} \cdot \vec{b} = 0 \Rightarrow \vec{a} \cdot \vec{b} = 0
+$$
+
+这意味着 $\vec{a}$ 和 $\vec{b}$ 互相垂直。
+
+因此，$\vec{a}$ 与 $\vec{b}$ 的夹角为：
+
+$$
+\theta = \frac{\pi}{2}
+$$
+
+最终答案为：
+
+```json
+{"answer": "B"}
+```
+============================================================
+最终答案：B
+生成长度：1467 字符
+是否包含<think>标签：否

@@ -1,0 +1,20 @@
+题目 ID: 49
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列关于铝的叙述中不正确的是____
+A. 铝是地壳中含量最多的金属元素
+B. 铝的抗腐蚀性能好，原因是铝表面的氧化膜可以阻止铝与空气中的氧气接触
+C. 铝是一种活泼的金属，在化学反应中常作还原剂
+D. 铝制餐具能用于蒸煮，或长时间存放碱性食物，但不适宜存放酸性食物
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

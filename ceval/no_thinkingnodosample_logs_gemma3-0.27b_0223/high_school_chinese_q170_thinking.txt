@@ -1,0 +1,25 @@
+题目 ID: 170
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+填入下文横线上的几句话，顺序恰当的一项是____
+我国古人类学家裴文中教授兴奋得几夜睡不着觉，他把这个稀世珍宝先用纸包起来，____，然后，把它抱在怀里，坐着汽车小心翼翼地把它送到北京。
+①打了层石膏
+②再用自己的被子卷起来
+③外面又裹了层棉花
+④棉花外面又套上了麻袋
+A. ③④①②
+B. ①③④②
+C. ①②③④
+D. ②①③④
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

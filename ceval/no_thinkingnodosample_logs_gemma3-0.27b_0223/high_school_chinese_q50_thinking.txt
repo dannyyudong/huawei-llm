@@ -1,0 +1,20 @@
+题目 ID: 50
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中，没有语病的一项是____
+A. 目前市场尤其是网络平台上，智能门锁品牌众多，价格相差悬殊很大。同时还出现了号称能打开智能门锁的“小黑盒”。
+B. 近年来，随着空间技术和空间活动规模的逐步扩大，越来越多的“太空产品”开始诞生。
+C. 美国哥伦比亚广播公司新闻网近日报道，美方最新一轮对华加征关税的举措将使已经风雨飘摇的美国零售企业关闭更多店面，裁减更多员工。
+D. 京都念慈庵蜜炼川贝枇杷膏，里面的主要成分是川贝母、枇杷叶、南沙参、茯苓等配制而成的，它具有润肺化痰、止咳平喘、护喉利咽、生津补气等功效。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

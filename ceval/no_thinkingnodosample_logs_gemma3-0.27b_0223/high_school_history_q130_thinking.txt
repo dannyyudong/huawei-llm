@@ -1,0 +1,20 @@
+题目 ID: 130
+科目：high_school_history
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中历史考试的单项选择题，请选出其中的正确答案。
+
+1791年，法国制宪会议颁布的宪法规定：只有一定财产的“积极公民”才有选举权。这一规定对法国的初步改造体现在____
+A. 法国确立了君主立宪政体
+B. 资产贵族制代替了门第贵族制
+C. 大资产阶级掌握了统治权
+D. 自主命运的公民取代了效忠与人的臣民
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

@@ -1,0 +1,93 @@
+题目 ID: 33
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+$\alpha\in\left({\frac{\pi}{3}},{\frac{5\pi}{6}}\right)$，且$\sin\left(\alpha+{\frac{\pi}{6}}\right)=\frac{1}{3}$，则$\cos\left(2\alpha-\frac{\pi}{6}\right)$的值为____
+A. $-\frac{8}{9}$
+B. $-\frac{4\sqrt{2}}{9}$
+C. $\frac{4\sqrt{2}}{9}$
+D. $\frac{8}{9}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+我们已知：
+
+- $\alpha \in \left(\frac{\pi}{3}, \frac{5\pi}{6}\right)$
+- $\sin\left(\alpha + \frac{\pi}{6}\right) = \frac{1}{3}$
+
+我们要求的是：
+
+$$
+\cos\left(2\alpha - \frac{\pi}{6}\right)
+$$
+
+---
+
+### 第一步：设 $\theta = \alpha + \frac{\pi}{6}$，则：
+
+$$
+\sin\theta = \frac{1}{3}
+$$
+
+我们已知 $\theta \in \left(\frac{\pi}{3} + \frac{\pi}{6}, \frac{5\pi}{6} + \frac{\pi}{6}\right) = \left(\frac{\pi}{2}, \frac{6\pi}{6}\right) = \left(\frac{\pi}{2}, \pi\right)$
+
+所以 $\theta \in \left(\frac{\pi}{2}, \pi\right)$，即 $\theta$ 是在第一象限到第二象限之间的角。
+
+---
+
+### 第二步：求 $\cos(2\alpha - \frac{\pi}{6})$
+
+我们注意到：
+
+$$
+2\alpha - \frac{\pi}{6} = \left(\alpha + \frac{\pi}{6}\right) - \frac{\pi}{3} = \theta - \frac{\pi}{3}
+$$
+
+所以：
+
+$$
+\cos\left(2\alpha - \frac{\pi}{6}\right) = \cos\left(\theta - \frac{\pi}{3}\right)
+$$
+
+我们使用余弦差公式：
+
+$$
+\cos\left(\theta - \frac{\pi}{3}\right) = \cos\theta \cos\frac{\pi}{3} + \sin\theta \sin\frac{\pi}{3}
+$$
+
+已知：
+
+- $\cos\frac{\pi}{3} = \frac{1}{2}$
+- $\sin\frac{\pi}{3} = \frac{\sqrt{3}}{2}$
+- $\sin\theta = \frac{1}{3}$
+
+代入：
+
+$$
+\cos\left(\theta - \frac{\pi}{3}\right) = \frac{1}{2} \cdot \frac{1}{3} + \frac{1}{3} \cdot \frac{\sqrt{3}}{2} = \frac{1}{6} + \frac{\sqrt{3}}{6} = \frac{1 + \sqrt{3}}{6}
+$$
+
+---
+
+### 最终答案：
+
+$$
+\boxed{\text{answer}: \frac{1 + \sqrt{3}}{6}}
+$$
+============================================================
+最终答案：(未提取到答案)
+生成长度：1262 字符
+是否包含<think>标签：否

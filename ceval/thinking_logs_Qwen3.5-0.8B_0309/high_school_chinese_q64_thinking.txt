@@ -1,0 +1,39 @@
+题目 ID: 64
+科目：high_school_chinese
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列词语中注音全都正确的一项是____
+A. 婀娜(ｎｕó)     发酵(ｘｉàｏ)     任弼时(ｒèｎ)     赧然一笑(ｎǎｎ)
+B. 啮噬(ｎｉè)     闷罐车(ｍèｎ)     冼星海(ｘｉǎｎ)   流水淙淙(ｃóｎɡ)
+C. 扒手(ｐá)       一撮毛(ｃｕō)     解晓东(ｘｉè)     蒙头转向(ｍéｎɡ)
+D. 譬方(ｂǐ)       打折扣(ｚｈé)     单田芳(ｓｈàｎ)   含辛茹苦(ｒú)
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": B",
+    "analysis": {
+        A: \"婀娜\"应读作 náo (nào)，不是 nüò；“任弼时”的 rèn 是第四声（去声），这里标注为 rèng/ren 错误。\nC: “一撮毛”的正确读音应为 cù, not cuo; \"蒙头转向\"中的 méng 是第一声，但此处通常不标调或按轻声处理，不过主要错在‘一’字音误写成了 'cu'。\",
+        D: \"譬方\"在此处指比喻、比方，标准拼音通常为 pì fāng，而非 bǐ qīng；此外，“含辛茹苦”的标准发音也是 hán xín ní kǔ，rū 是错误的韵母和声调组合。\"",
+        "reasoning_summary": "- Option A has incorrect pronunciation for the first character of 'ne'eru'.\n- Option C contains a typo in reading 'yichuo maou', which should be 'cuzhuomao'\n- Option D misreads both characters as having different tones and vowel sounds compared to standard dictionaries."
+    }
+}
+```
+============================================================
+最终答案：D
+生成长度：634 字符
+是否包含<think>标签：否

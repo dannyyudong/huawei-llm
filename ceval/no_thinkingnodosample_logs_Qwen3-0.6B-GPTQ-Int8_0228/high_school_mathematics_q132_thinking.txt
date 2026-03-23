@@ -1,0 +1,167 @@
+题目 ID: 132
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+过双曲线C：$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$的右焦点F，作直线l交C的两条渐近线于A，B两点，A，B均位于Y轴右侧，且满足$\overrightarrow{AF}=\dfrac{1}{2}\overrightarrow{FB}$，O为坐标原点，若$\angle OBA=30^\circ$，则双曲线C的离心率为____
+A. $\frac{2\sqrt{3}}{3}$
+B. $\sqrt{3}$
+C. $\frac{4\sqrt{3}}{3}$
+D. $\frac{5\sqrt{3}}{3}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+设双曲线 $ C: \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 $ 的右焦点为 $ F $，坐标为 $ (c, 0) $，其中 $ c = \sqrt{a^2 + b^2} $。
+
+直线 $ l $ 与双曲线的两条渐近线相交于点 $ A $ 和 $ B $，且满足 $ \overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB} $，且 $ O $ 为坐标原点，$ \angle OBA = 30^\circ $。
+
+由于 $ \angle OBA = 30^\circ $，且 $ A $ 和 $ B $ 在 Y 轴右侧，我们可以设点 $ A = (x_1, y_1) $，$ B = (x_2, y_2) $，且 $ x_1 > 0 $，$ x_2 > 0 $。
+
+由于 $ \overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB} $，我们可以设 $ \overrightarrow{FB} = 2\overrightarrow{AF} $，即 $ \overrightarrow{FB} = 2\overrightarrow{AF} $，说明 $ F $ 在 $ A $ 和 $ B $ 的中点。
+
+设 $ F = (c, 0) $，则 $ A = (c + x, y) $，$ B = (c - x, y) $，其中 $ x > 0 $。
+
+由于 $ A $ 和 $ B $ 在 Y 轴右侧，所以 $ x > 0 $，且 $ y > 0 $。
+
+由于 $ \angle OBA = 30^\circ $，我们可以利用向量的点积公式：
+
+$$
+\cos \angle OBA = \frac{\vec{BO} \cdot \vec{BA}}{|\vec{BO}| \cdot |\vec{BA}|}
+$$
+
+由于 $ \angle OBA = 30^\circ $，所以：
+
+$$
+\cos 30^\circ = \frac{\vec{BO} \cdot \vec{BA}}{|\vec{BO}| \cdot |\vec{BA}|}
+$$
+
+由于 $ \vec{BO} = (c - x, y) $，$ \vec{BA} = (x_1 - x_2, y_1 - y_2) $，且 $ x_1 = c + x $，$ x_2 = c - x $，所以 $ x_1 - x_2 = 2x $，$ y_1 - y_2 = y $。
+
+因此：
+
+$$
+\vec{BO} = (c - x, y), \quad \vec{BA} = (2x, y)
+$$
+
+点积：
+
+$$
+\vec{BO} \cdot \vec{BA} = (c - x)(2x) + y \cdot y = 2x(c - x) + y^2
+$$
+
+模长：
+
+$$
+|\vec{BO}| = \sqrt{(c - x)^2 + y^2}, \quad |\vec{BA}| = \sqrt{(2x)^2 + y^2}
+$$
+
+因此：
+
+$$
+\cos 30^\circ = \frac{2x(c - x) + y^2}{\sqrt{(c - x)^2 + y^2} \cdot \sqrt{4x^2 + y^2}}
+$$
+
+由于 $ \cos 30^\circ = \frac{\sqrt{3}}{2} $，所以：
+
+$$
+\frac{\sqrt{3}}{2} = \frac{2x(c - x) + y^2}{\sqrt{(c - x)^2 + y^2} \cdot \sqrt{4x^2 + y^2}}
+$$
+
+由于 $ \overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB} $，说明 $ F $ 在 $ A $ 和 $ B $ 的中点，即 $ x_1 = c + x $，$ x_2 = c - x $，所以 $ x = \frac{x_1 - x_2}{2} $。
+
+由于 $ A $ 和 $ B $ 在 Y 轴右侧，且 $ \angle OBA = 30^\circ $，我们可以设 $ y = b $，因为渐近线方程为 $ y = \pm \frac{b}{a}x $，所以 $ y = b $。
+
+由于 $ \angle OBA = 30^\circ $，我们可以设 $ \vec{BA} = (2x, b) $，$ \vec{BO} = (c - x, b) $，所以：
+
+$$
+\vec{BO} \cdot \vec{BA} = (c - x)(2x) + b^2 = 2x(c - x) + b^2
+$$
+
+模长：
+
+$$
+|\vec{BO}| = \sqrt{(c - x)^2 + b^2}, \quad |\vec{BA}| = \sqrt{(2x)^2 + b^2}
+$$
+
+因此：
+
+$$
+\cos 30^\circ = \frac{2x(c - x) + b^2}{\sqrt{(c - x)^2 + b^2} \cdot \sqrt{4x^2 + b^2}}
+$$
+
+由于 $ \cos 30^\circ = \frac{\sqrt{3}}{2} $，所以：
+
+$$
+\frac{\sqrt{3}}{2} = \frac{2x(c - x) + b^2}{\sqrt{(c - x)^2 + b^2} \cdot \sqrt{4x^2 + b^2}}
+$$
+
+由于 $ \overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB} $，说明 $ F $ 在 $ A $ 和 $ B $ 的中点，即 $ x = \frac{x_1 - x_2}{2} $。
+
+由于 $ A $ 和 $ B $ 在 Y 轴右侧，且 $ \angle OBA = 30^\circ $，我们可以设 $ y = b $，因为渐近线方程为 $ y = \pm \frac{b}{a}x $，所以 $ y = b $。
+
+由于 $ \angle OBA = 30^\circ $，我们可以设 $ \vec{BA} = (2x, b) $，$ \vec{BO} = (c - x, b) $，所以：
+
+$$
+\vec{BO} \cdot \vec{BA} = (c - x)(2x) + b^2 = 2x(c - x) + b^2
+$$
+
+模长：
+
+$$
+|\vec{BO}| = \sqrt{(c - x)^2 + b^2}, \quad |\vec{BA}| = \sqrt{(2x)^2 + b^2}
+$$
+
+因此：
+
+$$
+\cos 30^\circ = \frac{2x(c - x) + b^2}{\sqrt{(c - x)^2 + b^2} \cdot \sqrt{4x^2 + b^2}}
+$$
+
+由于 $ \cos 30^\circ = \frac{\sqrt{3}}{2} $，所以：
+
+$$
+\frac{\sqrt{3}}{2} = \frac{2x(c - x) + b^2}{\sqrt{(c - x)^2 + b^2} \cdot \sqrt{4x^2 + b^2}}
+$$
+
+由于 $ \overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB} $，说明 $ F $ 在 $ A $ 和 $ B $ 的中点，即 $ x = \frac{x_1 - x_2}{2} $。
+
+由于 $ A $ 和 $ B $ 在 Y 轴右侧，且 $ \angle OBA = 30^\circ $，我们可以设 $ y = b $，因为渐近线方程为 $ y = \pm \frac{b}{a}x $，所以 $ y = b $。
+
+由于 $ \angle OBA = 30^\circ $，我们可以设 $ \vec{BA} = (2x, b) $，$ \vec{BO} = (c - x, b) $，所以：
+
+$$
+\vec{BO} \cdot \vec{BA} = (c - x)(2x) + b^2 = 2x(c - x) + b^2
+$$
+
+模长：
+
+$$
+|\vec{BO}| = \sqrt{(c - x)^2 + b^2}, \quad |\vec{BA}| = \sqrt{(2x)^2 + b^2}
+$$
+
+因此：
+
+$$
+\cos 30^\circ = \frac{2x(c - x) + b^2}{\sqrt{(c - x)^2 + b^2} \cdot \sqrt{4x^2 + b^2}}
+$$
+
+由于 $ \cos 30^\circ = \frac{\sqrt{3}}{2} $，所以：
+
+$$
+\frac{\sqrt{3}}{2} = \frac{2x(c - x) + b^2}{\sqrt{(c - x)^2 + b^2} \cdot \sqrt{4x^2 + b
+============================================================
+最终答案：B
+生成长度：3775 字符
+是否包含<think>标签：否

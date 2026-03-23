@@ -1,0 +1,20 @@
+题目 ID: 122
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列新闻标题中，语意明确的一句是____
+A. 政府有关部门明令禁止取缔药品交易市场
+B. 真正优秀的教师无一不是道德修养的模范
+C. 独联体国家看不上2002年世界杯足球赛
+D. 警方对报案人称围观者坐视不管表示愤恨
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

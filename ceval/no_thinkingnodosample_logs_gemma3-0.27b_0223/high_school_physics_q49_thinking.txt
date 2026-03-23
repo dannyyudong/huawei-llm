@@ -1,0 +1,20 @@
+题目 ID: 49
+科目：high_school_physics
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+由牛顿第二定律F=ma可知，无论怎样小的力都可能使物体产生加速度，可是当用很小的力去推很重的桌子时，却推不动，这是因为____
+A. 牛顿第二定律不适用于静止的物体
+B. 桌子加速度很小，速度增量也很小，眼睛观察不到
+C. 推力小于桌子所受到的静摩擦力，加速度为负值
+D. 桌子所受的合力为零，加速度为零
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

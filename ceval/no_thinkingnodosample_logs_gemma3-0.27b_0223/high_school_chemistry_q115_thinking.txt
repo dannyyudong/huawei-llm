@@ -1,0 +1,20 @@
+题目 ID: 115
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+X、Y、Z、W、M五种元素的原子序数依次增大。已知X、Y、Z、W是短周期元素中的四种非金属元素,X元素的原子形成的离子就是一个质子;Y原子的最外层电子数是内层电子数的2倍;Z、W在元素周期表中处于相邻的位置,它们的单质在常温下均为无色气体;M是地壳中含量最高的金属元素。下列说法正确的是____
+A. 五种元素的原子半径从大到小的顺序是:M>W>Z>Y>X
+B. X、Z两元素能形成原子个数比(X∶Z)为3∶1和2∶1的化合物
+C. 化合物$YW_2$、$ZW_2$都是酸性氧化物
+D. 用M单质作阳极、石墨作阴极电解$NaHCO_3$溶液,电解一段时间后,在阴极区会出现白色沉淀
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

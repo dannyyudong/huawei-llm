@@ -1,0 +1,20 @@
+题目 ID: 136
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+在实验室中，对下列实验、事故或药品的处理正确的是____
+A. 加热试管的试管口不能对着自己或别人
+B. 金属钠着火燃烧时，用泡沫灭火器灭火
+C. 少量浓硫酸沾在皮肤上，立即用氢氧化钠溶液冲洗
+D. 含硫酸的废液倒入水槽中，用水冲入下水道
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

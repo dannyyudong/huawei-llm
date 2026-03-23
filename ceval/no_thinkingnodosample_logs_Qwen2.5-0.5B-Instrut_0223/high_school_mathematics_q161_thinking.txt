@@ -1,0 +1,68 @@
+题目 ID: 161
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+若$\frac{\sin2\alpha}{3\cos\alpha-1}=\tan\alpha$，则$\cos \alpha$的值为____
+A. 1或$\frac{1}{2}$
+B. $-1或-\frac{1}{2}$
+C. $-1或\frac{1}{2}$
+D. $ \pm 1或\frac{1}{2}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+首先，我们有方程 $\frac{\sin2\alpha}{3\cos\alpha-1} = \tan\alpha$。我们知道 $\tan\alpha = \frac{\sin\alpha}{\cos\alpha}$，所以我们可以将方程转换为：
+
+$$\frac{\sin2\alpha}{3\cos\alpha-1} = \frac{\sin\alpha}{\cos\alpha}$$
+
+由于 $\sin2\alpha = 2\sin\alpha\cos\alpha$，我们可以进一步简化方程为：
+
+$$\frac{2\sin\alpha\cos\alpha}{3\cos\alpha-1} = \frac{\sin\alpha}{\cos\alpha}$$
+
+接下来，我们将两边同时乘以 $(3\cos\alpha-1)$ 来消去分母：
+
+$$2\sin\alpha\cos\alpha = \sin\alpha(3\cos\alpha-1)$$
+
+展开右边的表达式：
+
+$$2\sin\alpha\cos\alpha = 3\sin\alpha\cos\alpha - \sin\alpha$$
+
+移项并合并同类项：
+
+$$\sin\alpha\cos\alpha = 3\sin\alpha\cos\alpha - \sin\alpha$$
+
+将 $\sin\alpha$ 的项移到一边：
+
+$$0 = 2\sin\alpha\cos\alpha - \sin\alpha$$
+
+提取 $\sin\alpha$：
+
+$$0 = \sin\alpha(2\cos\alpha - 1)$$
+
+因为 $\sin\alpha \neq 0$（因为 $\alpha$ 是角，不是零度数），所以我们有：
+
+$$2\cos\alpha - 1 = 0$$
+
+解这个方程得到：
+
+$$2\cos\alpha = 1$$
+
+$$\cos\alpha = \frac{1}{2}$$
+
+因此，$\cos\alpha$ 的值是 $\frac{1}{2}$，选项 C 正确。
+============================================================
+最终答案：C
+生成长度：879 字符
+是否包含<think>标签：否

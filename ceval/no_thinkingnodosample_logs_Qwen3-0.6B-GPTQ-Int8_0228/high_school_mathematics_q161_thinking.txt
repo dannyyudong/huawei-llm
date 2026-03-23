@@ -1,0 +1,81 @@
+题目 ID: 161
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+若$\frac{\sin2\alpha}{3\cos\alpha-1}=\tan\alpha$，则$\cos \alpha$的值为____
+A. 1或$\frac{1}{2}$
+B. $-1或-\frac{1}{2}$
+C. $-1或\frac{1}{2}$
+D. $ \pm 1或\frac{1}{2}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+我们已知：
+
+$$
+\frac{\sin 2\alpha}{3\cos\alpha - 1} = \tan\alpha
+$$
+
+利用三角恒等式：
+
+- $\sin 2\alpha = 2\sin\alpha \cos\alpha$
+- $\tan\alpha = \frac{\sin\alpha}{\cos\alpha}$
+
+代入原式：
+
+$$
+\frac{2\sin\alpha \cos\alpha}{3\cos\alpha - 1} = \frac{\sin\alpha}{\cos\alpha}
+$$
+
+两边同时乘以 $\cos\alpha$（注意：$\cos\alpha \neq 0$）：
+
+$$
+2\sin\alpha \cos\alpha \cdot \cos\alpha = \sin\alpha
+$$
+
+$$
+2\sin\alpha \cos^2\alpha = \sin\alpha
+$$
+
+两边同时除以 $\sin\alpha$（$\sin\alpha \neq 0$）：
+
+$$
+2\cos^2\alpha = 1
+$$
+
+$$
+\cos^2\alpha = \frac{1}{2}
+$$
+
+$$
+\cos\alpha = \pm \frac{1}{\sqrt{2}} = \pm \frac{\sqrt{2}}{2}
+$$
+
+因此，$\cos\alpha$ 的值为：
+
+$$
+\boxed{-1 \text{ 或 } \frac{1}{2}}
+$$
+
+最终答案为：
+
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：676 字符
+是否包含<think>标签：否

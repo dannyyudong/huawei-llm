@@ -1,0 +1,54 @@
+题目 ID: 61
+科目：high_school_chemistry
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列反应(均未配平)中，氧化剂与还原剂物质的量的关系为1︰2的是____
+A. $Cu+H_2SO_4 \longrightarrow CuSO_4+SO_2\uparrow+H_2O$
+B. $CH_3COOH+Ca(ClO)_2 \longrightarrow HClO + Ca(CH_3COO)_2$
+C. $I_2 + NaClO_3 \longrightarrow NaIO_3 + Cl_2$
+D. $HCl+MnO_2 \longrightarrow MnCl_2 + Cl_2\uparrow+H_2O$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+根据反应式，氧化剂与还原剂物质的量的关系为 **1︰2**，我们需要判断选项中反应式是否满足这一关系。
+
+**A.** $Cu + H_2SO_4 \longrightarrow CuSO_4 + SO_2\uparrow + H_2O$  
+- 反应中，Cu 作为还原剂，SO₂ 作为氧化产物。  
+- 反应中，Cu 与 H₂SO₄ 反应，Cu 从 0 转变为 +2，SO₂ 从 0 转变为 +4。  
+- 1 mol Cu 与 1 mol SO₂ 反应，因此氧化剂与还原剂物质的量为 **1︰1**，不符合 1︰2。
+
+**B.** $CH_3COOH + Ca(ClO)_2 \longrightarrow HClO + Ca(CH_3COO)_2$  
+- 反应中，CH₃COOH 作为还原剂，HClO 作为氧化产物。  
+- 反应中，Ca(ClO)₂ 与 Ca(CH₃COO)₂ 反应，Ca 从 +2 转变为 +2，ClO⁻ 转变为 Cl⁻。  
+- 1 mol Ca(ClO)₂ 与 1 mol HClO 反应，因此氧化剂与还原剂物质的量为 **1︰1**，不符合 1︰2。
+
+**C.** $I_2 + NaClO_3 \longrightarrow NaIO_3 + Cl_2$  
+- 反应中，I₂ 作为氧化剂，Cl₂ 作为还原剂。  
+- 1 mol I₂ 与 1 mol Cl₂ 反应，因此氧化剂与还原剂物质的量为 **1︰1**，不符合 1︰2。
+
+**D.** $HCl + MnO_2 \longrightarrow MnCl_2 + Cl_2\uparrow + H_2O$  
+- 反应中，HCl 作为还原剂，Cl₂ 作为氧化产物。  
+- 反应中，HCl 与 MnO₂ 反应，H⁺ 转变为 Mn²+，Cl⁻ 转变为 Cl₂。  
+- 1 mol HCl 与 1 mol Cl₂ 反应，因此氧化剂与还原剂物质的量为 **1︰1**，不符合 1︰2。
+
+**正确答案：**  
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：881 字符
+是否包含<think>标签：否

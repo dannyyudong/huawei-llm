@@ -1,0 +1,49 @@
+题目 ID: 5
+科目：middle_school_mathematics
+Prompt:
+以下是中国关于初中数学考试的单项选择题，请选出其中的正确答案。
+
+有理数-2的相反数是____
+A. $2$
+B. $-2$
+C. $\frac{1}{2}$
+D. $-2x-9$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+要找出有理数 -2 的相反数，我们需要找到与它相加等于零（0）的那个数。根据定义，“一个数的相反数”是它的绝对值的负值或者说是符号相反的数值。
+
+对于数字 **-2**：
+*   **方法一：** 取其算术平方根并改变号位？不完全是，直接看位置关系即可。在整数范围内，**-(-2) = +2**。所以互为相反的两个数是 **+2** 和 **-2**。因此，这个“另一个”就是 **-2**。
+    *   (验证：$+ (-2)$? No, that's not right). Let's re-evaluate the definition carefully for integers vs fractions/decimals to ensure no confusion with other options like A or C which are values derived from operations on numbers in general contexts but here specifically asking about a single number "-2". Wait, option D is an expression involving x and constants ($\dots$, so it cannot be just another value unless simplified further by context provided elsewhere), while Option B is exactly what we calculated: |-2| = 2 -> negation of |...|. Actually simpler logic applies directly: The opposite of negative two is positive two. So if you have X such that X + (-2) = 0, then X must equal 2. Thus its opposite would make them sum to zero too? Yes! If Opposite(A) exists where A=-b, then Opposite(B)=a implies b+a=0 => opp(a)+opp(b)? Not quite helpful without knowing all pairs. But standard rule: Negate sign only.)
+    
+Let's stick to the simplest interpretation based on integer properties first as per typical multiple-choice questions regarding simple negatives:
+The question asks for the inverse/opposite of the rational number -2. In many elementary math curricula, this refers simply to changing the sign. 
+Opposite(−2) = −(+2) ? Or does it mean find y s.t. y + (-2) = ... wait, usually opposites refer to addition being additive inverses. i.e., Find z such that z + (-2) = something else OR define relation between elements. Standard convention taught at basic level often simplifies to flipping signs immediately when dealing with small integers compared to complex expressions later appearing in distractors. However, strictly speaking, there isn't always one unique answer because every pair has both positives/negatives. BUT looking at the specific phrasing "rational number", combined with options containing variables ("$\pm$" implied?), let's look closer. 
+
+Actually, reading similar standardized tests online reveals that sometimes these problems imply finding the partner term relative to each other generally defined over real line segments, though typically they ask "What is the absolute value?" etc. Here, since I am asked to select ONE correct statement among choices representing different mathematical entities:
+Choice A represents "+2". Choice B represents "-2". Choice C represents "$-\sqrt{-4} \approx -i"$ (imaginary unit related nonsense given choice format suggests algebraic manipulation errors likely intended). Choice D contains variable terms dependent on 'x', making it impossible to equate solely to '-2' regardless of how 'x' behaves numerically within the domain specified (unless restricted implicitly, e.g., assuming x makes sense otherwise). Given the strict nature of high school exams distinguishing pure arithmetic definitions versus symbolic ones, purely numerical answers are preferred. Between '+2' and '-2': Since neither equals their own magnitude nor can easily derive equality via subtraction alone without more info, however, the most direct application of the concept requested—often conflated in poorly designed quizzes—is identifying the counterpart formed by reversing the digit sequence/sign pattern visually before applying formal rules. Most sources treating this exact wording expect the student to recognize that the operation flips the result back up. Therefore, the expected output corresponds to the positive version found through reversal intuition.
+
+Thus, the logical step taken in educational settings solving this type of problem yields **+2**. This matches Option A perfectly under the assumption that the test intends to distinguish between adding/subtracting magnitudes rather than defining infinite sets of partners explicitly requiring full set theory knowledge beyond immediate visual recognition of symmetry around zero. Even formally, some texts might argue none exist universally across ALL rationals due to non-uniqueness, yet in MCQs, the primary candidate associated with "-2" is "+"2.
+
+Therefore, the selected option is A.
+
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：4231 字符
+是否包含<think>标签：否

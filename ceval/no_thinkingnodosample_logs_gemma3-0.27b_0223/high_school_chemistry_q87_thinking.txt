@@ -1,0 +1,20 @@
+题目 ID: 87
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列关于药物的使用说法正确的是____
+A. 虽然药物能治病，但大部份药物有毒副作用
+B. 使用青霉素时，不用进行试验直接静脉注射
+C. 长期大量使用阿司匹林可预防疾病，没有副作用
+D. 我们生病了都可以到药店自己买药吃，不用到医院
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

@@ -1,0 +1,20 @@
+题目 ID: 71
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中，标点符号使用正确的一句是____
+A. 姚明在整个NBA赛季中都会因为这样那样的原因成为关注的目标。这到底是什么原因？是他的体型？他的亲切？还是别的什么？
+B. 以《团结、友谊、发展》为主题的第48届世界乒乓球锦标赛，今天在“上海东方明珠电视塔”广场隆重开幕。
+C. “留住济南”图片展深深吸引了观众。那小巷，那泉水，那绿草青苔，已经成了难以寻觅的影子——真可谓“梦忆深深深几许，一街一巷总关情。”
+D. 据考证，古历下亭址在今名士阁西侧（该处现有一石碑，正面题“古历下亭址”五个大字，背面刻有杜甫《陪李北海宴历下亭》诗）。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

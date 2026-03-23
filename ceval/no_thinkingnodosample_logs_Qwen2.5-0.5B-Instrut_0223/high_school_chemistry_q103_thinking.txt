@@ -1,0 +1,38 @@
+题目 ID: 103
+科目：high_school_chemistry
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+已知：$2C(s)+O_{2}(g)=2C O(g)$，$\Delta H=-217kJ \cdot mol^{-1}$，$C(s)+H_2O(g)=CO(g)+H_2(g)$，$\Delta H=b kJ \cdot mol^{-1}$,H—H、O—H和O=O键的键能分别为 $ 436 kJ \cdot mol^{-1}$,$ 462 kJ \cdot mol^{-1}$，$ 495 kJ \cdot mol^{-1}$,则b为：____
+A. $+352$
+B. $+132$
+C. $-120$
+D. $-330$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+首先，我们来计算每个反应的焓变 $\Delta H$：
+
+1. 对于 $2C(s) + O_2(g) = 2CO(g)$，反应是气体向液体转化，所以焓变 $\Delta H = -\Delta H_f^\circ(CO) + \Delta H_f^\circ(O_2)$。根据标准态下的焓变公式，$-\Delta H_f^\circ(CO) = -217 \text{ kJ/mol}$ 和 $-\Delta H_f^\circ(O_2) = -217 \text{ kJ/mol}$，因此 $\Delta H = -217 \text{ kJ/mol} + (-217 \text{ kJ/mol}) = -434 \text{ kJ/mol}$。
+
+2. 对于 $C(s) + H_2O(g) = CO(g) + H_2(g)$，反应是气态向液态转化，焓变 $\Delta H = \Delta H_f^\circ(CO) + \Delta H_f^\circ(H_2) - \Delta H_f^\circ(CO) - \Delta H_f^\circ(H_2)$。根据标准态下的焓变公式，$\Delta H_f^\circ(CO) = 436 \text{ kJ/mol}$ 和 $\Delta H_f^\circ(H_2) = 495 \text{ kJ/mol}$，因此 $\Delta H = 436 \text{ kJ/mol} + 495 \text{ kJ/mol} - 436 \text{ kJ/mol} - 495 \text{ kJ/mol} = -120 \text{ kJ/mol}$。
+
+由于题目要求的是 $b$ 的值，我们需要找到一个满足条件的 $b$ 值，使得反应 $C(s) + H_2O(g) = CO(g) + H_2(g)$ 的焓变等于 $-120 \text{ kJ/mol}$。通过比较选项，我们可以看到只有选项 C（-120）符合这个条件。
+
+所以，最终的答案是：{"answer": "C"}
+============================================================
+最终答案：C
+生成长度：873 字符
+是否包含<think>标签：否

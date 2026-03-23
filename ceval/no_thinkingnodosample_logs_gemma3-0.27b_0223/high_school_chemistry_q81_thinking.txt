@@ -1,0 +1,20 @@
+题目 ID: 81
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列说法错误的是____
+A. 催化剂可以改变化学反应速率
+B. 食物放在冰箱中会减慢食物变质的速率
+C. 2mol $SO_2$与 1mol $O_2$混合一定能生成2mol $SO_3$
+D. 锌与稀硫酸反应时，加入少量铜粉能加快产生氢气的速率
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

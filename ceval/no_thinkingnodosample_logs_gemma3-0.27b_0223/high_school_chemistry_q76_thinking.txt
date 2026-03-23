@@ -1,0 +1,20 @@
+题目 ID: 76
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+短周期主族元素X、Y、Z、R的原子序数依次增大，X是地壳中含量最高的元素，Z在X中燃烧火焰呈黄色，R是基态原子p能级有一对成对电子。下列说法正确的是____
+A. 电负性：X>R>Z>Y
+B. X与Z组成的化合物肯定含有共价键
+C. 原子半径：Z>R>X>Y
+D. 气态氰化物的稳定性：X>Y>R
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

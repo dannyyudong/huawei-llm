@@ -1,0 +1,20 @@
+题目 ID: 98
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中，没有语病的一句是____
+A. 海水深度在200米以的大陆架，蕴藏的石油约有1500亿吨，约占地球已知总储藏量的三分之一。
+B. 今天是开学的第一天，同学们一报完名，就在清洁委员的组织下，把教室打扫得干干净净，整整齐齐。
+C. 自治区今年遭受了自建国以来最大的一次雪灾，做好生产救灾工作决定于干部作风是否深入。
+D. 既然你来了，我也该走了。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

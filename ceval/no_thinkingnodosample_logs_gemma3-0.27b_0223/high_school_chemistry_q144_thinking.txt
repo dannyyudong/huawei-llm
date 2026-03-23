@@ -1,0 +1,20 @@
+题目 ID: 144
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列实验操作能达到实验目的的是____
+A. 稀释浓硫酸时，应将水沿容器内壁慢慢加入浓硫酸中
+B. 用润湿的pH试纸测溶液的pH值，一定会引起误差
+C. 蒸发时将蒸发皿放置在铁架台的铁圈上，并加垫石棉网加热
+D. 石油的蒸馏实验中，忘记加沸石，可以先停止加热，待溶液冷却后加入沸石，再继续加热蒸馏
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

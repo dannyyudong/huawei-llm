@@ -1,0 +1,20 @@
+题目 ID: 35
+科目：high_school_physics
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+下列哪个说法是正确的？____
+A. 体操运动员双手握住单杠吊在空中不动时处于失重状态；
+B. 蹦床运动员在空中上升和下落过程中都处于失重状态；
+C. 举重运动员在举起杠铃后不动的那段时间内处于超重状态
+D. 游泳运动员仰卧在水面静止不动时处于失重状态
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

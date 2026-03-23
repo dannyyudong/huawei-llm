@@ -1,0 +1,20 @@
+题目 ID: 149
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+$N_A$为阿伏加德罗常数，下列说法正确的是____
+A. 18g氨基（$-NH_2$）中含有的电子数为10$N_A$
+B. 24g金属镁在空气中完全燃烧，转移电子数为2$N_A$
+C. 足量$MnO_2$和80 mL 10 $mol \cdot L^{-1}$浓盐酸共热可生成0.2$N_A$个$Cl_2$分子
+D. 电解精炼铜时，若转移了$N_A$个电子，则阳极质量减小32g
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

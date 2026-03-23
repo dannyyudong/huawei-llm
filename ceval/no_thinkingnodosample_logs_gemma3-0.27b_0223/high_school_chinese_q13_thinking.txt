@@ -1,0 +1,21 @@
+题目 ID: 13
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下面是中美联合公报上的一句话，填人横线上的句子正确的是____
+美国方面认识到，台湾海峡两边的中国人都认为，只有一个中国，____。
+A. 台湾是中国的一个省
+B. 台湾是中国的一部分
+C. 台湾是中国不可分割的一部分
+D. 台湾自古以来就是中国不可分割的一部分
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

@@ -1,0 +1,25 @@
+题目 ID: 167
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+填在下文横线上的四句话，最恰切的一组是____
+他抬手看表，发现才凌晨4点。窗外临水枕河的小院悄无声息，____，与世隔绝，船舱里静寂如梦。
+①就连自己置身其中的小楼
+②惟有自己的呼吸在空气中震荡着
+③也没有一丁点儿响动
+④像一条远离地球的太空船。
+A. ②④①③
+B. ①③②④
+C. ④③②①
+D. ②①③④
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

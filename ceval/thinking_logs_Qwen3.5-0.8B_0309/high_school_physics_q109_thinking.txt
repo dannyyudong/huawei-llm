@@ -1,0 +1,50 @@
+题目 ID: 109
+科目：high_school_physics
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+雨滴由静止开始下落，遇到水平方向吹来的风，下述说法中正确的是____
+A. 风速越大，雨滴下落时间越长
+B. 风速越大，雨滴着地时速度越小
+C. 雨滴下落时间与风速无关
+D. 雨滴着地速度与风速无关
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": "C",
+    "reasoning": 
+        - **受力分析**：题目描述的是“受风吹”的雨滴（即忽略空气阻力或认为风力是主要外力），因此竖直方向的合力为重力 $mg$，向下；在水平方向上无初速度的水珠会保持匀速直线运动直到撞击地面。这意味着无论是否有风吹过，只要没有摩擦力阻碍其落地瞬间的水平位移变化，它都会做平抛运动。
+        
+        *   A选项错误：“下落的总时间是自由落体运动的性质决定的”，与外界施加的额外力（如风的推力）大小完全无关。即使有强风加速了水流的速度和加速度，由于初始条件相同且只考虑垂直高度决定飞行时长，所以时间不变。
+        
+        * B、D选项也同理，“着地的瞬时速度取决于末位置的高度”。如果风雨同时发生导致雨水被甩向高处并反弹回来再落下，或者仅仅是因为风向改变了路径使得某些区域的水流更猛烈但并未改变起跳点相对于地面的相对距离，那么到达同一地点的时间依然是一样的。此外，若存在摩擦阻力和侧滑效应等复杂因素未提及而强行假设影响结果则是错误的逻辑推论。核心在于：**独立变量只有风速**。既然其他所有影响因素都被排除在外，则结论必然成立。”
+}",
+    "step_by_step_reasoning": {
+        // Step-by-step reasoning for the final output:
+        1.  Identify the physical system and forces acting on a raindrop falling in still air (ignoring wind as an external force): Gravity acts downwards, no horizontal acceleration occurs initially because there is no initial velocity given to it relative to ground other than being dropped from rest vertically? Wait, re-read carefully."
+            Correction of physics model based strictly on text provided ("wind blows horizontally"): The prompt says 'raindrops fall... encounter horizontal blowing wind'. This implies gravity + Wind Force = Net Vertical Acceleration ($a_y$, down). Horizontal motion has zero net vertical component but non-zero total speed due to wind pushing water sideways before hitting ground or just adding lateral momentum if we consider impact dynamics without friction mentioned. However, standard high school physics problems regarding this specific phrasing usually imply that while the drop falls faster under strong winds compared to calm conditions, its trajectory geometry remains identical at any point height above the launch level unless specified otherwise about side-swings/friction losses which are often ignored in simplified models where only time vs distance relationship questions appear.",
+            
+            Let's stick to the most direct interpretation found in similar standardized test contexts involving these exact options: Usually, such questions assume ideal projectile mechanics with negligible drag except perhaps implicitly affecting landing position via path length changes not explicitly stated here. But looking closer at Option C/D logic: If you change one variable (Wind Speed) completely differentially across all scenarios described by the question setup (which doesn't vary parameters like angle), then Time must be constant regardless of magnitude. Since Options A/B describe dependence relationships between variables, they claim False/True respectively depending on whether Wind affects Time/Velocity directly. Given the lack of information linking Wind specifically changing flight duration beyond simply increasing downward drift rate over equal distances, claiming independence holds true when comparing independent inputs against fixed outputs derived solely from kinematics equations applied independently to each case variationally.",
+            
+            Actually, let's reconsider the simplest valid answer format expected. In many versions of this classic problem type, the intended solution relies on recognizing that Flight Duration depends ONLY on Initial Height/Loss Point Distance, NOT on Downward Velocity caused by wind alone. Therefore, Changing Wind does not Change Time. Thus Answer C is correct logically within the constraints of typical textbook simplifications ignoring complex fluid interactions not detailed elsewhere.",
+        }
+}
+```
+============================================================
+最终答案：C
+生成长度：3474 字符
+是否包含<think>标签：否

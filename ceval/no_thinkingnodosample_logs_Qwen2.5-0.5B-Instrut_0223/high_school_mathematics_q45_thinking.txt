@@ -1,0 +1,50 @@
+题目 ID: 45
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+化简$\tan(\dfrac{\pi}{4}+A)-\tan(\dfrac{\pi}{4}-A)=$____
+A. $2\tan A$
+B. $-2\tan A$
+C. $2\tan2A$
+D. $-2\tan2A$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+首先，我们使用和差角公式来简化这个表达式。给定的表达式是 $\tan(\dfrac{\pi}{4} + A) - \tan(\dfrac{\pi}{4} - A)$。
+
+根据和差角公式，我们知道：
+
+$$\tan(x + y) = \frac{\tan x + \tan y}{1 - \tan x \tan y}, \quad \tan(x - y) = \frac{\tan x - \tan y}{1 + \tan x \tan y}$$
+
+对于给定的表达式，我们可以将其重写为：
+
+$$\tan(\dfrac{\pi}{4} + A) - \tan(\dfrac{\pi}{4} - A) = \frac{\tan(\dfrac{\pi}{4} + A) - \tan(\dfrac{\pi}{4} - A)}{1 + \tan(\dfrac{\pi}{4} + A)\tan(\dfrac{\pi}{4} - A)}$$
+
+现在，我们需要计算 $\tan(\dfrac{\pi}{4} + A)$ 和 $\tan(\dfrac{\pi}{4} - A)$ 的值。由于 $\tan(\dfrac{\pi}{4}) = 1$，我们可以直接代入得到：
+
+$$\tan(\dfrac{\pi}{4} + A) = \tan(A), \quad \tan(\dfrac{\pi}{4} - A) = \tan(-A) = -\tan(A)$$
+
+因此，
+
+$$\tan(\dfrac{\pi}{4} + A) - \tan(\dfrac{\pi}{4} - A) = \frac{\tan(A) - (-\tan(A))}{1 + \tan(A)(-\tan(A))} = \frac{2\tan(A)}{1 - \tan^2(A)}$$
+
+注意到这里，我们没有直接应用任何特定的三角恒等式或公式，但通过上述步骤可以推导出结果。所以，正确的答案应该是：
+
+{"answer": "C"}
+============================================================
+最终答案：C
+生成长度：843 字符
+是否包含<think>标签：否

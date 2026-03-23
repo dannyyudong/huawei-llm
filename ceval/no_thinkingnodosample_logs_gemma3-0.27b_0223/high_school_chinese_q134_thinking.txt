@@ -1,0 +1,20 @@
+题目 ID: 134
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列句子中的标点符号运用完全正确的一项是____
+A. 她笑笑说：“有这么多热心的民警，有这么多好的街坊，我呀！还得活一辈子！”
+B. 西周王陵在哪里？在周原吗？考古学家们在周原做了大量工作，没有发现；在丰镐吗？考古学家又在西周首都丰镐周围寻求，依然没有结果。
+C. 按照中国医学的传统理论，正常情况下，风是自然界的“六气”之一（风、寒、暑、湿、燥、火）。异常情况下，风又是致病的一种因素。
+D. 关于《汉文学史纲要》，他曾说过：“文学史编制太草率”诸如此类的话——事实证明，他的批评很有道理。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

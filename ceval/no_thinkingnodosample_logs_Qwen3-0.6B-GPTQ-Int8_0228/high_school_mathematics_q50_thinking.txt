@@ -1,0 +1,98 @@
+题目 ID: 50
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+函数$f(x)={\sqrt{5\cos ^{2}x-4\sin x+5}}-\left | 3\cos x \right | $的最大值为____
+A. $2\sqrt{2}$
+B. $2\sqrt{3}$
+C. $2\sqrt{5}$
+D. 3
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+我们来分析函数：
+
+$$
+f(x) = \sqrt{5\cos^2 x - 4\sin x + 5} - |3\cos x|
+$$
+
+### 第一步：分析函数的定义域
+
+由于函数包含平方根和绝对值，我们首先考虑其定义域：
+
+- $5\cos^2 x - 4\sin x + 5 \geq 0$，这是平方根的条件。
+- $|3\cos x| \geq 0$，总是成立。
+
+因此，函数在定义域内成立。
+
+---
+
+### 第二步：尝试简化或寻找极值点
+
+我们尝试将函数简化或代入特殊角度来寻找最大值。
+
+#### 试 $x = 0$：
+
+$$
+f(0) = \sqrt{5\cos^2 0 - 4\sin 0 + 5} - |3\cos 0| = \sqrt{5(1) - 0 + 5} - 3 = \sqrt{10} - 3 \approx 3.16 - 3 = 0.16
+$$
+
+#### 试 $x = \frac{\pi}{2}$：
+
+$$
+f\left(\frac{\pi}{2}\right) = \sqrt{5\cos^2\left(\frac{\pi}{2}\right) - 4\sin\left(\frac{\pi}{2}\right) + 5} - |3\cos\left(\frac{\pi}{2}\right)| = \sqrt{0 - 4 + 5} - 0 = \sqrt{1} = 1
+$$
+
+#### 试 $x = \frac{\pi}{3}$：
+
+$$
+\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}, \quad \sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{2}
+$$
+
+$$
+f\left(\frac{\pi}{3}\right) = \sqrt{5\left(\frac{1}{2}\right)^2 - 4\left(\frac{\sqrt{3}}{2}\right) + 5} - |3 \cdot \frac{1}{2}| = \sqrt{\frac{5}{4} - 2\sqrt{3} + 5} - \frac{3}{2}
+$$
+
+计算：
+
+$$
+\frac{5}{4} + 5 = \frac{25}{4}, \quad \frac{25}{4} - 2\sqrt{3} \approx 6.25 - 3.464 = 2.786
+$$
+
+$$
+\sqrt{2.786} \approx 1.67, \quad \text{所以} \quad f\left(\frac{\pi}{3}\right) \approx 1.67 - 1.5 = 0.17
+$$
+
+---
+
+### 第三步：比较最大值
+
+我们已经尝试了几个点，最大值出现在 $x = \frac{\pi}{2}$，此时：
+
+$$
+f\left(\frac{\pi}{2}\right) = 1
+$$
+
+---
+
+### 最终答案：
+
+$$
+\boxed{\text{answer}: "D"}
+============================================================
+最终答案：D
+生成长度：1296 字符
+是否包含<think>标签：否

@@ -1,0 +1,66 @@
+题目 ID: 112
+科目：middle_school_chemistry
+Prompt:
+以下是中国关于初中化学考试的单项选择题，请选出其中的正确答案。
+
+化学是一门以实验为基础的自然学科，规范的实验操作是完成实验任务的保证。下列实验操作中，不合理的是____
+A. 酒精洒在实验桌上燃烧起来，立即用湿抹布盖灭
+B. 实验室制取$O_2$时，应先检查装置气密性，再装药品
+C. 稀释浓硫酸时，将浓硫酸注入盛有水的量筒中，并不断搅拌
+D. 做铁丝在氧气中燃烧的实验时，集气瓶内预留少量的水或细沙
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": A",
+    "reasoning": :
+        - **选项 A**：**合理**。当酒精不慎洒出后，应立即使用干燥的布（如毛巾）覆盖其表面进行冷却和灭火；若遇明火、电火花等引燃物则需先熄灭其他火源后再处理此处的易燃液体。虽然题目描述为‘点燃’但实际意图通常是防止火灾蔓延或使用灭火器扑灭泄漏处，该做法符合安全规范。不过对比 B/C/D，通常认为这是标准的安全处置流程之一。（注：严格来说如果是直接泼油起火且无干粉设备可用才需用干砂/土），但在单选题语境下与其他三项相比仍属正确措施。） -> *修正思考*：重新审视题意，“立刻用湿抹布盖灭”是针对“洒出来烧起来了”。如果是在桌面上撒了粉末着火？那不能用湿巾。但如果是指滴落后的残留液溅起溢出导致火势扩大呢？不，最直接的解读就是 spills (spills) burning up on the table surface and needs to be extinguished immediately with a damp cloth or fire suppressant, which is standard procedure for liquid spillage in many contexts unless specified otherwise." Actually, let's look at C first as it has clear procedural errors.*
+    
+-   **分析各选项细节**:
+        -   **选项 D **(铁丝燃烧): 铁丝剧烈反应生成高温熔融物和大量白烟(未反应的硫),极易炸裂瓶底。必须预先放少量水或铺一层沙子以防爆炸。**此项操作是正确的**.
+        -   **容器材质与试剂性质**: $H_{2}SO_{4}$具有强腐蚀性，会腐蚀玻璃仪器内壁及橡胶塞。因此不能直接在装有液体的锥形瓶中倾倒酸剂入试管！这会导致溶液飞溅伤人甚至损坏器材。正确的顺序应该是先在广口瓶中加入适量蒸馏水润洗过的大孔塑料漏斗放入其中，然后缓慢倒入稀盐酸至刻度线以下再加碎瓷片预热混合均匀即可加入试管。**该项操作是错误的**,因为直接将浓硫酸注入水中容易因局部过热造成喷溅事故。(注意原选项中说是向'盛有水量的量筒',这也是错误的方向)。
+        
+        *(再次确认逻辑)*: 
+            Option A: Spilled alcohol burns? Use wet cloths/metallic gloves + water spray if available. Correct safety protocol exists here even though 'wet wipe cover flame source' isn't perfect physics-wise without specific equipment like foam cans... but compared to chemical hazards of acid mixing, this might seem weak. However, usually these questions treat 'spill then burn' as needing immediate suppression/cleaning. Let's stick to finding the most glaringly wrong one based on chemistry principles regarding reagents/materials used.**
+            
+            Wait, looking closely at Option A again. If you have spilled ethanol on your desk and it catches fire due to heat from nearby sources, using a wet towel covers the area where the fuel was applied. This prevents further spread. It seems reasonable enough that we accept it over others potentially involving dangerous mix-ups. But wait! Is there an option about putting chemicals into glass bottles directly? Yes, Option E mentions making solutions by diluting acids/bases carefully because they are corrosive/gaseous/hard-to-handle. That implies direct pouring is bad practice generally. Does O/A/B exist? No. The question asks what is unreasonable.
+            
+            Re-evaluating Option A vs Option C/E logic often found in such exams:*
+                Usually, when options list multiple correct procedures except one incorrect one, I need to find the absolute error.
+                
+                *Option A*: Alcohol spilling = Wet wipes/Magnets/Water Spray. Standard answer key behavior suggests this IS considered acceptable/safe relative to other choices provided thematically around lab handling.
+                *Option C*: Dilute H$_2$SO$_3$. Mixing concentrated sulfuric acid ($\approx 98\%$, boiling point ~10^\circ C)$+$water creates superheated steam explosion risk upon cooling/dilution inside a rigid container like a volumetric flask/conical tube neck easily causing breakage/explosion before proper stirring can occur safely within the vessel walls themselves. Also, adding solid NaOH/HCl requires careful measurement/pouring via funnel not just dropping straight down. Dropping conc $\text{sulfuric}$ directly into water volume makes no sense physically). So C is definitely WRONG.
+                *Wait*, did I misread Option A? Maybe it meant something else? Or maybe my analysis of A being right while C is left off is too hasty given typical exam patterns?*
+                In Chinese high school chem labs:
+                    - Pouring hot liquids/fumes near open flames must use lid/lamp/shielded hood. Not listed explicitly.
+                    - Acid/Base reactions require fume bars etc., so placing drops close together risks splashing out during transfer.
+                    
+                        Okay, let's step back. Which statement describes a FAILING experiment operation?
+                        
+                        A. Alcoholic solution spills. Immediate action needed. Using wet towels/isolates/sparks works well enough conceptually ("cover"). Even better than throwing away paper cups now. Acceptable.
+                        B. Oxygen generation check gas tightness BEFORE filling. Essential safety rule. True.
+                        C. Concentrated Sulfuric Acid diluted IN Water INTO VOLUMETRIC FLASKS OR CONICAL TUBES WITHOUT FLOW CONTROL AND STIRRING. THIS IS THE DEFINITELY UNRAVELLED ERROR. You cannot pour dropwise dense viscous fluid directly into small volumes of water; pressure buildup causes violent eruption breaking containers instantly. And since it says "into a measuring cylinder/volumeter," specifically referencing concentration changes leading to temperature spikes, this violates basic laboratory hygiene protocols strictly speaking. Furthermore, some older textbooks emphasize avoiding acidic bases mixed poorly initially. BUT WAIT—Is there any interpretation where A is actually worse? Some strict interpretations say don't touch flammable vapors until cooled completely. But between "pouring strong acid blindly" and "covering oil after spill"? Covering oil is safer than letting it boil violently under reflux conditions later anyway. Therefore C remains the strongest candidate for "unreasonable".
+                        D. Iron rod combustion pre-wetting sand/wet bottle base. Definitely safe/recommended.
+                        
+                        Conclusion stands: C contains fundamental physical impossibilities associated with storing hazardous fluids in simple vessels lacking flow control mechanisms required for precise addition rates. Additionally, sometimes students confuse "diluted" meaning simply lower temp, whereas technically concentrating agents should never be added to cold distilled waters arbitrarily. Thus, C is the intended answer.",
+                }
+``` 
+
+Answer:**C**
+============================================================
+最终答案：C
+生成长度：5905 字符
+是否包含<think>标签：否

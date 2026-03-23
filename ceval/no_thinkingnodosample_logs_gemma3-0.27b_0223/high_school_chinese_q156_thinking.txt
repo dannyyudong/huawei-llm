@@ -1,0 +1,20 @@
+题目 ID: 156
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中，没有语病的一句是____
+A. 无论什么时候我们都要善于团结那些跟自己“合不来”“看不惯”的同志。
+B. 读自己的书，可以动手画出重要的地方；倘是借阅的，不能做记号，可以摘记下来。
+C. 淘最近这段工夫可烦了，班里的同学谁也不搭理他。
+D. 其实，看现在已经成名的童星们，家庭的影响不无决定因素。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

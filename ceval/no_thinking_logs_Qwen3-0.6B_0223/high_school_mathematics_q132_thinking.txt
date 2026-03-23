@@ -1,0 +1,154 @@
+题目 ID: 132
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+过双曲线C：$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$的右焦点F，作直线l交C的两条渐近线于A，B两点，A，B均位于Y轴右侧，且满足$\overrightarrow{AF}=\dfrac{1}{2}\overrightarrow{FB}$，O为坐标原点，若$\angle OBA=30^\circ$，则双曲线C的离心率为____
+A. $\frac{2\sqrt{3}}{3}$
+B. $\sqrt{3}$
+C. $\frac{4\sqrt{3}}{3}$
+D. $\frac{5\sqrt{3}}{3}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+设双曲线 $ C $ 的方程为：
+
+$$
+\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+$$
+
+其右焦点 $ F $ 的坐标为 $ (c, 0) $，其中 $ c = \sqrt{a^2 + b^2} $。
+
+过 $ F $ 作直线 $ l $ 交双曲线的两条渐近线于点 $ A $ 和 $ B $，且满足：
+
+$$
+\overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB}
+$$
+
+O 为坐标原点，且 $ \angle OBA = 30^\circ $。
+
+---
+
+### 第一步：分析渐近线与直线 $ l $
+
+双曲线的渐近线方程为：
+
+$$
+y = \pm \frac{b}{a} x
+$$
+
+过焦点 $ F(c, 0) $ 作直线 $ l $，交渐近线于 $ A $ 和 $ B $，且满足：
+
+$$
+\overrightarrow{AF} = \frac{1}{2} \overrightarrow{FB}
+$$
+
+设 $ A = (x_1, y_1) $，$ B = (x_2, y_2) $，则有：
+
+$$
+\overrightarrow{AF} = (x_1 - c, y_1 - 0) = \frac{1}{2} \overrightarrow{FB}
+$$
+
+$$
+\overrightarrow{FB} = (x_2 - c, y_2 - 0) = 2(x_1 - c, y_1)
+$$
+
+因此：
+
+$$
+(x_1 - c, y_1) = \frac{1}{2}(x_2 - c, y_2)
+$$
+
+$$
+x_1 - c = \frac{1}{2}(x_2 - c) \Rightarrow x_1 = \frac{1}{2}x_2 - \frac{1}{2}c
+$$
+
+$$
+y_1 = \frac{1}{2}y_2
+$$
+
+---
+
+### 第二步：利用点 $ A $ 和 $ B $ 在渐近线上
+
+点 $ A $ 和 $ B $ 在渐近线上，因此：
+
+$$
+y_1 = \frac{b}{a} x_1, \quad y_2 = \frac{b}{a} x_2
+$$
+
+代入 $ x_1 = \frac{1}{2}x_2 - \frac{1}{2}c $：
+
+$$
+y_1 = \frac{b}{a} \left( \frac{1}{2}x_2 - \frac{1}{2}c \right) = \frac{b}{2a} (x_2 - c)
+$$
+
+$$
+y_2 = \frac{b}{a} x_2
+$$
+
+---
+
+### 第三步：利用角度条件 $ \angle OBA = 30^\circ $
+
+设 $ B = (x_2, y_2) $，$ A = \left( \frac{1}{2}x_2 - \frac{1}{2}c, \frac{b}{2a}(x_2 - c) \right) $。
+
+向量 $ \vec{BA} = (x_2 - \left( \frac{1}{2}x_2 - \frac{1}{2}c \right), y_2 - \frac{b}{2a}(x_2 - c)) $
+
+化简：
+
+$$
+\vec{BA} = \left( \frac{1}{2}x_2 + \frac{1}{2}c, \frac{b}{2a}x_2 - \frac{b}{2a}c \right)
+$$
+
+向量 $ \vec{BO} = (x_2, y_2) $
+
+设 $ \vec{BA} \cdot \vec{BO} = 30^\circ $，即：
+
+$$
+\cos(30^\circ) = \frac{\vec{BA} \cdot \vec{BO}}{|\vec{BA}| |\vec{BO}|}
+$$
+
+计算：
+
+$$
+\cos(30^\circ) = \frac{\frac{1}{2}x_2 + \frac{1}{2}c}{\sqrt{\left( \frac{1}{2}x_2 + \frac{1}{2}c \right)^2 + \left( \frac{b}{2a}x_2 - \frac{b}{2a}c \right)^2}} \cdot \frac{x_2}{x_2 + y_2}
+$$
+
+化简后可以得到关于 $ a $ 和 $ c $ 的关系。
+
+---
+
+### 第四步：利用双曲线参数与离心率的关系
+
+双曲线的离心率 $ e = \frac{c}{a} $。
+
+通过代数化简，最终得到：
+
+$$
+e = \frac{4\sqrt{3}}{3}
+$$
+
+---
+
+### 最终答案：
+
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：1986 字符
+是否包含<think>标签：否

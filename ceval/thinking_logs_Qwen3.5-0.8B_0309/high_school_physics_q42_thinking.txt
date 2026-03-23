@@ -1,0 +1,38 @@
+题目 ID: 42
+科目：high_school_physics
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+下列所提的物理学家为物理学的发展做出了重大的贡献，其中描述正确的是____
+A. 法拉第在对理论和实验资料进行严格分析后提出法拉第电磁感应定律
+B. 元电荷e的数值最早是由物理学家密立根测得的
+C. 伏特发现了电流的热效应，定量给出了电能和热能之间的转换关系
+D. 库仑首先总结出电荷间的作用规律并引入电场线描述电场
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": "B",
+    "reasoning"::
+    A. **错误**。迈克尔·法拉第在1830年代对理论进行了严格的分析和总结（即提出了**麦克斯韦方程组**），随后才通过大量实验数据验证了这一发现；他本人并未直接发表“法拉第电磁感应定律”这篇著名的论文或著作作为主要成就的代表作之一。（注：虽然他在实验中确实描述了这种现象）。
+    
+    B. **正确**。历史上公认的最早精确测定电子质量/电量的方法是英国科学家威廉·汤姆森（J.J.Tomson）利用阴极射线管进行的测量工作。**詹姆斯·阿伦尼乌斯 (James Clerk Maxwell)**、**亨利·康登 (Henry Condon)** 以及后来由**米歇尔·密立根 (Mieleshen Rutherford/Milne) / William Henry Ramsay/Walter Bragg/Bernard Fowler/Rudolf Glauber/Antonin Grigorievich Tolman/Eugene Wigner/Henry Dudeney/Louis de Broglie/Gerhard von Braun/Karl Schwarzschild/Sergei Kuznetsov/Vladimir Ilyushkin/Paul Hahnstein/Joseph Joliot-Curie/Frank Wilkins/Cecil Beatty/Timothy Llewellyn Smith/Dennis Gurnee/Nickel Mott/Othniy Scargill等数人合作完成了一系列精密的实验研究**，从而首次准确计算出了基本单位的电量 $q=e$ 及其对应的值约为 $9 \times 10^{-27}$ C。这是现代粒子物理学的基础事实。\nC. **部分不准确且表述有瑕疵**。焦耳曾指出热与功的关系是能量守恒的表现，但他并没有给出一个定性的‘公式’来定义这种转化关系的数量级大小或者具体比例系数（这通常归功于后来的统计力学发展及更复杂的模型如卡诺循环中的熵变概念）。此外，“定性给出的...转换关系”的说法不如选项 B严谨地指出了其历史地位的核心意义在于确立了单位制基础上的绝对常数。\n\n因此，最符合史实的是 B。"
+}
+```
+============================================================
+最终答案：B
+生成长度：1005 字符
+是否包含<think>标签：否

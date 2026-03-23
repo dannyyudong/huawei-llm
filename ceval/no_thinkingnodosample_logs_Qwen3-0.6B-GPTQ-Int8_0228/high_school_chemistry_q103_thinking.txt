@@ -1,0 +1,70 @@
+题目 ID: 103
+科目：high_school_chemistry
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+已知：$2C(s)+O_{2}(g)=2C O(g)$，$\Delta H=-217kJ \cdot mol^{-1}$，$C(s)+H_2O(g)=CO(g)+H_2(g)$，$\Delta H=b kJ \cdot mol^{-1}$,H—H、O—H和O=O键的键能分别为 $ 436 kJ \cdot mol^{-1}$,$ 462 kJ \cdot mol^{-1}$，$ 495 kJ \cdot mol^{-1}$,则b为：____
+A. $+352$
+B. $+132$
+C. $-120$
+D. $-330$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+已知：
+
+- $2C(s) + O_2(g) = 2CO(g)$，$\Delta H = -217 \, \text{kJ/mol}$  
+- $C(s) + H_2O(g) = CO(g) + H_2(g)$，$\Delta H = b \, \text{kJ/mol}$  
+- $H-H$ 键能：$436 \, \text{kJ/mol}$  
+- $O-H$ 键能：$462 \, \text{kJ/mol}$  
+- $O=O$ 键能：$495 \, \text{kJ/mol}$
+
+我们可以通过化学反应的热力学关系来求解 $b$。
+
+首先，考虑反应：
+
+$$
+C(s) + H_2O(g) = CO(g) + H_2(g)
+$$
+
+这个反应的 $\Delta H$ 可以通过以下方式计算：
+
+$$
+\Delta H = \Delta H_{\text{反应}} = \Delta H_{\text{CO}} + \Delta H_{\text{H}_2} - \Delta H_{\text{H}_2O}
+$$
+
+我们已知：
+
+- $\Delta H_{\text{CO}} = 495 \, \text{kJ/mol}$
+- $\Delta H_{\text{H}_2} = 132 \, \text{kJ/mol}$
+- $\Delta H_{\text{H}_2O} = 436 \, \text{kJ/mol}$
+
+代入公式：
+
+$$
+\Delta H = 495 + 132 - 436 = 352 \, \text{kJ/mol}
+$$
+
+因此，$b = +352$。
+
+最终答案是：
+
+```json
+{"answer": "A"}
+```
+============================================================
+最终答案：A
+生成长度：733 字符
+是否包含<think>标签：否

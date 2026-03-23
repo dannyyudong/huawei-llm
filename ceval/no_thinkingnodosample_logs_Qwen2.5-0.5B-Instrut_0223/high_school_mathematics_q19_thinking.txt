@@ -1,0 +1,50 @@
+题目 ID: 19
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+已知$\cos\left(\alpha-{\frac{\pi}{2}}\right)=-{\frac{2{\sqrt{5}}}{5}}$， $\alpha\in\left(\pi,\frac{3\pi}{2}\right)$，则$\tan\alpha$____
+A. 2
+B. $\frac{3}{2}$
+C. 1
+D. $\frac{1}{2}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+首先，我们知道$\cos\left(\alpha - \frac{\pi}{2}\right) = \sin\alpha$。因此，给定条件可以转换为$\sin\alpha = -\frac{2\sqrt{5}}{5}$。
+
+接下来，我们需要找到$\alpha$的具体值。由于$\alpha \in (\pi, \frac{3\pi}{2})$，我们可以使用正弦函数来确定这个角度。注意到$\sin\alpha$是一个正值，这意味着$\alpha$位于第三象限（因为$\alpha$是钝角且小于$\pi$）。
+
+对于第三象限的角，正弦值会是负值。我们可以通过三角恒等变换来求解$\alpha$：
+
+$$\sin\alpha = -\frac{2\sqrt{5}}{5}$$
+
+利用正弦的定义和三角恒等变换，我们有：
+
+$$\sin\alpha = \frac{-2\sqrt{5}}{5} = \frac{4}{5} \cdot (-\frac{\sqrt{5}}{4})$$
+
+这表明$\alpha$实际上是第二象限的角度，即$\alpha = \pi + \arcsin(-\frac{2\sqrt{5}}{5})$。
+
+现在，我们计算$\tan\alpha$：
+
+$$\tan\alpha = \frac{\sin\alpha}{\cos\alpha} = \frac{\frac{4}{5} \cdot (-\frac{\sqrt{5}}{4})}{-\frac{\sqrt{5}}{5}} = \frac{4}{5} \cdot \frac{5}{4} = 1$$
+
+所以，$\tan\alpha = 1$。
+
+综上所述，正确的选项是：{"answer": "C"}
+============================================================
+最终答案：C
+生成长度：737 字符
+是否包含<think>标签：否

@@ -1,0 +1,43 @@
+题目 ID: 129
+科目：high_school_biology
+Prompt:
+以下是中国关于高中生物考试的单项选择题，请选出其中的正确答案。
+
+下列关于实验的操作及显色结果的叙述，错误的是____
+A. 观察菠菜叶肉细胞的叶绿体时，无需染色
+B. 在常温条件下，吡罗红可以使RNA呈现红色
+C. 观察DNA和RNA在细胞中的分布实验需要加热
+D. 观察活细胞的线粒体可以用甲基绿染液染色
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": A,
+    "reasoning": :
+        - **选项 A**：虽然不需要对叶片进行脱水和酒精处理（即“解离”），但为了便于染色体与 DNA、蛋白质分离并利于显微镜下清晰观察到结构细节，必须使用盐酸或醋酸洗脱来溶解组织间的蛋白纤维以及释放核物质。因此，“无需染色”的说法是错误的。\n\n- **选项 B**：吲哚青霉素是碱性染料的一种，其分子中含有酚羟基等强碱基团，遇 RNA 的磷酸骨架会迅速发生反应生成红色的吡咯啉二苯胺化合物，故该描述正确。\n\n- **步骤 C**：“观察 DNA 和 RNA 在细胞中的分布实验”，通常指人教版教材的实验操作要求是在蒸馏水基础上加入 NaOH 溶液使两者分散开来并进行漂洗后，再进行甲酰胺变性酶消化；或者在某些简化版操作中提及需煮沸以破坏核酸稳定性以便提取。无论如何，此过程都需要高温条件打破化学键才能有效完成检测流程，而非仅仅说‘不’加热即可忽略这一关键操作步骤的描述性错误点。（注：若题目意指单纯做临时装片而不涉及后续裂解/变性的具体试剂名称则表述模糊，但在常规生物学考题语境下，此项常作为干扰项出现）。\n\n*修正思考逻辑针对本题最直接的考点分析*: 
+   *标准操作流程对比法 (Standard Procedure Comparison)*:
+       | Experiment Type | Standard Protocol Step | Required Heat? | Reason for Heating |\n|-------------------|------------------------|---------------|--------------------|\n| Mitochondria in Living Cell | Live preparation + Methyl Green stain -> Diffusion under microscope | No / Low temp usually preferred to preserve viability and membrane integrity of mitochondrion during staining process itself if using live cells directly without fixation first steps like heat shock or specific enzymatic digestion required by the lab manual strictly speaking... Wait, let's look at standard textbook procedures again.* \n   
+     Let's re-evaluate Option D vs others based on strict 'textbook procedure' logic often found in Chinese high school exams:*
+     
+      *Option D Analysis*: Observing living cell lineosomes/mitochondria with methylene blue is a classic experiment where you simply add dye solution into an existing viable sample immediately before viewing it microscopically because heating would denature proteins/membranes inside intact organelles which are difficult/dangerous to handle while preserving their structure/functionally as seen through light microscopy compared to fixed tissue sections that require chemical processing later. So saying one can use this method implies validity exists despite potential limitations mentioned above—this statement is generally considered correct in exam contexts regarding feasibility/methods available."
+      
+      Re-verifying Option A specifically against common question banks: This is indeed a very famous distractor point. The key difference between observing plant tissues (like leaves) versus animal nuclei/cells involves acid treatment ("fixation"). Plant leaf observation requires washing out chloroplast pigments via alcohol/hydrochloric acid; Animal nucleus needs fixing/washing then counterstaining. Therefore claiming no need for color change/stainning when dealing with plants is factually incorrect.\n\nRe-verifying Option C carefully: In many simplified versions of these experiments involving nuclear distribution, boiling water followed by adding detergent/enzymes is part of the protocol. However, some sources might argue only temperature changes matter. But given option A has such a glaring procedural error related to the fundamental nature of differentiating plant from non-plant samples, A is definitely the intended answer.",
+}
+```
+============================================================
+最终答案：A
+生成长度：3000 字符
+是否包含<think>标签：否

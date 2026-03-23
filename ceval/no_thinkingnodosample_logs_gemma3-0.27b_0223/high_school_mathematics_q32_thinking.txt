@@ -1,0 +1,20 @@
+题目 ID: 32
+科目：high_school_mathematics
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+已知数列$\{a_{n}\}$满足$a_{n+1}=\frac{1}{1-a_n}$，若$a_1=\frac{1}{2}$，则$a_{2022}$____
+A. -1
+B. $\frac{1}{2}$
+C. 1
+D. 2
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

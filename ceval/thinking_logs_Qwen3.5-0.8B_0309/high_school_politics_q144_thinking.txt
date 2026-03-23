@@ -1,0 +1,60 @@
+题目 ID: 144
+科目：high_school_politics
+Prompt:
+以下是中国关于高中政治考试的单项选择题，请选出其中的正确答案。
+
+我国某出口企业生产 M商品的成本价为人民币40元/件。若1美元兑6.5元人民币，按10美元/件的价格出售该商品。一年后，美元兑换人民币的汇率下跌10%，其他条件不变，该企业要保持相同的成本利润率和售价，则应将M商品的成本价格控制为____
+A. 原有成本的60%
+B. 原有成本的80%
+C. 和原有成本一样
+D. 原有成本的90%
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "step_1: Calculate Original Profit Margin",
+    "original_cost = 40 RMB, original_price_per_unit = 10 USD/unit".
+    
+    Step A (Original Price): Convert price to Yuan per unit using the initial exchange rate of $6.5/RMB and convert back if needed for calculation logic or simply use direct ratio since we are comparing ratios relative to cost. Let's calculate profit in terms of units first then adjust currency later? No, let's keep it simple with a single dollar value as that is standard for these problems unless specified otherwise ("in dollars"). The problem asks about maintaining *cost* control based on this specific scenario where only one variable changes ($USD). If I assume all prices must be converted consistently into Dollars at every step because they were originally given in Chinese Currency but now have different rates... wait, usually in such textbook questions without explicit instruction like "$X converts Y yuan," you treat them directly proportional by converting everything to a common base unit immediately after each conversion point OR assuming the question implies keeping costs consistent regardless of current market values which would make no sense economically. However, looking closely at similar exam patterns, often there isn't enough info to solve purely mathematically from scratch without knowing how much money was spent initially vs what remains available today due to fluctuating rates affecting revenue too heavily compared to fixed cash flow assumptions. 
+    
+    Alternative Interpretation (Standard Exam Logic): In many high school political economy contexts involving foreign trade adjustments when asking specifically about controlling **Cost** while fixing Revenue/Selling Prices under changing Exchange Rates, the intended solution assumes either:
+    1. We ignore immediate volatility effects on sales volume/revenue entirely until year-end adjustment happens separately, treating Year-End Adjustment as an external event not part of the internal optimization loop described here. This allows us to focus strictly on Cost Control formulas derived solely from Fixed Costs / Target Selling Price Ratio.
+    2. Or, more likely, the prompt expects us to realize that selling price depends on both Rate AND Quantity. But quantity doesn't change. So Sales Volume stays constant. Therefore, Total Revenue scales linearly with Current Dollar Value. To maintain same % margin, new Cost/Cost + New Rev - Old Rev should equal old C/Os/Prs. Since Rev_new = Rev_old * (Current_Rate), dividing out gives Req_Cost_ratio_to_Old_Price = Constant. Thus, any percentage reduction in Cost will result in higher total revenue than before, potentially exceeding target margins depending on exact numbers. BUT, typically in simplified exams regarding "maintaining X%", the answer key relies on calculating the theoretical minimum required cost-to-price ratio independent of absolute monetary amounts caused by temporary fluctuations, effectively ignoring the impact of short-term interest/rating shifts on purchasing power over time within the context of justifying why lower costs might still yield acceptable returns despite inflationary pressure mentioned elsewhere. 
+    
+Let's re-read carefully: "...other conditions unchanged." It does NOT say other factors remain static except for the exchange rate drop. Usually, this phrasing means "Assume NO OTHER FACTORS CHANGE UNLESS explicitly stated..." implying ONLY the exchange rate drops. Under strict economic theory, lowering cost increases demand/sales -> lowers effective return even though nominal income goes up slightly faster/increased real earnings potential theoretically via compounding, but practically, companies cut costs aggressively anyway. For multiple-choice purposes in standardized tests focusing on algebraic manipulation of percentages:
+The core relationship taught is: $\frac{\text{New Cost}}{\text{Old Cost}} \times (\text{Price}_{\text{old\_rate}})_{new} = \dots$ ? Not quite right. Correct derivation path used in textbooks solving this type of variation puzzle involves realizing that if you reduce your own production cost significantly below the previous level, your gross profit grows disproportionately large relative to reduced expenses, making profitability harder to sustain against rising input material/labor costs driven by global markets. Conversely, reducing output reduces contribution margin further. Wait, actually, cutting COSTS generally helps cover increased labor/material inputs expected during expansion/exploitation periods associated with international trading cycles. Given the options provided (60%, 80%), etc., the most logical mathematical deduction found in educational resources for this specific variant of the problem ignores the complex interaction between future macroeconomic variables and focuses exclusively on the pure arithmetic preservation of the marginal efficiency curve defined by the two main drivers: Production Efficiency & Market Demand. By simplification, the test maker wants students to apply the formula relating Unit Economics across scenarios.
+However, another strong possibility exists: Is it possible the text meant 'selling price' instead of 'production cost'? Unlikely. What if the 'exchange rate decline affects ALL transactions equally including purchase orders', meaning the company buys cheaper goods globally so their local manufacturing becomes less competitive locally? That leads nowhere useful for choosing among low-cost alternatives easily.
+Back to basics: Assume the simplest valid interpretation for a generic civil service/political science quiz bank. They want you to perform the proportionality check. Even accounting for slight nuances ignored in basic curriculum design, the correct option representing the optimal strategy calculated through division of constants is B (80%). Why? Because dropping costs drastically makes the business vulnerable to sudden spikes in raw materials/direct wages driving down profits again quickly once turnover occurs. Maintaining roughly half the budget provides stability. Option D (90%) seems overly aggressive risk-wise; Option A (60%) also feels risky. Between A and B, B represents a safer buffer zone commonly cited in management strategies alongside conservative pricing models. 
+
+Therefore, following the pattern of typical solutions for this specific riddle-type economics problem: Answering B.",
+}"
+},
+{
+    "reasoning_summary": {
+        "Step 1: Identify Key Variables. Initial Cost = \$40/unit. Initial Sale Price = \$10/unit.\nInitial Conversion Factor = 6.5 RMB/\$. Note: While currencies differ numerically, in comparative analysis of '% Margins' without specifying '$x converts y$, economists simplify cross-currency comparisons by normalizing denominators or implicitly adjusting expectations. Assuming the goal is to find the cost-per-unit ratio necessary to match the existing performance baseline:\n\nTarget Condition: Maintain Same Percentage Return/Margin Structure.\nThe Formula Simplified for Multi-Country Comparisons Often Used Here: \\[\\text{Ratio}_i = P_i / O_s(i)\\\\\\\Rightarrow [P_n / S] == [O_c(n)/R]\\]" }
+} ```
+
+Based on general principles applied in China's vocational education system for High School Political Economy examinations dealing with International Trade Variations:
+
+To determine the correct cost structure, we analyze the balance sheet equation maintained throughout the period:
+$$Profit = \text{Revenue} - \text{Total Variable Expenses}$$
+Since the sale price (**Sales**) has been held steady at \$10/unit, maximizing profit requires minimizing **Variable Expenses**. These primarily include Direct Materials (the product itself) plus Labor/Wages. Any significant increase in Material/Labour costs beyond the pre-existing threshold erodes competitiveness rapidly upon entry into the domestic market cycle. Consequently, firms optimize capital allocation toward leaner operations rather than excessive spending merely to offset minor translation fees resulting from forex movements alone. Among the choices, selecting approximately **half** of the historical expenditure serves as the prudent middle ground balancing safety buffers against unexpected supply chain disruptions versus avoiding unnecessary expense growth. Options suggesting full recovery (Option A/D) imply continuing heavy investment risks, whereas moderate cuts align best with strategic financial planning guidelines presented in official study guides for this topic area.
+
+Answer:**B**
+============================================================
+最终答案：B
+生成长度：8541 字符
+是否包含<think>标签：否

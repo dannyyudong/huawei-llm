@@ -1,0 +1,22 @@
+题目 ID: 150
+科目：high_school_history
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中历史考试的单项选择题，请选出其中的正确答案。
+
+余秋雨在《中国文化四十七讲》中说：“中国人对于孔子的记忆，大多是他的一些话而不是他这个人。” 下列言论中属于孔子的有____
+①“克己复礼”                    ②“民为贵，君为轻，社稷次之”
+③“富贵不能淫，贫贱不能移，威武不能屈”     ④“有教无类”
+A. ①③
+B. ②③
+C. ①④
+D. ②④
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

@@ -1,0 +1,41 @@
+题目 ID: 48
+科目：high_school_chemistry
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列关于乙烯和乙烷相比较的说法中，不正确的是____
+A. 乙烯属于不饱和烃，乙烷属于饱和烃
+B. 乙烯和乙烷互为同系物
+C. 乙烷在光照条件下能与$Cl_2$发生取代反应，乙烯则不能
+D. 乙烯能使$Br_2$的$CCl_4$溶液褪色，乙烷则不能
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": B",
+    "reasoning": 
+        - A: 正确判断了官能团不同导致分类差异（含碳双键的不饱和度 vs 无）。故说法不正确的是该选项中的描述？不，题目问“下列说法**不正确**”的那一项是哪一个。让我们重新审视每个陈述的真假。\n            *   **A**: “乙烯...乙烷..." -> 这是正确的比较关系。所以这个说法本身是正确的。（注意：原问题可能是想选错误的项）\n                Wait, let's re-read the question carefully.\n                \"下列选项中正确的是\" (Which option is correct) OR \n                \"以下关于...的比较说法中，不正确的是\" (Among these comparisons of..., which one is NOT true).\nThe prompt asks for 'incorrect' statements in a multiple-choice format where usually only ONE answer key exists.) Let me check standard chemistry questions on this topic to see if there are typos or specific context I missed that might make it an open-ended choice? No, looking at typical high school exams:\n\nLet's evaluate each statement again based strictly on chemical facts:\n*   **Statement A:** Ethene ($CH_3-CH=CH_2$, unsaturated), Propane/Butane/etc. $CH_5(CH)_6$. Correct classification as saturated/ununsaturation respectively. Statement says True.\n*   **Statement B:** They have similar functional groups and molecular formulas with different chain lengths but same general formula structure type. This defines homologous series members. So they are homologues/similar compounds. The term used here ('homologue') implies similarity due to structural relationship via carbon chains. In many contexts, comparing two molecules like ethylene and propane shows how their properties change down the scale. However, chemically speaking, saying they are simply related by having the same group name suggests we should look closer. But wait, actually, both contain C=C double bond capability generally treated similarly regarding reaction types compared to alkanes/ketones/alcohols. Is there any subtle distinction making them not be considered 'similar'? Usually yes, because alkyl halides differ from ethers/amines etc., so maybe some older texts distinguish between simple hydrocarbons being just analogs versus distinct classes. BUT, most modern curricula treat all organic carbons containing pi bonds as part of the class Hydrocarbon family broadly enough for introductory comparison unless specified otherwise. If forced to choose the MOST clearly FALSE among potentially ambiguous options...\nWait! Look closely at Option D first. It seems very definitive.\n*   **Option D:** Propyne has terminal =OH; Alkene has no OH. Both react rapidly with Br$_2$/CCl$_4$. Why would propyne fail? Maybe confusion about position sensitivity? Or perhaps the text meant something else entirely?\nActually, checking common variations of this problem online often reveals slight discrepancies depending on exact wording nuances found in textbooks.*  
+However, without external search tools provided within my training data access limits beyond what was visible, let us rely on strict logic derived directly from definitions.\n1.  **Classification (A):** Yes, Ethene contains $\pi$ electrons (unstable). Propane does not. **(Correct)**\n2.  **Homology/Basis (B):** Homological relationships exist when adding CH$_2$ units while keeping other atoms constant. While technically precise terminology can vary slightly across regions/textbooks distinguishing 'isomers/homologues', conceptually linking property changes through length makes them comparable examples of increasing complexity/functionality levels relative to simpler ones. Often accepted as valid comparative discussion points even if terminologically pedantic distinctions arise later stages. *(Self-Correction*: Actually, strictly speaking, homologues must share exactly the same parent unit + H count difference. Here Parent Unit differs significantly (Alkane vs Enol-like?). Some sources argue NO direct relation despite superficial appearance.)*\n3.  **Substitution Reaction (C):** Only unactivated rings undergo free radical substitution under UV light. Unsubstituted benzene ring requires catalyst/drying agent conditions specifically. Therefore, stating propanone reacts readily with Cl$_2$ alone upon heating/light contradicts basic principles taught before advanced regioselectivity discussions. Thus, this claim is likely False.**\n4.  **Reactivity Test (D):** Bromine test detects presence of Carbon-Oxygen triple/bond systems capable of electrophilic addition. All listed species do possess such functionality. Claimed failure is scientifically incorrect.  
+
+Given the ambiguity around point B ("Are they homologues?" sometimes debated historically), whereas Point C explicitly states a condition (light+heat) required for protonation/deprotonation reactions involving aromaticity/catalysts—which applies ONLY to Benzene derivatives—not to Acyclic Ketones/Ethers—making C factually impossible given real-world lab procedures described.</br>Therefore, C is the intended target."<br>"Answer". 
+
+Final decision path confirmed pointing towards C.",
+}
+```
+============================================================
+最终答案：C
+生成长度：4867 字符
+是否包含<think>标签：否

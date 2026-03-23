@@ -1,0 +1,20 @@
+题目 ID: 53
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+下列有关实验操作说法错误的是____
+A. 蒸馏时应先加热蒸馏烧瓶，再向冷凝管中通入冷水
+B. 向容量瓶中转移液体时，玻璃棒可以接触容量瓶刻度线下的内壁
+C. 用分液漏斗分液时，眼睛注视分液漏斗内的液面
+D. 用蒸发结晶的方法可使NaCl从溶液中析出
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

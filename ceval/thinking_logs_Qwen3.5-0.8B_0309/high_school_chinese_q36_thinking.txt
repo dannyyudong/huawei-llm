@@ -1,0 +1,65 @@
+题目 ID: 36
+科目：high_school_chinese
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中，没有语病的一项是____
+A. 这份典籍的发现，说明了任何文化都有根，根脉里都藏着人类为生活不懈努力的足迹，记录着文明的进程和文化的起源，都是人类珍贵的遗产。
+B. 源于大自然馈赠的黄酒，记录着金戈铁马的风云岁月，激发了文人雅士的豪放激情，见证过大国外交的高光时刻，滋润着百姓惬意的市井生活。
+C. 顺丰集团宣布，今年将努力把集团“中国速度”的成功经验复制到海外，通过进一步增加直送专机、加开大量海外仓，服务遍布全球的消费者。
+D. 根据联合国卫生组织的一份报告发现，大量食用腌渍类肉类会增加人类患某种癌症的风险，相反，多吃水果、蔬菜和新鲜肉制品对身体颇有益。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": "B",
+    "analysis": {
+        A: “记录了……纪录”，搭配不当。“记载了历史/过程与源头是恰当的；‘记录下来’通常指把某事写下来保存（如文字），而这里强调的是作为证据留存的历史性意义。”\n        B: 逻辑通顺，“源自自然...激发豪情..."、“见证了外交高光...”、“滋养市民生活”。三个分句主语一致且连贯。\nC: “成功复制到海外”的主谓宾关系混乱。原意是将成功经验**应用到**海外市场或推广给全球市场，而非直接说它已经成功了并要被复制到那里去。（或者理解为要把成功的做法带到外面去做）。但更明显的错误在于后半部分：“通过在更多直送飞机上以及开设更多的海外仓库来提供服务\"这一表述在语法结构上是合理的吗？其实这个句子主要存在主客体颠倒的问题——应该是让这些措施服务于客户而不是让客户通过这些设施获得好处，或者说该动作本身并不具备直接的因果指向于特定对象的服务功能描述得不够准确。不过对比其他选项可能不是最佳解法。）让我们重新审视 C:\n\n   D: “导致人类患癌风险”中的量词使用有误。**应改为：** \"致癌物\"\n       （因为是指一种物质导致的后果）")}
+    
+    Wait, let's re-evaluate **Option C**.
+    Original text in Option C: "...通过将......的经验复制到海外，通过进一步增加了直送专机和加开了很多海外仓，服务遍布全世界的消费者。" (Through further increasing direct delivery planes and opening many overseas warehouses to serve consumers worldwide.)
+    This sentence structure is actually grammatically correct regarding the main clause ("service...", which implies a result). The issue might be subtle or I am misinterpreting it as wrong due to some hidden logic trap? No wait, usually these questions have one clear error. Let me look closer at standard errors for this specific question type often found in Chinese exams.
+    
+    Actually, looking closely at **Option C**: It says they are trying to copy their success *to* abroad via more flights/warehouses. Is there an implied subject missing that makes 'they' do something else? Or perhaps simpler grammar check: Does adding planes directly cause them to service customers better than before? Yes logically possible but phrasing can sometimes feel slightly off if not careful with causality relative to previous clauses. However, compared to others, maybe it isn't strictly bad enough?
+    
+    Re-reading **Standard Analysis of similar past exam items:** Often, sentences like "copying experience from China speed to foreign countries through X means Y" imply that doing Z leads to W without explicit causal link between Z/W unless stated otherwise. But here, "increasing warehousing/services" -> "serve global consumer". That seems fine.\n   
+    What about **Option E**? Not listed! Ah, options were A, B, C, D based on my initial scan. There was no option labeled E explicitly provided by user prompt except implicitly assuming we pick among A,B,C,D.*Wait*, did I miss reading all options again?*No*. Options only go up to D. So why would any other exist? Maybe because earlier analysis suggested multiple issues?\n    
+    Okay, back to checking **Option D** carefully. 
+    Sentence: "According to WHO report finding large consumption of preserved meat increases risk..., while eating fruit/veg/some fresh meats benefits body."
+    Error location: **"lead"** vs **"cause/risk factor"**. In medical contexts/pharmacology texts, saying "leads people to get cancer" sounds odd; you say "causes/can lead to death/disease". Saying "risk factors increase probability of getting disease" is precise. Also, using plural noun phrase "**preserved meat**, fruits," etc., works well. BUT WAIT - Look at the first part: "large amount consumed ... will add human risk of certain cancers". Then contrasted with healthy foods. Usually, health advice warns against processed/prepared food generally including dried/meat products. Preserving meat itself doesn't inherently make someone sick; rather, high salt content/preservatives matter. If the statement claims preserving MEAT causes cancer risks specifically mentioned elsewhere, does it hold water scientifically? Generally NO. Meat preservation involves curing processes that don't necessarily introduce carcinogens into humans significantly under normal conditions described simply as "consumption adds risk". More importantly, common distractor patterns involve word choice accuracy. Using words like "add", "increase", "will contribute" when referring to biological effects requires precision. While technically true that preservative chemicals affect metabolism, stating it creates a general rule-like effect where consuming preserves = increased cancer risk is factually weak/inaccurate context-wise compared to pure syntax flaws.
+    
+    Now reconsider **Option C**. Why is it considered incorrect in most versions of this classic question?
+    Commonly cited reason for C being flawed: Subject-Predicate mismatch / Logical flow ambiguity. Specifically, "By [doing] ..., serving ..." could mean the action serves themselves too much energy/time away instead of helping clients efficiently. OR, even stronger: Some sources argue the construction should read "[Doing things], thereby enabling services...]". Without strict logical deduction required beyond basic parsing, C has potential ambiguities.
+    
+    Back to **Option A**. "Recordings history/processes/sources"? Correct usage.
+    Back to **Option B**. All subjects consistent. Clear meaning. Very strong candidate.
+    
+    Therefore, despite complex linguistic nuances potentially present in older test banks, **Option B** stands out as perfectly free of obvious syntactic or semantic errors across different interpretations. 
+
+    Final Check:
+    A: Wrong verb-object pairing ('record') + redundant repetition of purpose.
+    B: Perfect parallelism and clarity.
+    C: Ambiguous relationship between warehouse expansion and customer benefit (could also refer to logistics efficiency leading to lower costs/better quality?). Less definitive flaw than B.
+    D: Scientifically imprecise use of verbs related to chemical additives affecting biology broadly versus just causing diseases. Though less glaring than A/C/D depending on interpretation, B remains superior.
+
+    Conclusion: Answer is B.
+</think>
+
+{"answer": "B"}
+============================================================
+最终答案：B
+生成长度：5639 字符
+是否包含<think>标签：否

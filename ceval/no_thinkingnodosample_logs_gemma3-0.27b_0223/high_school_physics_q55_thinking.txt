@@ -1,0 +1,20 @@
+题目 ID: 55
+科目：high_school_physics
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+若引力常量G为已知，根据下面哪组数据不可能计算出地球的质量____
+A. 月球绕地球做圆周运动的周期T1及月球中心到地心的距离R1
+B. 地面的重力加速度g0及地球半径R0
+C. 地球的同步卫星离地面的高度
+D. 人造地球卫星在地面附近做圆周运动的速度v及运行周期T2
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

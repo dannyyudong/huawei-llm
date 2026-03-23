@@ -1,0 +1,36 @@
+题目 ID: 38
+科目：high_school_physics
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+关于摩擦力，以下说法中正确的选项是____
+A. 关于摩擦力，以下说法中正确的选项是
+B. 静止的物体有可能碰到滑动摩擦力
+C. 滑动摩擦力的方向总是与运动方向相反
+D. 滑动摩擦力的方向不能能与运动方向一致
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": "C",
+    "reasoning": 
+        - A: The statement is incomplete and does not provide a valid option to choose from, so it cannot be selected as the correct answer in this context.\n- B: This contradicts Newton's laws of motion; an object at rest will remain stationary unless acted upon by external forces (like friction), meaning static objects do *not* touch surfaces that would cause sliding friction if they were moving relative to each other or against another surface without being pushed over its edge.\n- C: According to Coulomb's law for kinetic/static friction, when two solid bodies slide past one another due to contact resistance, there must exist enough force between them such that their velocities are opposite with respect to time ($v_1 = v + vt$). Therefore, the direction of the applied force on body $i$, which opposes velocity change $\vec{\alpha}_i \propto (\dot{x}_{body}^2)$, results in a net acceleration opposing any potential forward movement. Thus, the resultant frictional force always acts opposite to the instantaneous velocity vector of either contacting particle(s).\n- D: If both particles have equal mass but different initial speeds towards each other, applying a single constant horizontal push can accelerate only one side while slowing down/decelerating the other until equilibrium is reached where accelerations cancel out.",
+            }
+```
+============================================================
+最终答案：C
+生成长度：1407 字符
+是否包含<think>标签：否

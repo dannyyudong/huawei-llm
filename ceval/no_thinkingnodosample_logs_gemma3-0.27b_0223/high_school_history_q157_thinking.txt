@@ -1,0 +1,20 @@
+题目 ID: 157
+科目：high_school_history
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中历史考试的单项选择题，请选出其中的正确答案。
+
+下列对于美国三权分立理解不正确的是：____
+A. 国会.总统.最高法院分别行使立法.行政和司法权，形成三权鼎立之势
+B. 每个部门都能通过某种方式牵制其他部门，以防止其中任何一个部门滥用权力
+C. 总统的权力力量最大，受到的制约和限制最小
+D. 基本原则是分权与制衡
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

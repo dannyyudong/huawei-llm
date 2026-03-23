@@ -1,0 +1,20 @@
+题目 ID: 110
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+标点使用有错误的是____
+A. 今年4月7日，中外联合科考队开始对“天坑博物馆”——广西乐业天坑群进行大规模的科学考察。
+B. 闻一多先生说：“诗人主要的天赋是‘爱’，爱他的祖国，爱他的人民。”
+C. 开荒、种庄稼，种蔬菜，是足食的保证，纺羊毛、纺棉花，是丰衣的保证。
+D. 人总是要死的，就看怎样死法，是屈辱而死呢，还是为民族利益而死？
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

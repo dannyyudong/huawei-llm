@@ -1,0 +1,20 @@
+题目 ID: 80
+科目：high_school_history
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中历史考试的单项选择题，请选出其中的正确答案。
+
+陆游《杂赋》诗写道：“今朝半醉归草市，指点青帘上酒楼。”从这句诗中，我们能获得的最有效的信息是____
+A. 作为乡村集市的草市出现于宋代
+B. 宋代的草市已具较完备的饮食服务设施
+C. 宋代的草市受到官吏的直接监督
+D. 陆游所说的草市位于东京汴河两岸
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

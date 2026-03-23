@@ -1,0 +1,50 @@
+题目 ID: 119
+科目：middle_school_chemistry
+Prompt:
+以下是中国关于初中化学考试的单项选择题，请选出其中的正确答案。
+
+关于浓盐酸和浓硫酸的下列说法中，说法错误的是____
+A. 盐酸可用来制造药物
+B. 浓硫酸是油状的黏稠液体，有刺激性气味
+C. 打开浓盐酸的瓶口可以看到“白雾”
+D. 浓硫酸可用作某些气体的干燥剂
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": B",
+    "reasoning": 
+        - A: 氯化氢气体溶于水会形成酸雨（HCl + H2O = H3PO4），因此不能直接用于制药或医疗用途；但工业上常将氯气与氢气混合后点燃生成黄绿色烟雾状物质作为炸药原料之一，或者在特定条件下制备含卤素化合物等药品中间体，故该选项表述存在争议且不如其他明显错误项典型地被判定为‘正确’用法描述中的陷阱？不过更严谨的化学常识认为纯液态液氨可用于合成农药、杀虫剂等有机化工原料，而普通实验室制药多使用硝酸银溶液沉淀法而非直接用浓盐酸/稀盐酸配制制剂。但在单选题语境下，若必须选一个最明显的物理性质混淆点...等等重新审视题目意图——通常这类题目的标准答案是基于其**不可逆性**。实际上，严格来说，用浓盐酸做医药确实不推荐因为产生酸性腐蚀品风险大，但这属于操作规范问题。让我们看另一个角度：**是否所有选项中都有错？** C说'看到白雾'是对的（挥发出的小液滴）；D说是常用干燥剂也是对的；只有B把浓硫酸的物理状态写成了'Oily liquid (oil-like)'并描述了'Sterile smell'是错误的！虽然实际闻起来像烧碱味且有腐蚀性，但它不是典型的油性粘稠物，也不具备那种特定的挥发性刺激感特征来对应'B'. Therefore, the statement in option B is factually incorrect regarding its physical appearance and odor profile compared to reality."}
+        
+        *Correction on Reasoning for Final Output:* The question asks which **statement is WRONG**. Let's re-evaluate each based on standard chemistry knowledge:
+            -   **Option A**: Using concentrated hydrochloric acid directly as a solvent or reactant isn't typical pharmaceutical practice due to corrosivity risks of mixing acids with organic compounds without specific catalysts like silver nitrate precipitates used historically but now replaced by other methods? Actually, it says 'can be used', implying capability exists via industrial processes involving chlorine/hydrogen mixtures producing smoke agents that are then processed into drugs later, OR referring specifically to making chlorinated products where dilute solutions might work differently than conc. However, strictly speaking, using pure/concentrated HCl alone doesn't make sense chemically for drug synthesis usually requiring complex reactions. But wait, there is another interpretation often found in these questions: Is this about safety protocols vs general capabilities? No, let's look at Option D first. It seems correct. What if I misread Option A? Maybe it implies direct use? Or maybe it refers to something else entirely? Let's reconsider Option B. Concentrated sulfuric acid IS oily/viscous AND has an irritating/sticky/smelly nature when smelling near skin contact! So saying it does NOT have those properties makes Statement B FALSE. This fits perfectly. Why would A also seem questionable? Perhaps because while you can synthesize things from chloride salts, applying raw concentrated solution to human medicine carries high toxicity hazards not mitigated simply by concentration difference unless specified otherwise. BUT, looking closer at common exam patterns: Often they contrast Sulfuric Acid (Dry) vs Hydro Chloride (Fumes). Wait, no—let's stick to the most obvious error.
+            
+                Re-reading carefully:
+                A. Useable -> Plausible context-wise (industrial chemicals), though risky operationally. In many contexts, yes, related substances exist.
+                B. Oily viscous fluid WITH STERILE SMELLING -> TRUE description of Conc. SO3H. Saying NO matches facts. Thus B is False.
+                C. White mist upon opening bottle -> True phenomenon (fuming gas particles condensing droplets). Correct observation.
+                D. Used as drying agent -> Standard application. Correct usage.
+                
+                Conclusion remains consistent: Option B contains contradictory claims between physical state ("oily") and property described ("sterile/smelling"). Since both parts describe actual characteristics of Con Sc., claiming neither applies creates the false premise required for selecting the wrong answer choice. 
+
+Final check complete. Answer is B.
+</think>
+
+{"answer": "B"}
+============================================================
+最终答案：B
+生成长度：3541 字符
+是否包含<think>标签：否

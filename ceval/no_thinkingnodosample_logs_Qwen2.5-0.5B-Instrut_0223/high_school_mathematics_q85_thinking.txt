@@ -1,0 +1,58 @@
+题目 ID: 85
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+设地球的半径为R，若甲地位于北纬$45^{\circ}$东经$120^{\circ}$，乙地位于南纬$75^{\circ}$东经$120^{\circ}$，则甲、乙两地的球面距离为____
+A. $\sqrt{3}R$
+B. $\frac{\pi}{6}R$
+C. $\frac{5\pi}{6}R$
+D. $\frac{2\pi}{3}R$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+首先，我们需要计算甲地和乙地之间的球面距离。由于地球是一个近似球体，我们可以使用球面距离公式来解决这个问题：
+
+\[d = R \cdot \arccos(\sin(\phi_1) \cos(\theta_1) + \cos(\phi_1) \sin(\theta_1) \sin(\psi_1))\]
+
+其中，\(d\) 是球面距离，\(R\) 是地球半径，\(\phi_1\) 和 \(\theta_1\) 分别是甲地和乙地的纬度，\(\psi_1\) 是它们的经度差（即乙地相对于甲地的角度）。
+
+对于甲地（北纬 \(45^\circ\) 东经 \(120^\circ\)），球面距离 \(d_{甲}\) 可以表示为：
+
+\[d_{甲} = R \cdot \arccos(\sin(45^\circ) \cos(120^\circ) + \cos(45^\circ) \sin(120^\circ) \sin(180^\circ - 45^\circ))\]
+
+\[= R \cdot \arccos(-\frac{\sqrt{2}}{2} \cdot (-\frac{\sqrt{3}}{2}) + \frac{\sqrt{2}}{2} \cdot (\frac{\sqrt{3}}{2}))\]
+
+\[= R \cdot \arccos(\frac{\sqrt{6}}{2} + \frac{\sqrt{6}}{2})\]
+
+\[= R \cdot \arccos(\sqrt{6})\]
+
+对于乙地（南纬 \(75^\circ\) 东经 \(120^\circ\)），球面距离 \(d_{乙}\) 可以表示为：
+
+\[d_{乙} = R \cdot \arccos(\sin(75^\circ) \cos(120^\circ) + \cos(75^\circ) \sin(120^\circ) \sin(180^\circ - 75^\circ))\]
+
+\[= R \cdot \arccos(-\frac{\sqrt{6}}{2} \cdot (-\frac{\sqrt{3}}{2}) + \frac{\sqrt{6}}{2} \cdot (\frac{\sqrt{3}}{2}))\]
+
+\[= R \cdot \arccos(\frac{\sqrt{6}}{2} + \frac{\sqrt{6}}{2})\]
+
+\[= R \cdot \arccos(\sqrt{6})\]
+
+因此，甲、乙两地的球面距离都是 \(R \cdot \arccos(\sqrt{6})\)，这与选项 D 相匹配。
+
+所以，正确的答案是：{"answer": "D"}
+============================================================
+最终答案：D
+生成长度：1136 字符
+是否包含<think>标签：否

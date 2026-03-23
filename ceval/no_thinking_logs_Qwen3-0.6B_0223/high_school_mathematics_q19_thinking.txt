@@ -1,0 +1,142 @@
+题目 ID: 19
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+已知$\cos\left(\alpha-{\frac{\pi}{2}}\right)=-{\frac{2{\sqrt{5}}}{5}}$， $\alpha\in\left(\pi,\frac{3\pi}{2}\right)$，则$\tan\alpha$____
+A. 2
+B. $\frac{3}{2}$
+C. 1
+D. $\frac{1}{2}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+已知：
+
+$$
+\cos\left(\alpha - \frac{\pi}{2}\right) = -\frac{2\sqrt{5}}{5}, \quad \alpha \in \left(\pi, \frac{3\pi}{2}\right)
+$$
+
+我们要求：
+
+$$
+\tan\alpha
+$$
+
+### 第一步：利用三角恒等式
+
+我们知道：
+
+$$
+\tan\alpha = \frac{\sin\alpha}{\cos\alpha}
+$$
+
+我们也可以利用：
+
+$$
+\cos\left(\alpha - \frac{\pi}{2}\right) = \sin\alpha
+$$
+
+根据题设：
+
+$$
+\sin\left(\alpha - \frac{\pi}{2}\right) = -\frac{2\sqrt{5}}{5}
+$$
+
+所以：
+
+$$
+\sin\alpha = -\frac{2\sqrt{5}}{5}
+$$
+
+### 第二步：求 $\cos\alpha$
+
+我们使用三角恒等式：
+
+$$
+\cos\left(\alpha - \frac{\pi}{2}\right) = \sin\alpha
+$$
+
+已知：
+
+$$
+\cos\left(\alpha - \frac{\pi}{2}\right) = -\frac{2\sqrt{5}}{5}
+$$
+
+所以：
+
+$$
+\sin\alpha = -\frac{2\sqrt{5}}{5}
+$$
+
+我们使用三角恒等式：
+
+$$
+\sin^2\alpha + \cos^2\alpha = 1
+$$
+
+代入：
+
+$$
+\left(-\frac{2\sqrt{5}}{5}\right)^2 + \cos^2\alpha = 1
+$$
+
+$$
+\frac{4 \cdot 5}{25} + \cos^2\alpha = 1
+$$
+
+$$
+\frac{20}{25} + \cos^2\alpha = 1
+$$
+
+$$
+\cos^2\alpha = 1 - \frac{4}{5} = \frac{1}{5}
+$$
+
+所以：
+
+$$
+\cos\alpha = \pm \frac{1}{\sqrt{5}}
+$$
+
+我们还需确定 $\alpha$ 的范围，已知：
+
+$$
+\alpha \in \left(\pi, \frac{3\pi}{2}\right)
+$$
+
+所以 $\alpha$ 是在第三象限，$\cos\alpha$ 为负数。
+
+因此：
+
+$$
+\cos\alpha = -\frac{1}{\sqrt{5}}
+$$
+
+### 第三步：求 $\tan\alpha$
+
+$$
+\tan\alpha = \frac{\sin\alpha}{\cos\alpha} = \frac{-\frac{2\sqrt{5}}{5}}{-\frac{1}{\sqrt{5}}} = \frac{2\sqrt{5}}{5} \cdot \sqrt{5} = \frac{2 \cdot 5}{5} = 2
+$$
+
+### 最终答案：
+
+$$
+\boxed{\text{A}}
+$$
+============================================================
+最终答案：A
+生成长度：1320 字符
+是否包含<think>标签：否

@@ -1,0 +1,56 @@
+题目 ID: 63
+科目：middle_school_mathematics
+Prompt:
+以下是中国关于初中数学考试的单项选择题，请选出其中的正确答案。
+
+下列方程中是一元一次方程的是____
+A. $1-\frac{x}{2}=3y-2$
+B. $\frac{1}{y}-2=y$
+C. $3x+1=2x$
+D. $3x^{2}+1=0$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+To determine which of the given equations is a **one-variable linear equation**, we need to check the following:
+
+- The equation should contain **only one variable**.
+- The variable should appear only once, and its exponent should be 1.
+
+Let's analyze each option:
+
+- **A. $1 - \frac{x}{2} = 3y - 2$**  
+  This has two variables: $x$ and $y$.  
+  ✅ **Not a one-variable linear equation.**
+
+- **B. $\frac{1}{y} - 2 = y$**  
+  This has two variables: $y$ and $x$.  
+  ✅ **Not a one-variable linear equation.**
+
+- **C. $3x + 1 = 2x$**  
+  This has only one variable: $x$.  
+  ✅ **This is a one-variable linear equation.**
+
+- **D. $3x^2 + 1 = 0$**  
+  This has a quadratic term in $x$, so it is **not a linear equation**.  
+  ❌ **Not a one-variable linear equation.**
+
+### Final Answer:
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：810 字符
+是否包含<think>标签：否

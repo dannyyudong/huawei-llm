@@ -1,0 +1,66 @@
+题目 ID: 74
+科目：middle_school_mathematics
+Prompt:
+以下是中国关于初中数学考试的单项选择题，请选出其中的正确答案。
+
+已知0≤a-b≤1且1≤a+b≤4，则a的取值范围是____
+A. 1≤a≤2
+B. 2≤a≤3
+C. $\frac{1}{2}$≤a≤$\frac{5}{2}$
+D. $\frac{3}{2}$≤a≤$\frac{5}{2}$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+已知条件：
+
+- $ 0 \leq a - b \leq 1 $
+- $ 1 \leq a + b \leq 4 $
+
+我们尝试找出 $ a $ 的取值范围。
+
+1. 从 $ 0 \leq a - b \leq 1 $，可以得到：
+   - $ a - b \geq 0 \Rightarrow a \geq b $
+   - $ a - b \leq 1 \Rightarrow a \leq b + 1 $
+
+2. 从 $ 1 \leq a + b \leq 4 $，可以得到：
+   - $ a + b \geq 1 \Rightarrow a \geq 1 - b $
+   - $ a + b \leq 4 \Rightarrow a \leq 4 - b $
+
+3. 将 $ a \geq b $ 和 $ a \leq b + 1 $ 与 $ a \geq 1 - b $ 和 $ a \leq 4 - b $ 结合，可以得到：
+   - $ b \leq a \leq b + 1 $
+   - $ 1 - b \leq a \leq 4 - b $
+
+4. 将 $ b \leq a \leq b + 1 $ 与 $ 1 - b \leq a \leq 4 - b $ 结合，可以得到：
+   - $ b \leq a \leq b + 1 $ 与 $ 1 - b \leq a \leq 4 - b $ 的交集为：
+     - $ 1 - b \leq b \leq 4 - b $
+
+5. 解这个不等式：
+   - $ 1 - b \leq b \Rightarrow 1 \leq 2b \Rightarrow b \geq \frac{1}{2} $
+   - $ b \leq 4 - b \Rightarrow 2b \leq 4 \Rightarrow b \leq 2 $
+
+因此，$ a $ 的取值范围为：
+$$
+\frac{1}{2} \leq a \leq 2
+$$
+
+最终答案是：
+
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：890 字符
+是否包含<think>标签：否

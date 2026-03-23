@@ -1,0 +1,20 @@
+题目 ID: 39
+科目：high_school_politics
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中政治考试的单项选择题，请选出其中的正确答案。
+
+假定2012年6月用100元人民币可以购买10件甲商品，此后物价一路仰冲，截止2013年6月，用100元只能购买8件甲商品，如果不考虑其他因素，则货币贬值____，物价上涨____。
+A. 25％、20％
+B. 20％、20％
+C. 20%、25％
+D. 25％、25％
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

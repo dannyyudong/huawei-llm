@@ -1,0 +1,20 @@
+题目 ID: 78
+科目：high_school_chinese
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列各句中加下划线的成语使用恰当的一句是：____
+A. 调查发现，我校最近有少数学生在午休期间去打游戏机，个别学生还参与了赌博，请老师们教育，加强管理，以$\underline{防患未然}$。
+B. 《笑傲江湖》一剧的男主角被撤换的消息早已$\underline{不胫而走}$，日前制片主任在记者招待会上证实了这一说法。
+C. 他在地主家当长工的时候，吃的是$\underline{粗茶淡饭}$，住的是猪棚狗窝，干的是牛马活儿。
+D. 第一次见到王师傅便喜欢上了她，那轻柔的嗓音，那甜美的微笑，一看便知是个$\underline{一团和气}$的人。
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

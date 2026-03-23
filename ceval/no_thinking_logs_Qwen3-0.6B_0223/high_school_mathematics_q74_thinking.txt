@@ -1,0 +1,89 @@
+题目 ID: 74
+科目：high_school_mathematics
+Prompt:
+以下是中国关于高中数学考试的单项选择题，请选出其中的正确答案。
+
+已知$f(x)=\sin\left(x+{\frac{3\pi}{2}}\right)$，$g\left(x\right)=\cos \left(x+\frac{\pi}{2} \right)$,则下列结论中不正确的是____
+A. 函数$y=f\left(x\right) \cdot g\left(x\right)$的最小正周期为$\pi$
+B. 函数$y=f\left(x\right) \cdot g\left(x\right)$的最大值为$\frac{1}{2}$
+C. 将函数$f(x)$的图象向右平移$\frac{\pi}{2}$个单位后得到$g(x)$的图象
+D. 函数$y=f\left(x\right) \cdot g\left(x\right)$的图像关于点$\left(\frac{\pi}{4},0 \right)$对称
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+已知：
+
+- $ f(x) = \sin\left(x + \frac{3\pi}{2}\right) $
+- $ g(x) = \cos\left(x + \frac{\pi}{2}\right) $
+
+我们可以先化简这两个函数：
+
+- $ \sin\left(x + \frac{3\pi}{2}\right) = \sin\left(x - \frac{\pi}{2} + 2\pi\right) = \cos(x) $（利用三角恒等式）
+- $ \cos\left(x + \frac{\pi}{2}\right) = -\sin(x) $（利用三角恒等式）
+
+因此，函数：
+
+- $ f(x) = \cos(x) $
+- $ g(x) = -\sin(x) $
+
+现在我们分析各选项：
+
+---
+
+**A. 函数 $ y = f(x) \cdot g(x) $ 的最小正周期为 $ \pi $**
+
+- $ f(x) \cdot g(x) = \cos(x) \cdot (-\sin(x)) = -\sin(x) \cos(x) $
+- 由于 $ \sin(x) \cos(x) = \frac{1}{2} \sin(2x) $，所以函数 $ y = f(x) \cdot g(x) $ 的周期为 $ \pi $，与选项一致。
+
+✅ **正确**
+
+---
+
+**B. 函数 $ y = f(x) \cdot g(x) $ 的最大值为 $ \frac{1}{2} $**
+
+- $ f(x) \cdot g(x) = -\sin(x) \cos(x) = -\frac{1}{2} \sin(2x) $
+- $ \sin(2x) $ 的最大值为 1，所以最大值为 $ -\frac{1}{2} $，与选项不符。
+
+❌ **错误**
+
+---
+
+**C. 将函数 $ f(x) $ 的图象向右平移 $ \frac{\pi}{2} $ 个单位后得到 $ g(x) $ 的图象**
+
+- $ f(x) = \cos(x) $
+- 向右平移 $ \frac{\pi}{2} $ 得到 $ f(x - \frac{\pi}{2}) = \cos(x - \frac{\pi}{2}) = \sin(x) $
+- 但 $ g(x) = -\sin(x) $，所以此选项不正确。
+
+❌ **错误**
+
+---
+
+**D. 函数 $ y = f(x) \cdot g(x) $ 的图像关于点 $ \left( \frac{\pi}{4}, 0 \right) $ 对称**
+
+- 由于 $ f(x) = \cos(x) $, $ g(x) = -\sin(x) $，函数为 $ -\sin(x) \cos(x) $，图像关于点 $ \left( \frac{\pi}{4}, 0 \right) $ 对称，与选项一致。
+
+✅ **正确**
+
+---
+
+### 最终答案：
+
+```json
+{"answer": "B"}
+```
+============================================================
+最终答案：B
+生成长度：1262 字符
+是否包含<think>标签：否

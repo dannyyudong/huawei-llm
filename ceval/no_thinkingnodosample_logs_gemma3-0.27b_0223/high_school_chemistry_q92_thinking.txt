@@ -1,0 +1,24 @@
+题目 ID: 92
+科目：high_school_chemistry
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+用石灰水保存鲜蛋是一种化学保鲜法。石灰水能保存鲜蛋的原理是____
+   ①石灰具有强碱性，杀菌能力强；
+   ②$Ca(OH)_2$能与CO_2鲜蛋呼出的反应，生成碳酸钙薄膜，起保护作用；
+   ③石灰水是电解质溶液，能使蛋白质凝聚；
+   ④石灰水能渗入蛋内中和酸性物质。
+A. ①②
+B. ③④
+C. ②④
+D. ①③
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+

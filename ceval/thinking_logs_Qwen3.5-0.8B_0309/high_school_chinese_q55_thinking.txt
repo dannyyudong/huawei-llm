@@ -1,0 +1,72 @@
+题目 ID: 55
+科目：high_school_chinese
+Prompt:
+以下是中国关于高中语文考试的单项选择题，请选出其中的正确答案。
+
+下列词语中注音全都正确的一项是____
+A. 扩展(ｋｕàｎɡ)     押解(ｊｉè)     披肝沥胆(ｌì)     锲而不舍(ｑｉè)
+B. 慕名(ｍù)          倾轧(ｙà)       万马齐喑(ｙīｎ)    引吭高歌(ｈáｎɡ)
+C. 嶙峋(ｘúｎ)        溺水(ｎì)       蛊惑人心(ɡǔ)       和衷共济(ｃｈōｎɡ)
+D. 虐政(ｎüè)         搭讪(ｓｈàｎ)   铤而走险(ｔǐｎɡ)   条分缕析(ｌǒｕ)
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+  "answer": B",
+  "analysis": {
+    \"选项 A:\"\n- 扩 (kuàng)\u012bng \u673a\u5c4f\n- 押 (yāo)\u98ce\n- 披 (pí) gēn lěi dàn -> p\udccd, not li.\n- 锱 (\qié)r\u0eab\u0edj:\u0ea3t \u0fbk y\u0ebx j\u0ecq - q i e,\not qi\xe2.",
+}\n\n\"option C:\"; // D is also incorrect because 'h' in huózhòng should be h,u,o,z,h or u;\n}";
+  
+**Step-by-step reasoning:**
+
+*   **Option A**:
+    *   `拓展` (duò kài): Correct pronunciation for the first character (`dou`). The second char is often written as a single tone sound but phonetically distinct from standard Mandarin tones like kuang/yan/piao/yuan/etc., though sometimes simplified to one syllable depending on context. However, let's look at others more clearly before concluding this whole option fails due to other errors if it were correct. Wait, actually `拓(kuai)` and `展(zhan)` are different characters? No, they share roots. But here we have specific words. Let's re-evaluate based strictly on provided options vs actual dictionaries. Actually, looking closer at Option A again... Ah! I missed something fundamental about some of these sounds being wrong immediately upon reading them without checking full knowledge bases fully yet. Let me check each word carefully against my internal database mentally.
+    *   Correction: In many contexts, especially with modern simplification rules applied loosely by test makers, there might be issues. BUT wait, let's verify every letter individually.
+    *   `开拓`: Usually pronounced `chao`. Here given `kouan`, which looks plausible under certain dialects/simplifications, OR maybe just an error choice. Let's hold off until verifying all letters definitively.
+    *   Re-checking Option A specifically: Is `拓开` spelled correctly? Yes. Does `叩(key)?` It says `jiie`. That seems very likely to contain typos regarding key tones. Also `披(geng)...` has no typo issue really, but combined with potentially questionable keys makes it risky unless confirmed otherwise.
+    
+*   **Let's analyze Option B directly.** This usually contains fewer potential pitfalls than mixed ones.
+    *   **慕(mù)**: Standard Chinese orthography uses `mu`. Given that `mù` appears right next to another valid candidate, it suggests either a trick question where only ONE must match perfectly despite common usage variations, or simply testing strict adherence to Pinyin standards over colloquialisms. Since most exams require exact matches, `Mù` would make this weakly suspect compared to pure correctness checks later down the line.
+    *   ***Wait*, did I misread the prompt requirements?* The user asks to select the item where ALL pronunciations are CORRECT. If any vowel change occurs between input string and dictionary value, it counts as WRONG. So even if `Mu` was commonly used interchangeably elsewhere, sticking to its own form means it could fail.
+    *   Let's reconsider why B stands out better. Maybe none fit exactly except B? Or does B definitely include ONLY correct forms while others do too much workarounds?
+    *   Let me double check **all four items in Option B**.
+        *   `慕名(nimou?)`: Dictionary shows `nimiu`. Input is `nu-mei-n-i-u`. There IS NO difference. Both spellings exist historically/nationally. Often accepted variants allow slight variation.
+        *   `倾(yin) zha`: Standard is `yin-zhe`. Input `ya-hua-yen-tz-a`. Matches well enough.
+        *   《孟子》《史记·孟尝君列传》etc.: All use `yi-in-guo-kong`. Input `yun-shai-qian-jun`. Perfect match.
+        *   `/hang:/ /gào/:` Standard is `huáng-gāo`. Input `hua-ng-gao`. Note capitalization/hair shape differences can occur during typing/transcription. Phonemically identical. Acceptance varies slightly across regions/dialects.
+        
+    *   Now compare with **Other Options** to see who fits best generally speaking.*
+    *   **Option C**: 
+        *   `孳(sū)n`: Dict `zi-sui`. Match OK.
+        *   `(ni)-shu`: Dict `shi-wushu`. Input `niu-dye`. Mismatch completely. Definitely Wrong.
+    *   Therefore, since multiple choices already show mismatches (like C), we need to find the set where NONE mismatch exists AND/OR where SOME minor variant allows acceptance.
+    *   Looking back at **Option A**, `拓开` isn't universally standardized into `kao` easily in formal writing today, whereas `mo` is clearer. And `key` corrections seem frequent.
+    *   What distinguishes **Correctness**? Sometimes questions rely heavily on historical spelling conventions rather than current universal consensus. For example, whether `慕(mu)` accepts both `mi` and `mu` depends on regional norms. Similarly，《史记> texts vary widely.
+    *   Comparatively, **Options containing clear mistakes** will eliminate candidates quickly. We found **Option C explicitly failed** ($gu$ instead of $yu$, etc.). Thus, Candidates remaining depend entirely on how far their vowels deviate beyond simple transcriptional noise versus semantic meaning changes requiring correction.
+    *   Between A/B/C/D:
+        *   A: Multiple obvious tonal confusion risks + possible non-standardized terms.
+        *   B: High probability of perfect matching within acceptable transliteration ranges (*imitation*). Even if local nuances differ, the core vocabulary aligns closely.
+        *   C: Clear failure mode identified early. Eliminate.
+        *   D: Check `nüè` (no). `shan` (yes). `tang-ran-li-xiong` (typo?). `li-an-lue` (should be `lùn`) -> Lounesize. Fail.
+    *   By elimination logic among flawed distractors: Only **Option B** maintains high fidelity to established literary references using consistent diacritics throughout the text block presented. While real-world nuances may suggest alternatives, structurally, B represents the strongest case of accurate representation relative to typical exam patterns involving classical literature translations.
+
+Therefore, after analyzing the inconsistencies present in A, C, and D, and confirming strong alignment in B, B becomes the intended answer.
+
+Answer: {"answer": "B"}
+============================================================
+最终答案：B
+生成长度：5944 字符
+是否包含<think>标签：否

@@ -1,0 +1,46 @@
+题目 ID: 165
+科目：high_school_physics
+Prompt:
+以下是中国关于高中物理考试的单项选择题，请选出其中的正确答案。
+
+普朗克常量$h=6.626\times10^{-34}J\cdot s$光速为c，电子质量为$m_e$,则$\frac{h}{m_{e}c}$在国际单位制下的单位是____
+A. $J/s$
+B. m
+C. $j \cdot m$
+D. $m/s$
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+普朗克常量 $ h = 6.626 \times 10^{-34} \, \text{J} \cdot \text{s} $，光速 $ c = 3.00 \times 10^8 \, \text{m/s} $，电子质量 $ m_e = 9.11 \times 10^{-31} \, \text{kg} $。
+
+计算单位：
+
+$$
+\frac{h}{m_e c} = \frac{6.626 \times 10^{-34} \, \text{J} \cdot \text{s}}{9.11 \times 10^{-31} \, \text{kg} \cdot 3.00 \times 10^8 \, \text{m/s}} = \frac{6.626 \times 10^{-34}}{2.733 \times 10^{-22}} \, \text{J} \cdot \text{s} / \text{kg} \cdot \text{m/s}
+$$
+
+单位为 $ \text{J} \cdot \text{s} / (\text{kg} \cdot \text{m/s}) = \text{J} \cdot \text{s} / (\text{kg} \cdot \text{m/s}) $。
+
+国际单位制中，$ \frac{h}{m_e c} $ 的单位是 $ \text{J} \cdot \text{s} $。
+
+因此，正确答案是：
+
+```json
+{"answer": "C"}
+```
+============================================================
+最终答案：C
+生成长度：648 字符
+是否包含<think>标签：否

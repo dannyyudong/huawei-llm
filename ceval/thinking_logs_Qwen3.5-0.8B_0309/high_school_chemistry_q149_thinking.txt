@@ -1,0 +1,66 @@
+题目 ID: 149
+科目：high_school_chemistry
+Prompt:
+以下是中国关于高中化学考试的单项选择题，请选出其中的正确答案。
+
+$N_A$为阿伏加德罗常数，下列说法正确的是____
+A. 18g氨基（$-NH_2$）中含有的电子数为10$N_A$
+B. 24g金属镁在空气中完全燃烧，转移电子数为2$N_A$
+C. 足量$MnO_2$和80 mL 10 $mol \cdot L^{-1}$浓盐酸共热可生成0.2$N_A$个$Cl_2$分子
+D. 电解精炼铜时，若转移了$N_A$个电子，则阳极质量减小32g
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
+
+============================================================
+Thinking 过程:
+(无 thinking 内容)
+============================================================
+完整输出:
+```json
+{
+    "answer": "B",
+    "reasoning": "\n\n**分析选项 A**: $\text{-}NH_{2}-\text{(氨)}$的摩尔质量为 $(1+16) = 17 g/mol$. 当含有 $m=18 g$物质时，物质的量为 $n=\frac{18}{17}\approx 1 mol$. 每个氨分子有5个价键共用电子对或参与成键的电子数计算比较复杂且通常指原子核外总电子数 (即质子 + 中性子). 更准确地说，一个$\text{-}NH_{x}-...-\dots-$结构单元中的氮原子的最外层是完整的八隅体 ($s^2p^3$, x>1),所以该基团本身不含未配对的外层电子用于形成多中心配位等次级作用力；或者理解为题目意图考察的是“含碳/氢化合物”这类常见考点逻辑错误导致的陷阱。实际上，如果是指连接处的单质部分或其他特定语境下的计数会有不同结果，但在常规的高中化学题设下，“氨基中含有多少电子”，往往被设计用来测试是否混淆了元素种类、同素异形体或非标准计量单位。然而，严谨的化学定义指出，单个甲基根离子($CH_3^-)$具有9个电子(来自H, C:6; H:1*3 -> total 9)，而整个氨基酸链虽然包含多个这样的片段，但题干给出的具体数值与经典模型不符。\n\n修正后的严格推导如下:\n   - **对象**: 18g 氨基 (-NH$_2$)。分子量 M = N(H)(Mass of NH$_2$)=17 g/mol.\n     $$ n(\text{Ammonia}) = \\frac{\\overline{{}}{}$$ }{\mathcal{E}_{mass}=17}\\times m = \\frac{18}{\\bar{c}_e^{17}}} ≈ 1.058 mol $. (\text{此处取近似值以匹配典型考题模式，实际精确值为约1.058}).\n   - **数量**: 假设按每摩尔对应一定数量的基本反应单元处理。(此路不通).\n   *重新审视题意可能存在的简化理解*: 在某些不严格的旧版教材或有特殊定义的上下文中，可能会将这种特定的有机小分子视为某种离散粒子进行统计？但这不符合物理事实。让我们看其他明显错误的项来确认 B 的正确性作为主要依据。\n\n**验证选项 B**: Mg 的标准化合价为 +2,\n   - **过程**: 还原剂失去 2 个电子变为 Mg²⁺。\n   - **数据**: 相对原子质量约为 24 g/mol.\n   - **状态**: “空气”意味着氧气 O₂存在。“完全燃烧”。对于活泼金属如 Mg，其氧化产物通常为氧化物而非简单的盐类沉淀，且在高温条件下会进一步与水蒸气反应生成氢氧化镁和水。（注：初中阶段常忽略水合物的问题）。即使不考虑后续的水解，只看第一步的反应方程式：\n      $$ \mathrm{Mg(s)+O_2(g) → Mg(O)_2(l)? No! Magnesium burns in air to form magnesium oxide first? Wait. Standard reaction is usually with oxygen gas forming the metal peroxide or superoxides depending on temp and pressure conditions for some metals like Al/Mg at high temps but generally considered combustion product as oxides. However, let's look closer at standard textbook problems regarding 'Combustion' vs 'Reaction'. Often these questions imply direct oxidation by Oxygen if specified simply.' }\n      Actually, strictly speaking, burning Mg reacts vigorously with atmospheric oxygen to produce a white powder which decomposes upon heating into MgO. The question says \"in air completely burned\" implying complete consumption of reactants under typical exam assumptions where they might ignore intermediate phases unless explicitly stated otherwise OR it implies reacting directly with available oxygen?\n      Let's reconsider the wording carefully. Usually, this specific phrasing appears when testing knowledge that Metal Oxide formation involves losing electrons differently than simple acid-base neutralization logic applied blindly without considering phase changes or stoichiometry nuances involving water/oxygen availability.* But wait, there is another interpretation often used:* If we assume pure chemical combination ignoring physical states complexities common in real-world scenarios found in exams, does one calculate based on moles?* For Mg, mass = 24g => Moles = 1 mole. Each atom loses 2 e-. Total transfer = 2 moles = 2NA. This matches option B perfectly within the context of simplified chemistry problem sets focusing purely on electron count calculation from atomic weight/mole ratio before complex side reactions are introduced."  
+
+       *(Self-Correction)*: Re-evaluating Option D just in case. Electrolysis of CuSO₄ solution gains/electrons depend on anode/cathode setup. Anode oxidizes ions. Loss of charge corresponds to loss of electrons transferred between electrodes relative to current flow direction conventions sometimes flipped. It gets complicated quickly here compared to the clean integer match of B. Also, electrolytic cell workup requires careful definition ("anodic dissolution"). Without specifying cathode material being inert copper plate specifically preventing hydrogen evolution during initial charging steps affecting net gain, assuming full theoretical yield over time can be tricky due to kinetics/hydrogen generation competing initially until concentration drops significantly enough to drive Faraday efficiency fully up to ~99%+. So saying exactly NA electrons result in 32g decrease assumes perfect thermodynamic equilibrium driving force throughout all stages, which isn't guaranteed experimentally. Thus D is likely incorrect because practical limitations exist beyond ideal theory.  
+       
+       Back to B: In many standardized Chinese curriculum contexts, especially older ones or those simplifying concepts, calculating electron transfer solely via Mass / Atomic Weight × Valence Charge provides the intended answer key value even though physically incomplete. Given options A has no clear logical flaw other than potential misinterpretation of organic structure counting versus discrete particle counts, while others have significant flaws related to experimental reality not covered by basic definitions, B stands out as the mathematically consistent choice derived from fundamental constants provided in such exercises. 
+
+**(Final Decision)**: Based on elimination principles favoring mathematical consistency defined by elementary periodic table data across multiple choices despite minor contextual caveats present in advanced texts, select B.",
+        ```
+    
+The correct answer is **B**. Here is the step-by-step reasoning:
+
+### Analysis of Options
+
+**Option A:** "$18~\rm g$" Amine group ($(-\overset{..}{NH_2})-$).
+*   Calculate the number of moles using the formula: 
+    $$ n = \frac{m}{M} = \frac{18~\rm {g}}{17~\rm {g}/mol} \approx 1.06~\rm {nmol}. $$
+*   While each ammonia molecule contains nitrogen atoms bonded together, chemically analyzing its constituent parts reveals that individual amino groups do not possess free valency bonds capable of participating in multi-center coordination complexes easily described merely by their molecular composition alone in introductory physics/math contexts. More importantly, treating large molecules containing repeating units as single entities leads to confusion about whether the unit itself contributes extra electrons. Furthermore, precise calculations show that converting grams back to exact integers yields non-integers (~1.058 nmol), making claims stating it equals exactly $10N_A$ scientifically inaccurate regardless of how you interpret the grouping method. Therefore, statement A is false.
+
+**Option B:** "$24~\rm g"$ Magnesium (Mg) combusted in air.
+*   Determine the amount of substance: Since the atomic mass of Magnesium is approximately $24~\rm {u}$, then:
+    $$ n(Mg) = \frac{24~\rm {\mu g}}{24~\cancel{/ug/ml}} = 1~\rm {moel}. $$
+*   Analyze Electron Transfer: When Magnesium combines with oxygen in the presence of excess oxygen (implied by "completely burnt"), it typically forms magnesium oxide ($MgO$). Although actual industrial processes involve intermediates, in the context of general electrochemistry/exam questions asking only for electron numbers calculated from elemental weights:
+    $$ \ce{Mg ^{++} + O _{2} ^{--} -> MgO }. $$
+    One mole of Mg releases two equivalents of electrons.
+    Number of electrons transferred = $2 \times n(Mg) = 2 \times 1 = 2~\rm {eq}$.
+    Equivalent quantity expressed in terms of Avogadro constant ($N_A$):
+    $$ 2~\rm eq = 2N_A . $$
+This makes Statement B numerically accurate according to the expected model of such problems. Note: Realistically, Mg doesn't burn cleanly to solid salt immediately without heat/water interaction producing hydroxy-magnesium compounds, so technically less energy would pass through, leading to lower currents. However, given the constraints of selecting among flawed statements, B represents the theoretically sound derivation requested.
+
+*(Note: Statements C and D contain errors unrelated to the core concept tested—specifically, Cl production depends heavily on temperature control rather than fixed volume/concentration ratios yielding exponents matching NaOH density formulas incorrectly).*
+
+Therefore, the correct choice is **B**.
+
+Answer: {"answer": "B"}
+============================================================
+最终答案：B
+生成长度：7715 字符
+是否包含<think>标签：否

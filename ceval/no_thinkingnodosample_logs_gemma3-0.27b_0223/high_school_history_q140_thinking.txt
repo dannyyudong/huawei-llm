@@ -1,0 +1,21 @@
+题目 ID: 140
+科目：high_school_history
+错误信息：Cannot use chat template functions because tokenizer.chat_template is not set and no template argument was passed! For information about writing templates and setting the tokenizer.chat_template attribute, please see the documentation at https://huggingface.co/docs/transformers/main/en/chat_templating
+Prompt:
+以下是中国关于高中历史考试的单项选择题，请选出其中的正确答案。
+
+下列哪些事件.政策或表现是由民族矛盾决定的：____
+①中共和平解决西安事变  ②中共提出“在斗争中求团结”  ③实现第二次国共合作④国民政府既想反共，又不敢与中共分裂  ⑤国民党“六大”坚持独裁准备内战
+A. ①②③④⑤
+B. ①②③④
+C. ①②③
+D. ①③④⑤
+
+请在答案栏中仅显示你的选择，例如："answer": "C"。
+请逐步推理，并将最终答案放在 JSON 格式中。
+
+输出格式示例：
+{"answer": "A"}
+
+你的回答：
+
