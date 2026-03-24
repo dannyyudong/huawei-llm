@@ -1,3 +1,4 @@
+# mbpp
 HF_ALLOW_CODE_EVAL=1 lm-eval run \
   --model hf \
   --model_args pretrained=/home/huawei/huawei/Qwen3-0.6B-GPTQ-Int8 \
@@ -6,8 +7,18 @@ HF_ALLOW_CODE_EVAL=1 lm-eval run \
   --output_path /home/huawei/huawei/lm-evaluation-harness/outputs
 
 
-
-  cd /home/huawei/huawei/lm-evaluation-harness
+# ifeval
+```bash
+cd /home/huawei/huawei/lm-evaluation-harness
+python -m lm_eval \
+  --model hf \
+  --model_args pretrained=/home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
+  --tasks ifeval \
+  --device cuda \
+  --batch_size 4 \
+  --output_path outputs/Qwen3-0.6B-w8a8_ifeval \
+  --gen_kwargs "temperature=0.7,top_p=0.8,top_k=20,repetition_penalty=1" \
+  --log_samples
 
 python -m lm_eval \
   --model hf \
@@ -30,7 +41,7 @@ python -m lm_eval \
   --output_path outputs/Qwen3-0.6B-gptq-int8_ifeval \
   --log_samples
 
-
+```
 # gsm-8k
 cd /home/huawei/huawei/lm-evaluation-harness
 python -m lm_eval \
@@ -47,11 +58,11 @@ python -m lm_eval \
 cd /home/huawei/huawei/lm-evaluation-harness
 python -m lm_eval \
   --model hf \
-  --model_args pretrained=/home/huawei/huawei/Qwen3-0.6B \
+  --model_args pretrained=/home/huawei/huawei/Qwen3-0.6B-GPTQ-Int8 \
   --tasks gsm8k \
   --device cuda \
   --batch_size 4 \
-  --output_path outputs/Qwen3-0.6B_gsm-8k \
+  --output_path outputs/Qwen3-0.6B-gptq_gsm-8k \
   --log_samples \
   --num_fewshot 0 \
-  --limit 250 \
+  --limit 250 
