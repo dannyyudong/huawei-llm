@@ -53,7 +53,7 @@ python -m lm_eval \
   --output_path outputs/Qwen3-0.6B-w8a8_gsm-8k \
   --log_samples \
   --num_fewshot 0 \
-  --limit 250 
+
 
 cd /home/huawei/huawei/lm-evaluation-harness
 python -m lm_eval \
@@ -64,5 +64,4 @@ python -m lm_eval \
   --batch_size 4 \
   --output_path outputs/Qwen3-0.6B-gptq_gsm-8k \
   --log_samples \
-  --num_fewshot 0 \
-  --limit 250 
+  --num_fewshot 5 \
