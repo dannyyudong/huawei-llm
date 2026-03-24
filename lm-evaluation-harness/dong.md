@@ -40,6 +40,18 @@ python -m lm_eval \
   --device cuda \
   --batch_size 4 \
   --output_path outputs/Qwen3-0.6B-w8a8_gsm-8k \
-  --log_samples
-  --num_fewshot 5 \
+  --log_samples \
+  --num_fewshot 0 \
+  --limit 250 
+
+cd /home/huawei/huawei/lm-evaluation-harness
+python -m lm_eval \
+  --model hf \
+  --model_args pretrained=/home/huawei/huawei/Qwen3-0.6B \
+  --tasks gsm8k \
+  --device cuda \
+  --batch_size 4 \
+  --output_path outputs/Qwen3-0.6B_gsm-8k \
+  --log_samples \
+  --num_fewshot 0 \
   --limit 250 \
