@@ -46,13 +46,13 @@ python -m lm_eval \
 cd /home/huawei/huawei/lm-evaluation-harness
 python -m lm_eval \
   --model hf \
-  --model_args pretrained=/home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
+  --model_args pretrained=/home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token,add_bos_token=true \
   --tasks gsm8k \
   --device cuda \
   --batch_size 4 \
   --output_path outputs/Qwen3-0.6B-w8a8_gsm-8k \
   --log_samples \
-  --num_fewshot 0 \
+  --num_fewshot 5
 
 
 cd /home/huawei/huawei/lm-evaluation-harness

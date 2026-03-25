@@ -12,8 +12,8 @@ os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 
 # ================= 配置区域 =================
 DATA_DIR = "/home/huawei/huawei/ceval/ceval_data"
-MODEL_PATH = "/home/huawei/huawei/Qwen3-0.6B-GPTQ-Int8"
-MODEL_NAME = "Qwen3-0.6B-GPTQ-Int8"
+MODEL_PATH = "/home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token"
+MODEL_NAME = "Qwen3-0.6B-w8a8"
 EVAL_SPLIT = "test"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MAX_NEW_TOKENS = 4096  # Thinking 需要更多空间
@@ -135,7 +135,7 @@ def model_predict_with_thinking(prompt, question_id, subject_name):
             messages,
             tokenize=False,
             add_generation_prompt=True,
-            # enable_thinking=True  # 已移除
+            enable_thinking=False  # 已移除
            # enable_thinking=True
         )
         
