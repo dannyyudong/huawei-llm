@@ -13,8 +13,8 @@ git
 2. benchmark 构建
 - [ ] Berkeley Function Calling Leaderboard V4 (agent)
 - [ ] MCP-Bench(agent)
-- [ ] gsm-8k(knowledge)
-- [ ] ifbench(instruction following)
+- [x] gsm-8k(knowledge)
+- [x] ifbench(instruction following)
 - [ ] MMLU-Redux(knowledge)
 - [ ] FollowBench(instruction following)
 3. benchmark 测试(qwen3-0.6b)

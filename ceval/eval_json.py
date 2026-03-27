@@ -17,8 +17,8 @@ MODEL_NAME = "Qwen3-0.6B-w8a8"
 EVAL_SPLIT = "test"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MAX_NEW_TOKENS = 4096  # Thinking 需要更多空间
-SAVE_PATH = f"ceval_eval_results_{MODEL_NAME}_npthink0310.csv"
-THINKING_SAVE_DIR = f"nothinking_logs_{MODEL_NAME}_0310"
+SAVE_PATH = f"ceval_eval_results_{MODEL_NAME}_npthinkdosample0325.csv"
+THINKING_SAVE_DIR = f"nothinking_logs_{MODEL_NAME}_0325"
 
 # 🎯 指定要评测的科目（留空或设为 None 则评测所有科目）
 # 示例：EVAL_SUBJECTS = ["high_school_mathematics", "high_school_physics"]
@@ -64,7 +64,7 @@ SUBJECT_CN_MAP = {
 #     "min_p": 0.0,
 # }
 GENERATION_CONFIG = {
-    "do_sample": False,
+    "do_sample": True,
     "temperature": 0.6,
     "top_p": 0.95,
     "top_k": 20,
@@ -75,7 +75,12 @@ GENERATION_CONFIG = {
 
 # ================= 模型加载 =================
 print(f"🚀 正在加载模型：{MODEL_PATH} ...")
-tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, trust_remote_code=True, padding_side="left")
+tokenizer = AutoTokenizer.from_pretrained(
+    MODEL_PATH,
+    trust_remote_code=True,
+    padding_side="left",
+    fix_mistral_regex=True,##只有使用w8a8量化模型时才需要这个参数，其他模型可能不兼容
+)
 model_kwargs = {"device_map": "auto", 
                 "trust_remote_code":True}
 model_kwargs["torch_dtype"] = torch.float16 if DEVICE == "cuda" else torch.float32
