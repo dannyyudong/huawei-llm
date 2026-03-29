@@ -3,7 +3,9 @@ git commit -m "your commit message"
 git 
 2026/3/23
 和远程仓库对齐
+## 26/3/29
 
+部分测评集需要api,及需要大模型辅助测评或是需要链接服务器进行测试，因而对测试集进行替换，将mcp-bench换为humaneval
 ## todolist 26/3/20
 1. qwen3-0.6b-w8a8量化尝试
 - [x] 1.1 量化方法环境构建(gptq+smoothquant)
@@ -11,20 +13,21 @@ git
 - [x] 1.3 量化尝试
 - [ ] 1.4 量化结果测试(与qwen3-0.6b/qwen3-0.6b-gptq-int8横向对比)
 2. benchmark 构建
-- [ ] Berkeley Function Calling Leaderboard V4 (agent)
+- [x] Berkeley Function Calling Leaderboard V4 (agent)
+- [ ] MCP-Bench(agent)
+- [x] humaneval(coding) 
+- [x] gsm-8k(knowledge)
+- [x] ifbench(instruction following)
+- [x] MMLU-Redux(knowledge)
+- [x] FollowBench(instruction following)
+3. benchmark 测试(qwen3-0.6b)
+- [x] Berkeley Function Calling Leaderboard V4 (agent)
 - [ ] MCP-Bench(agent)
 - [x] gsm-8k(knowledge)
 - [x] ifbench(instruction following)
-- [ ] MMLU-Redux(knowledge)
+- [x] MMLU-Redux(knowledge)
 - [ ] FollowBench(instruction following)
-3. benchmark 测试(qwen3-0.6b)
-- [ ] Berkeley Function Calling Leaderboard V4 (agent)
-- [ ] MCP-Bench(agent)
-- [ ] gsm-8k(knowledge)
-- [ ] ifbench(instruction following)
-- [ ] MMLU-Redux(knowledge)
-- [ ] FollowBench(instruction following)
-
+- [ ] humaneval(coding) 
 ## timeline 26/3/25-26/3/29
 
 ### 3/25 (周三)

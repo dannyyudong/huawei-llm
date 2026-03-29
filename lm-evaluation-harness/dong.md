@@ -1,3 +1,7 @@
+# humaneval
+
+
+
 # mbpp
 1. qwen系列 mbpp加--apply_chat_template 参数后会影响自动会自动加角色和特殊 token
 例如 user/assistant 结构、<|im_start|> 这类控制符（具体取决于模型模板）。
