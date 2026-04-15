@@ -1,0 +1,65 @@
+{
+  "builder_name": "arrow",
+  "citation": "",
+  "config_name": "high_school_mathematics",
+  "dataset_name": "mmlu-redux-2.0",
+  "dataset_size": 22354,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/edinburgh-dawg/mmlu-redux-2.0@63f54ebd32c36485c679f53b8e2f576d689b9b34/high_school_mathematics/data-00000-of-00001.arrow": {
+      "num_bytes": 24736,
+      "checksum": null
+    }
+  },
+  "download_size": 24736,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "choices": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "error_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "correct_answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "potential_reason": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 47090,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 22354,
+      "num_examples": 100,
+      "dataset_name": "mmlu-redux-2.0"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

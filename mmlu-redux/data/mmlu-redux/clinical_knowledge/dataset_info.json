@@ -1,0 +1,65 @@
+{
+  "builder_name": "arrow",
+  "citation": "",
+  "config_name": "clinical_knowledge",
+  "dataset_name": "mmlu-redux",
+  "dataset_size": 36643,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/edinburgh-dawg/mmlu-redux@aca72c89212bfeac1c087790679f18267c8bab66/clinical_knowledge/data-00000-of-00001.arrow": {
+      "num_bytes": 38272,
+      "checksum": null
+    }
+  },
+  "download_size": 38272,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "choices": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "error_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "correct_answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "potential_reason": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 74915,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 36643,
+      "num_examples": 100,
+      "dataset_name": "mmlu-redux"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

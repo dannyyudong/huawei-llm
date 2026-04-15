@@ -1,0 +1,65 @@
+{
+  "builder_name": "arrow",
+  "citation": "",
+  "config_name": "econometrics",
+  "dataset_name": "mmlu-redux",
+  "dataset_size": 49225,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/edinburgh-dawg/mmlu-redux@aca72c89212bfeac1c087790679f18267c8bab66/econometrics/data-00000-of-00001.arrow": {
+      "num_bytes": 50848,
+      "checksum": null
+    }
+  },
+  "download_size": 50848,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "choices": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "error_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "correct_answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "potential_reason": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 100073,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 49225,
+      "num_examples": 100,
+      "dataset_name": "mmlu-redux"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

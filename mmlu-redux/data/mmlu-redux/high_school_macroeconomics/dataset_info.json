@@ -1,0 +1,65 @@
+{
+  "builder_name": "arrow",
+  "citation": "",
+  "config_name": "high_school_macroeconomics",
+  "dataset_name": "mmlu-redux",
+  "dataset_size": 43672,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/edinburgh-dawg/mmlu-redux@aca72c89212bfeac1c087790679f18267c8bab66/high_school_macroeconomics/data-00000-of-00001.arrow": {
+      "num_bytes": 45584,
+      "checksum": null
+    }
+  },
+  "download_size": 45584,
+  "features": {
+    "question": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "choices": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "answer": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "error_type": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "correct_answer": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "potential_reason": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 89256,
+  "splits": {
+    "test": {
+      "name": "test",
+      "num_bytes": 43672,
+      "num_examples": 100,
+      "dataset_name": "mmlu-redux"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
