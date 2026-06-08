@@ -1,5 +1,8 @@
 import logging
 import os
+import gc
+import ctypes
+from copy import deepcopy
 from typing import Any
 
 import numpy as np
@@ -13,6 +16,7 @@ from lm_eval.models.utils import handle_stop_sequences, postprocess_generated_te
 
 
 eval_logger = logging.getLogger(__name__)
+_LIBC = None
 
 
 def _as_bool(value: Any) -> bool:
@@ -23,8 +27,28 @@ def _as_bool(value: Any) -> bool:
     return bool(value)
 
 
+def _malloc_trim() -> None:
+    global _LIBC
+    if os.name != "posix":
+        return
+    try:
+        if _LIBC is None:
+            _LIBC = ctypes.CDLL("libc.so.6")
+            _LIBC.malloc_trim.argtypes = [ctypes.c_size_t]
+            _LIBC.malloc_trim.restype = ctypes.c_int
+        _LIBC.malloc_trim(0)
+    except Exception as exc:
+        eval_logger.debug("malloc_trim failed: %s", exc)
+
+
 class OnnxCausalRunner:
-    def __init__(self, onnx_path: str, provider: str, use_amct: bool = False):
+    def __init__(
+        self,
+        onnx_path: str,
+        provider: str,
+        use_amct: bool = False,
+        low_cpu_mem: bool = True,
+    ):
         if not os.path.isfile(onnx_path):
             raise FileNotFoundError(
                 f"ONNX model file does not exist: {onnx_path}. "
@@ -48,11 +72,14 @@ class OnnxCausalRunner:
             session_options = amct.AMCT_SO
 
         if session_options is None:
-            self.sess = ort.InferenceSession(onnx_path, providers=[provider])
-        else:
-            self.sess = ort.InferenceSession(
-                onnx_path, session_options, providers=[provider]
-            )
+            session_options = ort.SessionOptions()
+        if low_cpu_mem:
+            session_options.enable_cpu_mem_arena = False
+            session_options.enable_mem_pattern = False
+
+        self.sess = ort.InferenceSession(
+            onnx_path, session_options, providers=[provider]
+        )
 
         self.input_shapes = {x.name: x.shape for x in self.sess.get_inputs()}
         past_key_inputs = [
@@ -203,8 +230,10 @@ class OnnxCausalLM(LM):
         tokenizer: str | None = None,
         provider: str = "CUDAExecutionProvider",
         use_amct: bool = False,
-        max_length: int = 2048,
+        low_cpu_mem: bool = True,
+        max_length: int = 4096,
         max_gen_toks: int = 256,
+        trim_cpu_mem: bool = False,
         trust_remote_code: bool = True,
         fix_mistral_regex: bool = False,
         **kwargs,
@@ -215,6 +244,7 @@ class OnnxCausalLM(LM):
         self.provider = provider
         self.max_length = int(max_length)
         self.max_gen_toks = int(max_gen_toks)
+        self.trim_cpu_mem = _as_bool(trim_cpu_mem)
         self._device = provider
 
         tokenizer_kwargs = {
@@ -241,7 +271,10 @@ class OnnxCausalLM(LM):
             self.eos_token_ids = []
 
         self.runner = OnnxCausalRunner(
-            self.onnx_path, provider=self.provider, use_amct=_as_bool(use_amct)
+            self.onnx_path,
+            provider=self.provider,
+            use_amct=_as_bool(use_amct),
+            low_cpu_mem=_as_bool(low_cpu_mem),
         )
 
         unused = ", ".join(sorted(kwargs))
@@ -294,9 +327,9 @@ class OnnxCausalLM(LM):
         for request in tqdm(
             requests, disable=disable_tqdm, desc="Running ONNX generate_until requests"
         ):
-            context, gen_kwargs = request.args
-            original_gen_kwargs = dict(gen_kwargs)
-            gen_kwargs = dict(gen_kwargs)
+            context, request_gen_kwargs = request.args
+            original_gen_kwargs = deepcopy(request_gen_kwargs)
+            gen_kwargs = deepcopy(request_gen_kwargs)
             until = handle_stop_sequences(gen_kwargs.pop("until", None), eos=eos)
             max_gen_toks = int(
                 gen_kwargs.pop(
@@ -346,5 +379,8 @@ class OnnxCausalLM(LM):
             self.cache_hook.add_partial(
                 "generate_until", (context, original_gen_kwargs), generated
             )
+            gc.collect()
+            if self.trim_cpu_mem:
+                _malloc_trim()
 
         return results

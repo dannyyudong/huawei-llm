@@ -138,7 +138,7 @@ def generate(
     gpu_memory_utilization: float = typer.Option(0.9, help="The GPU memory utilization."),
     backend: str = typer.Option(
         "sglang",
-        help="The backend to use for the model. Supported: sglang, vllm, transformers.",
+        help="The backend to use for the model. Supported: sglang, vllm, transformers, onnx-amct.",
     ),
     skip_server_setup: bool = typer.Option(
         False,
@@ -149,6 +149,16 @@ def generate(
         None,
         "--local-model-path",
         help="Specify the path to a local directory containing the model's config/tokenizer/weights for fully offline inference. Use this only if the model weights are stored in a location other than the default HF_HOME directory.",
+    ),
+    onnx_model_path: Optional[str] = typer.Option(
+        None,
+        "--onnx-model-path",
+        help="Path to an AMCT ONNX model file, its sibling .data file, or a directory containing a .onnx file. Only used with --backend onnx-amct.",
+    ),
+    onnx_provider: str = typer.Option(
+        "CUDAExecutionProvider",
+        "--onnx-provider",
+        help="ONNX Runtime provider for --backend onnx-amct. Use 'auto' to prefer CUDA and fall back to CPU.",
     ),
     fix_mistral_regex: bool = typer.Option(
         False,
@@ -208,6 +218,8 @@ def generate(
         backend=backend,
         skip_server_setup=skip_server_setup,
         local_model_path=local_model_path,
+        onnx_model_path=onnx_model_path,
+        onnx_provider=onnx_provider,
         fix_mistral_regex=fix_mistral_regex,
         enable_think=parse_optional_bool(enable_think),
         result_dir=result_dir,

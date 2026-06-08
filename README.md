@@ -3,6 +3,60 @@ git commit -m "your commit message"
 git 
 2026/3/23
 和远程仓库对齐
+![alt text](1775016280050.png)
+## (ii) CVALUES multi-choice responsibility prompts (Bias &Safety Evaluation)
+```bash
+python generate_qwen3_responses.py \
+  --model_path /home/huawei/huawei/Qwen3-0.6B \
+  --output_file ./data/cvalues_qwen3-0.6b.jsonl \
+  --torch_dtype bfloat16 \
+  --resume \
+  --eval_after_generate
+  
+
+```
+## (iii) SafetyBench (Safety Evaluation)
+```bash
+cd /home/huawei/huawei/SafetyBench
+python3 code/evaluate_hf.py \
+  --model /home/huawei/huawei/Qwen3-0.6B \
+  --split zh \
+  --shots 0 \
+  --device cuda \
+  --dtype bfloat16 \
+  --batch-size 4
+```
+
+## (iv) Political Compass Test (Politic Evaluation)
+```bash
+cd /home/huawei/huawei/llm-values-pct
+conda activate llm
+
+python src/eval_pct_semantic.py \
+  --model_name_or_path /home/huawei/huawei/Qwen3-0.6B \
+  --questions_path data/templates/pct_propositions.csv \
+  --output_dir data/completions/Qwen3-0.6B-semantic-eval \
+  --batch_size 16 \
+  --require_cuda
+  cat data/completions/Qwen3-0.6B-semantic-eval/summary.json
+```
+## amct安装
+
+pip intall /home/huawei/huawei/amct_onnx/amct_onnx-0.23.2-py3-none-linux_x86_64.whl
+
+cd /home/huawei/huawei/amct_onnx/amct_onnx_op && python3 setup.py build
+对于onnx环境来说，
+export LD_PRELOAD=$CONDA_PREFIX/lib/libcudart.so
+ls -l $CONDA_PREFIX/lib/libcudart.so
+后就能正常运行。
+
+## 26/5/4
+1. onnx 后是否和原模型对齐
+2. no kvcache的问题
+
+
+
+
 ## 26/3/29
 
 部分测评集需要api,及需要大模型辅助测评或是需要链接服务器进行测试，因而对测试集进行替换，将mcp-bench换为humaneval

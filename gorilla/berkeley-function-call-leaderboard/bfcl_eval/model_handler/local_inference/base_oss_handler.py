@@ -21,6 +21,112 @@ from openai import OpenAI
 from overrides import EnforceOverrides, final, override
 
 
+class OnnxAmctCausalLMRunner:
+    """Minimal greedy decoder for AMCT-exported ONNX causal LM cache graphs."""
+
+    def __init__(self, onnx_path: str, provider: str = "CUDAExecutionProvider"):
+        import amct_onnx as amct
+        import numpy as np
+        import onnxruntime as ort
+
+        available_providers = ort.get_available_providers()
+        if provider == "auto":
+            provider = (
+                "CUDAExecutionProvider"
+                if "CUDAExecutionProvider" in available_providers
+                else "CPUExecutionProvider"
+            )
+        if provider not in available_providers:
+            raise RuntimeError(
+                f"Requested ONNX provider={provider} is not available. "
+                f"Available providers={available_providers}"
+            )
+
+        self.np = np
+        self.session = ort.InferenceSession(onnx_path, amct.AMCT_SO, providers=[provider])
+        self.input_shapes = {input_.name: input_.shape for input_ in self.session.get_inputs()}
+
+        past_key_inputs = [
+            input_
+            for input_ in self.session.get_inputs()
+            if input_.name.startswith("past_key_values") and input_.name.endswith(".key")
+        ]
+        if not past_key_inputs:
+            raise RuntimeError("ONNX graph does not expose past_key_values.*.key inputs.")
+
+        self.num_layers = len(past_key_inputs)
+        first_past_shape = past_key_inputs[0].shape
+        self.num_heads = int(first_past_shape[1]) if isinstance(first_past_shape[1], int) else 8
+        self.head_dim = int(first_past_shape[3]) if isinstance(first_past_shape[3], int) else 128
+
+        print(
+            "Loaded AMCT ONNX cache graph: "
+            f"layers={self.num_layers}, kv_heads={self.num_heads}, "
+            f"head_dim={self.head_dim}, provider={provider}"
+        )
+
+    def _empty_past(self, batch: int = 1):
+        past = []
+        for _ in range(self.num_layers):
+            key = self.np.zeros(
+                (batch, self.num_heads, 0, self.head_dim), dtype=self.np.float32
+            )
+            value = self.np.zeros(
+                (batch, self.num_heads, 0, self.head_dim), dtype=self.np.float32
+            )
+            past.append((key, value))
+        return past
+
+    def _step(self, input_ids, attention_mask, position_ids, past):
+        feeds = {
+            "input_ids": input_ids.astype(self.np.int64),
+            "attention_mask": attention_mask.astype(self.np.int64),
+            "position_ids": position_ids.astype(self.np.int64),
+        }
+        for layer_idx, (key, value) in enumerate(past):
+            feeds[f"past_key_values.{layer_idx}.key"] = key
+            feeds[f"past_key_values.{layer_idx}.value"] = value
+
+        outputs = self.session.run(None, feeds)
+        logits = outputs[0]
+        presents = outputs[1:]
+        new_past = []
+        for layer_idx in range(self.num_layers):
+            new_past.append((presents[2 * layer_idx], presents[2 * layer_idx + 1]))
+        return logits, new_past
+
+    def generate(self, input_ids: list[int], max_new_tokens: int, eos_token_ids: list[int]):
+        eos_token_ids = set(eos_token_ids or [])
+        tokens = list(input_ids)
+        past = self._empty_past(batch=1)
+        logits = None
+
+        # AMCT cache graphs are decode-shaped, so feed the prompt one token at a time.
+        for token_index, token_id in enumerate(tokens):
+            current = self.np.array([[token_id]], dtype=self.np.int64)
+            total_len = token_index + 1
+            attention_mask = self.np.ones((1, total_len), dtype=self.np.int64)
+            position_ids = self.np.array([[token_index]], dtype=self.np.int64)
+            logits, past = self._step(current, attention_mask, position_ids, past)
+
+        if logits is None:
+            return tokens
+
+        for _ in range(max_new_tokens):
+            next_token_id = int(self.np.argmax(logits[:, -1, :], axis=-1)[0])
+            tokens.append(next_token_id)
+            if next_token_id in eos_token_ids:
+                break
+
+            current = self.np.array([[next_token_id]], dtype=self.np.int64)
+            total_len = past[0][0].shape[2] + 1
+            attention_mask = self.np.ones((1, total_len), dtype=self.np.int64)
+            position_ids = self.np.array([[total_len - 1]], dtype=self.np.int64)
+            logits, past = self._step(current, attention_mask, position_ids, past)
+
+        return tokens
+
+
 class OSSHandler(BaseHandler, EnforceOverrides):
     def __init__(
         self,
@@ -50,7 +156,9 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         self.api_key = os.getenv("REMOTE_OPENAI_API_KEY", "EMPTY")
         self.client = OpenAI(base_url=self.base_url, api_key=self.api_key)
         self.use_transformers_backend = False
+        self.use_onnx_amct_backend = False
         self.local_model = None
+        self.onnx_runner = None
         self.enable_think: Optional[bool] = None
 
     @override
@@ -89,6 +197,8 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         lora_modules: Optional[list[str]] = None,
         enable_lora: bool = False,
         max_lora_rank: Optional[int] = None,
+        onnx_model_path: Optional[str] = None,
+        onnx_provider: str = "CUDAExecutionProvider",
     ):
         """
         Spin up a local server for the model.
@@ -97,8 +207,41 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         from transformers import AutoConfig, AutoTokenizer
         from transformers import AutoModelForCausalLM
 
+        def _normalize_onnx_path(path: str) -> str:
+            candidate = Path(path)
+            if candidate.is_dir():
+                matches = sorted(candidate.glob("*.onnx"))
+                if not matches:
+                    raise ValueError(f"No .onnx file found in ONNX model directory '{path}'.")
+                return str(matches[0])
+            if candidate.suffix == ".data":
+                candidate = candidate.with_suffix(".onnx")
+            if not candidate.exists():
+                raise ValueError(f"ONNX model file '{candidate}' does not exist.")
+            return str(candidate)
+
         # Determine the model source
-        if local_model_path is not None:
+        if backend == "onnx-amct":
+            if onnx_model_path is None and local_model_path is None:
+                raise ValueError(
+                    "backend='onnx-amct' requires --onnx-model-path or --local-model-path."
+                )
+
+            resolved_onnx_path = _normalize_onnx_path(
+                onnx_model_path if onnx_model_path is not None else local_model_path
+            )
+            tokenizer_source = (
+                local_model_path
+                if local_model_path is not None and os.path.isdir(local_model_path)
+                else str(Path(resolved_onnx_path).parent)
+            )
+            self.model_path_or_id = resolved_onnx_path
+            load_kwargs = {
+                "pretrained_model_name_or_path": tokenizer_source,
+                "local_files_only": os.path.isdir(tokenizer_source),
+                "trust_remote_code": True,
+            }
+        elif local_model_path is not None:
             # Validate the local_model_path
             if not os.path.isdir(local_model_path):
                 raise ValueError(
@@ -180,7 +323,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         # declare early so it always exists
         self._stop_event = threading.Event()
         try:
-            if not skip_server_setup:
+            if not skip_server_setup or backend in {"transformers", "onnx-amct"}:
                 if backend == "vllm":
                     process = subprocess.Popen(
                         [
@@ -262,6 +405,11 @@ class OSSHandler(BaseHandler, EnforceOverrides):
                         **model_load_kwargs
                     )
                     self.local_model.eval()
+                elif backend == "onnx-amct":
+                    self.use_onnx_amct_backend = True
+                    self.onnx_runner = OnnxAmctCausalLMRunner(
+                        self.model_path_or_id, provider=onnx_provider
+                    )
                 else:
                     raise ValueError(f"Backend {backend} is not supported.")
 
@@ -292,7 +440,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
             self._stderr_thread = stderr_thread
 
             # Wait for the server to be ready when using endpoint-based backends.
-            server_ready = self.use_transformers_backend
+            server_ready = self.use_transformers_backend or self.use_onnx_amct_backend
             while not server_ready:
                 # Check if the process has terminated unexpectedly
                 if not skip_server_setup and process is not None and process.poll() is not None:
@@ -427,6 +575,41 @@ class OSSHandler(BaseHandler, EnforceOverrides):
                 usage=SimpleNamespace(
                     prompt_tokens=input_token_count,
                     completion_tokens=int(generated_ids.shape[-1]),
+                ),
+            )
+        elif self.use_onnx_amct_backend:
+            if self.onnx_runner is None:
+                raise RuntimeError(
+                    "ONNX-AMCT backend is enabled but ONNX runner is not initialized."
+                )
+
+            inputs = self.tokenizer(formatted_prompt, return_tensors="np")
+            prompt_ids = inputs["input_ids"][0].tolist()
+
+            eos_token_ids = getattr(self.tokenizer, "eos_token_id", None)
+            if eos_token_ids is None:
+                eos_token_ids = []
+            elif isinstance(eos_token_ids, int):
+                eos_token_ids = [eos_token_ids]
+            else:
+                eos_token_ids = list(eos_token_ids)
+
+            output_ids = self.onnx_runner.generate(
+                input_ids=prompt_ids,
+                max_new_tokens=int(leftover_tokens_count),
+                eos_token_ids=eos_token_ids,
+            )
+            generated_ids = output_ids[len(prompt_ids):]
+            skip_special_tokens = bool(getattr(self, "skip_special_tokens", False))
+            generated_text = self.tokenizer.decode(
+                generated_ids, skip_special_tokens=skip_special_tokens
+            )
+
+            api_response = SimpleNamespace(
+                choices=[SimpleNamespace(text=generated_text)],
+                usage=SimpleNamespace(
+                    prompt_tokens=input_token_count,
+                    completion_tokens=len(generated_ids),
                 ),
             )
         elif len(extra_body) > 0:

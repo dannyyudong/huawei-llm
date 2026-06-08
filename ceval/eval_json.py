@@ -1,8 +1,11 @@
 import os
 import re
 import json
+import argparse
 import pandas as pd
 import torch
+import numpy as np
+import onnxruntime as ort
 from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import warnings
@@ -12,13 +15,65 @@ os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 
 # ================= 配置区域 =================
 DATA_DIR = "/home/huawei/huawei/ceval/ceval_data"
-MODEL_PATH = "/home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token"
-MODEL_NAME = "Qwen3-0.6B-w8a8"
+DEFAULT_MODEL_PATH = "/home/huawei/huawei/Qwen3-1.7B"
+DEFAULT_MODEL_NAME = "Qwen3-1.7b"
 EVAL_SPLIT = "test"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MAX_NEW_TOKENS = 4096  # Thinking 需要更多空间
-SAVE_PATH = f"ceval_eval_results_{MODEL_NAME}_npthinkdosample0325.csv"
-THINKING_SAVE_DIR = f"nothinking_logs_{MODEL_NAME}_0325"
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="C-Eval 本地评测脚本")
+    parser.add_argument(
+        "--model-path",
+        dest="model_path",
+        default=DEFAULT_MODEL_PATH,
+        help="模型路径，默认使用脚本内置路径",
+    )
+    parser.add_argument(
+        "--model-name",
+        dest="model_name",
+        default=DEFAULT_MODEL_NAME,
+        help="模型名称，用于结果文件命名",
+    )
+    parser.add_argument(
+        "--backend",
+        choices=["hf", "onnx"],
+        default="hf",
+        help="推理后端：hf(默认) 或 onnx",
+    )
+    parser.add_argument(
+        "--onnx-model-path",
+        dest="onnx_model_path",
+        default="/home/huawei/huawei/Qwen3-0.6B-ONNX/onnx/model.onnx",
+        help="ONNX 模型文件路径（backend=onnx 时使用）",
+    )
+    parser.add_argument(
+        "--onnx-provider",
+        dest="onnx_provider",
+        default="CUDAExecutionProvider",
+        help="ONNX Runtime provider，默认 CUDAExecutionProvider",
+    )
+    return parser.parse_args()
+
+
+args = parse_args()
+MODEL_PATH = args.model_path
+MODEL_NAME = args.model_name
+BACKEND = args.backend
+ONNX_MODEL_PATH = args.onnx_model_path
+ONNX_PROVIDER = args.onnx_provider
+MODEL_NAME_TAG = re.sub(r"[^0-9A-Za-z._-]+", "_", MODEL_NAME)
+ONNX_TOKENIZER_PATH = None
+if BACKEND == "onnx":
+    if os.path.isdir(ONNX_MODEL_PATH):
+        ONNX_TOKENIZER_PATH = ONNX_MODEL_PATH
+        ONNX_MODEL_PATH = os.path.join(ONNX_MODEL_PATH, "model.onnx")
+    else:
+        ONNX_TOKENIZER_PATH = os.path.dirname(ONNX_MODEL_PATH)
+
+SAVE_PATH = f"ceval_eval_results_{MODEL_NAME_TAG}_npthinkdosample0508.csv"
+THINKING_SAVE_DIR = f"nothinking_logs_{MODEL_NAME_TAG}_0508"
 
 # 🎯 指定要评测的科目（留空或设为 None 则评测所有科目）
 # 示例：EVAL_SUBJECTS = ["high_school_mathematics", "high_school_physics"]
@@ -64,33 +119,129 @@ SUBJECT_CN_MAP = {
 #     "min_p": 0.0,
 # }
 GENERATION_CONFIG = {
-    "do_sample": True,
+    "do_sample": False,
     "temperature": 0.6,
     "top_p": 0.95,
     "top_k": 20,
     "min_p": 0.0,
-    "repetition_penalty": 1.3,       # 防止模型陷入重复循环
+  #  "repetition_penalty": 1,       # 防止模型陷入重复循环
     "no_repeat_ngram_size": 6,        # 禁止连续重复的 6-gram
 }
 
 # ================= 模型加载 =================
-print(f"🚀 正在加载模型：{MODEL_PATH} ...")
+tokenizer_source = ONNX_TOKENIZER_PATH if BACKEND == "onnx" else MODEL_PATH
+print(f"🚀 正在加载 tokenizer：{tokenizer_source} ...")
 tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_PATH,
+    tokenizer_source,
     trust_remote_code=True,
     padding_side="left",
     fix_mistral_regex=True,##只有使用w8a8量化模型时才需要这个参数，其他模型可能不兼容
 )
-model_kwargs = {"device_map": "auto", 
-                "trust_remote_code":True}
-model_kwargs["torch_dtype"] = torch.float16 if DEVICE == "cuda" else torch.float32
-model = AutoModelForCausalLM.from_pretrained(MODEL_PATH, **model_kwargs)
-model.eval()
+model = None
+if BACKEND == "hf":
+    print(f"🚀 正在加载 HF 模型：{MODEL_PATH} ...")
+    model_kwargs = {"device_map": "auto", 
+                    "trust_remote_code":True}
+    model_kwargs["torch_dtype"] = torch.bfloat16 if DEVICE == "cuda" else torch.float32
+    model = AutoModelForCausalLM.from_pretrained(MODEL_PATH, **model_kwargs)
+    model.eval()
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
-print(f"✅ 模型加载完成，运行设备：{DEVICE}")
+
+# ✅ 兼容 Gemma 等模型的多终止 token（如 [1, 106]）
+STOP_TOKEN_IDS = getattr(model.generation_config, "eos_token_id", None) if model is not None else None
+if STOP_TOKEN_IDS is None:
+    STOP_TOKEN_IDS = tokenizer.eos_token_id
+if isinstance(STOP_TOKEN_IDS, int):
+    STOP_TOKEN_IDS = [STOP_TOKEN_IDS]
+elif isinstance(STOP_TOKEN_IDS, tuple):
+    STOP_TOKEN_IDS = list(STOP_TOKEN_IDS)
+
+if BACKEND == "hf":
+    print(f"✅ HF 模型加载完成，运行设备：{DEVICE}")
+else:
+    print("✅ ONNX 模式：已跳过 HF 模型加载")
+print(f"✅ 停止 token ids: {STOP_TOKEN_IDS}")
 
 # ================= 核心功能函数 =================
+class OnnxQwenRunner:
+    def __init__(self, onnx_path, provider="CUDAExecutionProvider"):
+        available = ort.get_available_providers()
+        if provider not in available:
+            raise RuntimeError(f"请求的 ONNX provider={provider} 不可用，可用 providers={available}")
+        self.sess = ort.InferenceSession(onnx_path, providers=[provider])
+        past_key_inputs = [
+            x for x in self.sess.get_inputs()
+            if x.name.startswith("past_key_values") and x.name.endswith(".key")
+        ]
+        if not past_key_inputs:
+            raise RuntimeError("ONNX 输入不包含 past_key_values.*.key")
+        self.num_layers = len(past_key_inputs)
+        shape = past_key_inputs[0].shape
+        self.num_heads = int(shape[1]) if isinstance(shape[1], int) else 8
+        self.head_dim = int(shape[3]) if isinstance(shape[3], int) else 128
+
+    def _empty_past(self, batch=1):
+        past = []
+        for _ in range(self.num_layers):
+            k = np.zeros((batch, self.num_heads, 0, self.head_dim), dtype=np.float32)
+            v = np.zeros((batch, self.num_heads, 0, self.head_dim), dtype=np.float32)
+            past.append((k, v))
+        return past
+
+    def _step(self, input_ids, attention_mask, position_ids, past):
+        feeds = {
+            "input_ids": input_ids.astype(np.int64),
+            "attention_mask": attention_mask.astype(np.int64),
+            "position_ids": position_ids.astype(np.int64),
+        }
+        for i, (k, v) in enumerate(past):
+            feeds[f"past_key_values.{i}.key"] = k
+            feeds[f"past_key_values.{i}.value"] = v
+        outs = self.sess.run(None, feeds)
+        logits = outs[0]
+        presents = outs[1:]
+        new_past = []
+        for i in range(self.num_layers):
+            new_past.append((presents[2 * i], presents[2 * i + 1]))
+        return logits, new_past
+
+    def generate(self, input_ids, max_new_tokens, eos_token_ids):
+        eos_token_ids = set(eos_token_ids or [])
+        tokens = list(input_ids)
+        past = self._empty_past(batch=1)
+
+        seq = np.array(tokens, dtype=np.int64)[None, :]
+        attn = np.ones_like(seq, dtype=np.int64)
+        pos = np.arange(seq.shape[1], dtype=np.int64)[None, :]
+        logits, past = self._step(seq, attn, pos, past)
+
+        last = logits[:, -1, :]
+        nid = int(np.argmax(last, axis=-1)[0])
+        tokens.append(nid)
+        if nid in eos_token_ids:
+            return tokens
+
+        for _ in range(max_new_tokens - 1):
+            cur = np.array([[tokens[-1]]], dtype=np.int64)
+            total_len = past[0][0].shape[2] + 1
+            attn = np.ones((1, total_len), dtype=np.int64)
+            pos = np.array([[total_len - 1]], dtype=np.int64)
+            logits, past = self._step(cur, attn, pos, past)
+            last = logits[:, -1, :]
+            nid = int(np.argmax(last, axis=-1)[0])
+            tokens.append(nid)
+            if nid in eos_token_ids:
+                break
+        return tokens
+
+
+onnx_runner = None
+if BACKEND == "onnx":
+    print(f"🚀 正在加载 ONNX 模型：{ONNX_MODEL_PATH} ...")
+    print(f"⚙️ ONNX provider: {ONNX_PROVIDER}")
+    onnx_runner = OnnxQwenRunner(ONNX_MODEL_PATH, provider=ONNX_PROVIDER)
+    print("✅ ONNX 模型加载完成")
 
 def load_local_data(subject, split=EVAL_SPLIT):
     file_path = os.path.join(DATA_DIR, f"{subject}_{split}.csv")
@@ -144,23 +295,32 @@ def model_predict_with_thinking(prompt, question_id, subject_name):
            # enable_thinking=True
         )
         
-        inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048, padding=True).to(model.device)
-        
-        with torch.no_grad():
-            outputs = model.generate(
-                **inputs,
+        if BACKEND == "hf":
+            inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048, padding=True).to(model.device)
+            with torch.no_grad():
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=MAX_NEW_TOKENS,
+                    do_sample=GENERATION_CONFIG["do_sample"],
+                    temperature=GENERATION_CONFIG["temperature"],
+                    top_p=GENERATION_CONFIG["top_p"],
+                    top_k=GENERATION_CONFIG["top_k"],
+                    repetition_penalty=GENERATION_CONFIG.get("repetition_penalty", 1.0),
+                    no_repeat_ngram_size=GENERATION_CONFIG.get("no_repeat_ngram_size", 0),
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=STOP_TOKEN_IDS
+                )
+            generated = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+        else:
+            np_inputs = tokenizer(text, return_tensors="np", truncation=True, max_length=2048, padding=True)
+            prompt_ids = np_inputs["input_ids"][0].tolist()
+            out_ids = onnx_runner.generate(
+                input_ids=prompt_ids,
                 max_new_tokens=MAX_NEW_TOKENS,
-                do_sample=GENERATION_CONFIG["do_sample"],
-                temperature=GENERATION_CONFIG["temperature"],
-                top_p=GENERATION_CONFIG["top_p"],
-                top_k=GENERATION_CONFIG["top_k"],
-                repetition_penalty=GENERATION_CONFIG.get("repetition_penalty", 1.0),
-                no_repeat_ngram_size=GENERATION_CONFIG.get("no_repeat_ngram_size", 0),
-                pad_token_id=tokenizer.pad_token_id,
-                eos_token_id=tokenizer.eos_token_id
+                eos_token_ids=STOP_TOKEN_IDS
             )
-        
-        generated = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
+            new_ids = out_ids[len(prompt_ids):]
+            generated = tokenizer.decode(new_ids, skip_special_tokens=True).strip()
         
         # ✅ 提取 Thinking 过程（支持多种标签格式）
         thinking_content = ""
@@ -413,7 +573,7 @@ else:
 print(f"📁 数据目录：{DATA_DIR}")
 print(f"📋 使用评测集：{EVAL_SPLIT}")
 print(f"📝 输出格式：JSON 标准化（C-Eval 官方建议）")
-print(f"🧠 Thinking 模式：启用")
+print(f"⚙️ 推理后端：{BACKEND}")
 print(f"💾 Thinking 日志目录：{os.path.abspath(THINKING_SAVE_DIR)}")
 print("=" * 60)
 

@@ -57,7 +57,7 @@ def get_args():
         "--backend",
         default="vllm",
         type=str,
-        choices=["vllm", "sglang", "transformers"],
+        choices=["vllm", "sglang", "transformers", "onnx-amct"],
     )
     parser.add_argument("--gpu-memory-utilization", default=0.9, type=float)
     parser.add_argument("--result-dir", default=None, type=str)
@@ -75,6 +75,18 @@ def get_args():
         type=str,
         default=None,
         help="Specify the path to a local directory containing the model's config/tokenizer/weights for fully offline inference. Use this only if the model weights are stored in a location other than the default HF_HOME directory.",
+    )
+    parser.add_argument(
+        "--onnx-model-path",
+        type=str,
+        default=None,
+        help="Path to an AMCT ONNX model file, its sibling .data file, or a directory containing a .onnx file. Only used with --backend onnx-amct.",
+    )
+    parser.add_argument(
+        "--onnx-provider",
+        type=str,
+        default="CUDAExecutionProvider",
+        help="ONNX Runtime provider for --backend onnx-amct. Use 'auto' to prefer CUDA and fall back to CPU.",
     )
     parser.add_argument(
         "--fix-mistral-regex",
@@ -294,6 +306,8 @@ def generate_results(args, model_name, test_cases_total):
                 backend=args.backend,
                 skip_server_setup=args.skip_server_setup,
                 local_model_path=args.local_model_path,
+                onnx_model_path=getattr(args, "onnx_model_path", None),
+                onnx_provider=getattr(args, "onnx_provider", "CUDAExecutionProvider"),
                 fix_mistral_regex=getattr(args, "fix_mistral_regex", False),
                 enable_think=getattr(args, "enable_think", None),
                 lora_modules=args.lora_modules,
