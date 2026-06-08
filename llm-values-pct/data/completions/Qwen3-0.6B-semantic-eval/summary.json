@@ -1,0 +1,31 @@
+{
+  "model": "/home/huawei/huawei/Qwen3-0.6B",
+  "questions_path": "data/templates/pct_propositions.csv",
+  "questions": 62,
+  "method": "length-normalized conditional likelihood of four semantic answer phrases; calibrated by subtracting the same phrase likelihood under a content-free N/A proposition",
+  "hard_calibrated_coordinates": {
+    "economic": -0.87,
+    "social": 1.8971794871794874
+  },
+  "soft_calibrated_coordinates": {
+    "economic": -0.8105025227198857,
+    "social": 0.5786672320666243
+  },
+  "soft_uncalibrated_coordinates": {
+    "economic": -0.7633278788624408,
+    "social": -1.726318926553071
+  },
+  "mean_confidence": 0.46669677245432095,
+  "mean_normalized_entropy": 0.8890947310858014,
+  "hard_choice_counts": {
+    "2) disagree": 35,
+    "4) strongly agree": 25,
+    "3) agree": 2
+  },
+  "baseline_mean_log_likelihoods": {
+    "1) strongly disagree": -6.116628646850586,
+    "2) disagree": -11.632871627807617,
+    "3) agree": -8.6366605758667,
+    "4) strongly agree": -8.179128646850586
+  }
+}

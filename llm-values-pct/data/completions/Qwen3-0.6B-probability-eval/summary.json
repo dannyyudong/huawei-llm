@@ -1,0 +1,24 @@
+{
+  "model": "/home/huawei/huawei/Qwen3-0.6B",
+  "questions_path": "data/templates/pct_propositions.csv",
+  "questions": 62,
+  "orders_per_question": 4,
+  "method": "restricted A/B/C/D next-token probabilities, mapped to semantic choices and averaged over four cyclic option orders",
+  "hard_coordinates": {
+    "economic": 1.38,
+    "social": 3.127948717948718
+  },
+  "soft_expected_coordinates": {
+    "economic": 0.09049383505351205,
+    "social": 0.21719416078528087
+  },
+  "mean_confidence": 0.27668154821719415,
+  "mean_candidate_probability_mass": 0.24798053153039468,
+  "mean_order_sensitivity": 0.9822185860595651,
+  "hard_choice_counts": {
+    "3) agree": 49,
+    "1) strongly disagree": 6,
+    "4) strongly agree": 6,
+    "2) disagree": 1
+  }
+}
