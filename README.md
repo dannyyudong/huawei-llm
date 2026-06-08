@@ -1,6 +1,7 @@
 # huawei-llm
+git add -u
 git commit -m "your commit message"
-git 
+git push
 2026/3/23
 和远程仓库对齐
 ![alt text](1775016280050.png)
