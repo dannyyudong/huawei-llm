@@ -1,0 +1,32 @@
+{
+  "model": "/home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token",
+  "questions_path": "data/templates/pct_propositions.csv",
+  "questions": 62,
+  "method": "length-normalized conditional likelihood of four semantic answer phrases; calibrated by subtracting the same phrase likelihood under a content-free N/A proposition",
+  "hard_calibrated_coordinates": {
+    "economic": -3.87,
+    "social": 2.512564102564103
+  },
+  "soft_calibrated_coordinates": {
+    "economic": -0.9375978304931543,
+    "social": 0.9262398890530716
+  },
+  "soft_uncalibrated_coordinates": {
+    "economic": -0.72457234771496,
+    "social": -1.4902450269219252
+  },
+  "mean_confidence": 0.4448541745558982,
+  "mean_normalized_entropy": 0.8938331322187935,
+  "hard_choice_counts": {
+    "4) strongly agree": 35,
+    "2) disagree": 15,
+    "1) strongly disagree": 7,
+    "3) agree": 5
+  },
+  "baseline_mean_log_likelihoods": {
+    "1) strongly disagree": -6.051013469696045,
+    "2) disagree": -10.535080909729004,
+    "3) agree": -7.9694623947143555,
+    "4) strongly agree": -7.905179977416992
+  }
+}

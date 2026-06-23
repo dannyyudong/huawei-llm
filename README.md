@@ -1,26 +1,70 @@
 # huawei-llm
 git add -u
-git commit -m "your commit message"
+git commit -m ""
 git push
 2026/3/23
 和远程仓库对齐
 ![alt text](1775016280050.png)
+## (i) StereoSet (Bias Evaluation)
+```bash
+cd /home/huawei/huawei/StereoSet/code && \
+ python -u eval_causal_lm.py \
+  --pretrained-class /home/huawei/huawei/Qwen3-1.7B \
+  --input-file ../data/dev.json \
+  --output-dir predictions \
+  --output-name predictions_Qwen3-1.7b.json \
+  --batch-size 8 && \
+ python evaluation.py \
+  --gold-file ../data/dev.json \
+  --predictions-file predictions/predictions_Qwen3-1.7b.json \
+  --output-file predictions/Qwen3-1.7b_results.json
+```
+```bash
+cd /home/huawei/huawei/StereoSet/code
+
+python3 eval_qwen_original_generative.py \
+  --model-path /home/huawei/huawei/Qwen3-0.6B \
+  --input-file ../data/dev.json \
+  --output-dir predictions \
+  --output-name predictions_Qwen3-0.6B_OriginalGenerative.json \
+  --batch-size 4
+  python3 eval_qwen_original_generative.py \
+  --model-path /home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
+  --input-file ../data/dev.json \
+  --output-dir predictions \
+  --output-name predictions_Qwen3-0.6B_w8a8_OriginalGenerative.json \
+  --batch-size 4 \
+  --device-map auto
+```
 ## (ii) CVALUES multi-choice responsibility prompts (Bias &Safety Evaluation)
 ```bash
-python generate_qwen3_responses.py \
+cd /home/huawei/huawei/CValues
+python code/generate_qwen3_responses.py \
   --model_path /home/huawei/huawei/Qwen3-0.6B \
   --output_file ./data/cvalues_qwen3-0.6b.jsonl \
   --torch_dtype bfloat16 \
   --resume \
+  --run-id "20260611" \
   --eval_after_generate
   
-
 ```
 ## (iii) SafetyBench (Safety Evaluation)
 ```bash
 cd /home/huawei/huawei/SafetyBench
 python3 code/evaluate_hf.py \
-  --model /home/huawei/huawei/Qwen3-0.6B \
+  --model /home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
+  --split zh \
+  --shots 0 \
+  --device cuda \
+  --dtype bfloat16 \
+  --run-id 20260611 \
+  --batch-size 4
+
+
+  cd /home/huawei/huawei/SafetyBench
+
+python3 code/evaluate_hf_next_token.py \
+  --model /home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
   --split zh \
   --shots 0 \
   --device cuda \
@@ -34,12 +78,12 @@ cd /home/huawei/huawei/llm-values-pct
 conda activate llm
 
 python src/eval_pct_semantic.py \
-  --model_name_or_path /home/huawei/huawei/Qwen3-0.6B \
+  --model_name_or_path /home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
   --questions_path data/templates/pct_propositions.csv \
-  --output_dir data/completions/Qwen3-0.6B-semantic-eval \
+  --output_dir data/completions/Qwen3-0.6B-w8a8-semantic-eval \
   --batch_size 16 \
   --require_cuda
-  cat data/completions/Qwen3-0.6B-semantic-eval/summary.json
+  cat data/completions/Qwen3-0.6B-w8a8-semantic-eval/summary.json
 ```
 ## amct安装
 

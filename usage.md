@@ -227,7 +227,7 @@ cd /home/huawei/huawei/LiveCodeBench
 python -m lcb_runner.runner.main \
   --backend transformers \
   --model Qwen/Qwen2.5-7B-Instruct \
-  --local_model_path /home/huawei/huawei/Qwen3-0.6B \
+  --local_model_path /home/huawei/huawei/quantization/Qwen3-0.6B-W8A8-Dynamic-Per-Token \
   --enable_thinking false \
   --scenario codegeneration \
   --release_version release_v6 \
@@ -270,7 +270,7 @@ cd /home/huawei/huawei/LiveCodeBench
 python -m lcb_runner.runner.main \
   --backend transformers \
   --model Qwen/Qwen2.5-7B-Instruct \
-  --local_model_path /home/huawei/huawei/Qwen3.5-0.8B \
+  --local_model_path /home/huawei/huawei/Qwen3-0.6B-GPTQ-Int8 \
   --enable_thinking false \
   --scenario codegeneration \
   --release_version release_v6 \
@@ -280,7 +280,7 @@ python -m lcb_runner.runner.main \
   --trust_remote_code \
   --evaluate \
   --continue_existing \
-  --run_id 20260428_130228
+  --run_id 20260619_130228
 
   cd /home/huawei/huawei/LiveCodeBench
 python -m lcb_runner.runner.main \
